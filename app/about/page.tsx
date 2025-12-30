@@ -2,20 +2,20 @@ import Link from "next/link";
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen pt-32 pb-24">
+      <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6">
+          <h1 className="text-6xl md:text-7xl font-bold text-brand-blue mb-6">
             About
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md mb-12">
-          <div className="space-y-6 text-brand-blue/80 leading-relaxed text-lg">
+        <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl mb-12">
+          <div className="space-y-6 text-brand-blue/80 leading-relaxed text-xl">
             <p>
-              I'm Alistair Webster. I work as a coach and consultant,
+              I'm Alistair Webster. I work as a coach and thinking partner, 
               mostly with people in leadership roles who care about using their 
               voice well.
             </p>
@@ -38,18 +38,19 @@ export default function About() {
                 href="https://ultraspeaking.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-brand-blue font-semibold hover:underline"
+                className="text-brand-blue font-bold hover:underline"
               >
                 Ultraspeaking
               </a>
-              . That training taught me how much can shift when people learn to
-              think clearly under pressure and trust their own voice.
+              , where I spent several years as a lead coach and program designer. 
+              That work taught me how much can shift when people learn to think 
+              clearly under pressure and trust their own voice.
             </p>
 
             <p>
               These days, most of my work is one-to-one—coaching leaders, preparing 
-              people for moments that matter, or serving as an outside consultant
-              to organizations navigating complexity.
+              people for moments that matter, or serving as an outside thinking 
+              partner for organizations navigating complexity.
             </p>
 
             <p>
@@ -66,21 +67,21 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <section className="bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <p className="text-lg text-brand-blue/80 leading-relaxed mb-6">
+        <section className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <p className="text-xl text-brand-blue/80 leading-relaxed mb-8">
             If you'd like to talk about working together, or you're just curious 
             about whether coaching might be useful for you, get in touch.
           </p>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-6 flex-wrap">
             <a 
               href="mailto:hello@alistairwebster.com"
-              className="inline-flex items-center px-8 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
+              className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-blue-light transition-all shadow-lg hover:shadow-xl hover:scale-105 transform text-lg"
             >
               Get in touch
             </a>
             <Link 
               href="/working"
-              className="inline-flex items-center px-8 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-white/80 transition-all shadow-sm border-2 border-brand-blue/20"
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-bold rounded-full hover:bg-white/90 transition-all shadow-md hover:shadow-lg border-2 border-brand-blue/20 hover:scale-105 transform text-lg"
             >
               Ways of working
             </Link>

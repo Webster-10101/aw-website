@@ -13,21 +13,21 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-brand-blue/10">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-blue/10 shadow-sm">
+      <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
         <Link 
           href="/" 
-          className="text-2xl font-bold text-brand-blue hover:text-brand-blue-light transition-colors"
+          className="text-3xl font-bold text-brand-blue hover:text-brand-blue-light transition-colors"
         >
           Alistair Webster
         </Link>
         
-        <div className="flex gap-8">
+        <div className="flex gap-10">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-base font-semibold transition-colors ${
                 pathname === link.href
                   ? "text-brand-blue"
                   : "text-brand-blue/70 hover:text-brand-blue"

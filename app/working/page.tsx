@@ -2,25 +2,25 @@ import Link from "next/link";
 
 export default function Working() {
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen pt-32 pb-24">
+      <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6">
+        <div className="mb-20">
+          <h1 className="text-6xl md:text-7xl font-bold text-brand-blue mb-8">
             Working Together
           </h1>
-          <p className="text-xl text-brand-blue/80 leading-relaxed">
+          <p className="text-2xl text-brand-blue/80 leading-relaxed">
             Most of what I do centers on helping you clarify your thinking and 
             strengthen your voice. Here's how that tends to show up.
           </p>
         </div>
 
         {/* 1:1 Coaching */}
-        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <h2 className="text-3xl font-bold text-brand-blue mb-6">
+        <section className="mb-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <h2 className="text-4xl font-bold text-brand-blue mb-8">
             1:1 Coaching
           </h2>
-          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg mb-6">
+          <div className="space-y-5 text-brand-blue/80 leading-relaxed text-xl mb-8">
             <p>
               This is the core of my practice. We meet regularly—usually every 
               two weeks—and create a space where you can think clearly about 
@@ -40,18 +40,18 @@ export default function Working() {
             href="https://speakupforgood.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
+            className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-blue-light transition-all shadow-lg hover:shadow-xl hover:scale-105 transform text-lg"
           >
             Learn more at Speak Up For Good →
           </a>
         </section>
 
         {/* Advisory */}
-        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <h2 className="text-3xl font-bold text-brand-blue mb-6">
+        <section className="mb-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <h2 className="text-4xl font-bold text-brand-blue mb-8">
             Advisory & Strategic Thinking
           </h2>
-          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
+          <div className="space-y-5 text-brand-blue/80 leading-relaxed text-xl">
             <p>
               Sometimes what's needed isn't coaching but someone to help you 
               think strategically—to see patterns you're too close to notice, 
@@ -71,11 +71,11 @@ export default function Working() {
         </section>
 
         {/* Workshops */}
-        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <h2 className="text-3xl font-bold text-brand-blue mb-6">
+        <section className="mb-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <h2 className="text-4xl font-bold text-brand-blue mb-8">
             Workshops & Group Work
           </h2>
-          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
+          <div className="space-y-5 text-brand-blue/80 leading-relaxed text-xl">
             <p>
               Occasionally I work with leadership teams, boards, or small cohorts 
               on questions that need collective attention.
@@ -93,11 +93,11 @@ export default function Working() {
         </section>
 
         {/* AI & Tools */}
-        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <h2 className="text-3xl font-bold text-brand-blue mb-6">
+        <section className="mb-10 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <h2 className="text-4xl font-bold text-brand-blue mb-8">
             AI & Tools
           </h2>
-          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
+          <div className="space-y-5 text-brand-blue/80 leading-relaxed text-xl">
             <p>
               I'm deeply curious about how AI is changing the way we work and 
               think—particularly for people in mission-driven roles.
@@ -115,22 +115,22 @@ export default function Working() {
         </section>
 
         {/* CTA */}
-        <section className="mt-16 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
-          <p className="text-lg text-brand-blue/80 leading-relaxed mb-6">
+        <section className="mt-20 bg-white/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl">
+          <p className="text-xl text-brand-blue/80 leading-relaxed mb-8">
             If you're interested in working together, the best next step is 
             simply to get in touch. Tell me what you're working on and we can 
             figure out if I'm the right person to help.
           </p>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-6 flex-wrap">
             <a 
               href="mailto:hello@alistairwebster.com"
-              className="inline-flex items-center px-8 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
+              className="inline-flex items-center px-8 py-4 bg-brand-blue text-white font-bold rounded-full hover:bg-brand-blue-light transition-all shadow-lg hover:shadow-xl hover:scale-105 transform text-lg"
             >
               Email me
             </a>
             <Link 
               href="/"
-              className="inline-flex items-center px-8 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-white/80 transition-all shadow-sm border-2 border-brand-blue/20"
+              className="inline-flex items-center px-8 py-4 bg-white text-brand-blue font-bold rounded-full hover:bg-white/90 transition-all shadow-md hover:shadow-lg border-2 border-brand-blue/20 hover:scale-105 transform text-lg"
             >
               ← Back home
             </Link>
