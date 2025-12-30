@@ -15,7 +15,7 @@ export default function About() {
         <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md mb-12">
           <div className="space-y-6 text-brand-blue/80 leading-relaxed text-lg">
             <p>
-              I'm Alistair Webster. I work as a coach and thinking partner, 
+              I'm Alistair Webster. I work as a coach and consultant,
               mostly with people in leadership roles who care about using their 
               voice well.
             </p>
@@ -42,15 +42,14 @@ export default function About() {
               >
                 Ultraspeaking
               </a>
-              , where I spent several years as a lead coach and program designer. 
-              That work taught me how much can shift when people learn to think 
-              clearly under pressure and trust their own voice.
+              . That training taught me how much can shift when people learn to
+              think clearly under pressure and trust their own voice.
             </p>
 
             <p>
               These days, most of my work is one-to-one—coaching leaders, preparing 
-              people for moments that matter, or serving as an outside thinking 
-              partner for organizations navigating complexity.
+              people for moments that matter, or serving as an outside consultant
+              to organizations navigating complexity.
             </p>
 
             <p>
