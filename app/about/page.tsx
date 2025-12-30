@@ -3,19 +3,19 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-light text-stone-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6">
             About
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="prose prose-stone prose-lg max-w-none">
-          <div className="space-y-6 text-stone-600 leading-relaxed">
+        <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md mb-12">
+          <div className="space-y-6 text-brand-blue/80 leading-relaxed text-lg">
             <p>
-              I'm Alistair Webster. I work as a coach and consultant,
+              I'm Alistair Webster. I work as a coach and thinking partner, 
               mostly with people in leadership roles who care about using their 
               voice well.
             </p>
@@ -38,7 +38,7 @@ export default function About() {
                 href="https://ultraspeaking.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-stone-900 underline hover:text-stone-600 transition-colors"
+                className="text-brand-blue font-semibold hover:underline"
               >
                 Ultraspeaking
               </a>
@@ -49,8 +49,8 @@ export default function About() {
 
             <p>
               These days, most of my work is one-to-one—coaching leaders, preparing 
-              people for moments that matter, or serving as an outside consultant
-              to organizations navigating complexity.
+              people for moments that matter, or serving as an outside thinking 
+              partner for organizations navigating complexity.
             </p>
 
             <p>
@@ -67,21 +67,21 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <section className="mt-16 pt-12 border-t border-stone-200">
-          <p className="text-lg text-stone-600 leading-relaxed mb-6">
+        <section className="bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <p className="text-lg text-brand-blue/80 leading-relaxed mb-6">
             If you'd like to talk about working together, or you're just curious 
             about whether coaching might be useful for you, get in touch.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <a 
               href="mailto:hello@alistairwebster.com"
-              className="inline-flex items-center px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-lg hover:bg-stone-800 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
             >
               Get in touch
             </a>
             <Link 
               href="/working"
-              className="inline-flex items-center px-6 py-3 border border-stone-300 text-stone-900 text-sm font-medium rounded-lg hover:bg-stone-50 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-white/80 transition-all shadow-sm border-2 border-brand-blue/20"
             >
               Ways of working
             </Link>
@@ -91,4 +91,3 @@ export default function About() {
     </div>
   );
 }
-

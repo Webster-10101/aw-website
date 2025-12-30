@@ -3,24 +3,24 @@ import Link from "next/link";
 export default function Working() {
   return (
     <div className="min-h-screen pt-24 pb-16">
-      <div className="max-w-3xl mx-auto px-6">
+      <div className="max-w-4xl mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <h1 className="text-4xl md:text-5xl font-light text-stone-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-bold text-brand-blue mb-6">
             Working Together
           </h1>
-          <p className="text-xl text-stone-600 leading-relaxed">
+          <p className="text-xl text-brand-blue/80 leading-relaxed">
             Most of what I do centers on helping you clarify your thinking and 
             strengthen your voice. Here's how that tends to show up.
           </p>
         </div>
 
         {/* 1:1 Coaching */}
-        <section className="mb-16 pb-16 border-b border-stone-200">
-          <h2 className="text-2xl font-light text-stone-900 mb-6">
+        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <h2 className="text-3xl font-bold text-brand-blue mb-6">
             1:1 Coaching
           </h2>
-          <div className="space-y-4 text-stone-600 leading-relaxed mb-6">
+          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg mb-6">
             <p>
               This is the core of my practice. We meet regularly—usually every 
               two weeks—and create a space where you can think clearly about 
@@ -40,18 +40,18 @@ export default function Working() {
             href="https://speakupforgood.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center text-stone-900 font-medium hover:text-stone-600 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
           >
             Learn more at Speak Up For Good →
           </a>
         </section>
 
         {/* Advisory */}
-        <section className="mb-16 pb-16 border-b border-stone-200">
-          <h2 className="text-2xl font-light text-stone-900 mb-6">
+        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <h2 className="text-3xl font-bold text-brand-blue mb-6">
             Advisory & Strategic Thinking
           </h2>
-          <div className="space-y-4 text-stone-600 leading-relaxed">
+          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
             <p>
               Sometimes what's needed isn't coaching but someone to help you 
               think strategically—to see patterns you're too close to notice, 
@@ -71,11 +71,11 @@ export default function Working() {
         </section>
 
         {/* Workshops */}
-        <section className="mb-16 pb-16 border-b border-stone-200">
-          <h2 className="text-2xl font-light text-stone-900 mb-6">
+        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <h2 className="text-3xl font-bold text-brand-blue mb-6">
             Workshops & Group Work
           </h2>
-          <div className="space-y-4 text-stone-600 leading-relaxed">
+          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
             <p>
               Occasionally I work with leadership teams, boards, or small cohorts 
               on questions that need collective attention.
@@ -93,11 +93,11 @@ export default function Working() {
         </section>
 
         {/* AI & Tools */}
-        <section className="mb-16 pb-16 border-b border-stone-200">
-          <h2 className="text-2xl font-light text-stone-900 mb-6">
+        <section className="mb-12 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <h2 className="text-3xl font-bold text-brand-blue mb-6">
             AI & Tools
           </h2>
-          <div className="space-y-4 text-stone-600 leading-relaxed">
+          <div className="space-y-4 text-brand-blue/80 leading-relaxed text-lg">
             <p>
               I'm deeply curious about how AI is changing the way we work and 
               think—particularly for people in mission-driven roles.
@@ -115,22 +115,22 @@ export default function Working() {
         </section>
 
         {/* CTA */}
-        <section className="mt-16">
-          <p className="text-lg text-stone-600 leading-relaxed mb-6">
+        <section className="mt-16 bg-white/70 backdrop-blur-sm rounded-2xl p-10 shadow-md">
+          <p className="text-lg text-brand-blue/80 leading-relaxed mb-6">
             If you're interested in working together, the best next step is 
             simply to get in touch. Tell me what you're working on and we can 
             figure out if I'm the right person to help.
           </p>
-          <div className="flex gap-4">
+          <div className="flex gap-4 flex-wrap">
             <a 
               href="mailto:hello@alistairwebster.com"
-              className="inline-flex items-center px-6 py-3 bg-stone-900 text-white text-sm font-medium rounded-lg hover:bg-stone-800 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-brand-blue text-white font-semibold rounded-full hover:bg-brand-blue-light transition-all shadow-md"
             >
               Email me
             </a>
             <Link 
               href="/"
-              className="inline-flex items-center px-6 py-3 border border-stone-300 text-stone-900 text-sm font-medium rounded-lg hover:bg-stone-50 transition-colors"
+              className="inline-flex items-center px-8 py-3 bg-white text-brand-blue font-semibold rounded-full hover:bg-white/80 transition-all shadow-sm border-2 border-brand-blue/20"
             >
               ← Back home
             </Link>
@@ -140,4 +140,3 @@ export default function Working() {
     </div>
   );
 }
-

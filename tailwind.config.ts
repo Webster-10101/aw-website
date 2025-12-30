@@ -9,8 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        lavender: {
+          light: '#F3F0FA',
+          DEFAULT: '#E8E4F3',
+          deep: '#DDD7F0',
+        },
+        brand: {
+          blue: '#3A5A7F',
+          'blue-light': '#4A6B8A',
+        },
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
