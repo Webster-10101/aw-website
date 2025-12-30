@@ -15,7 +15,7 @@ export default function About() {
         <div className="prose prose-stone prose-lg max-w-none">
           <div className="space-y-6 text-stone-600 leading-relaxed">
             <p>
-              I'm Alistair Webster. I work as a coach and thinking partner, 
+              I'm Alistair Webster. I work as a coach and consultant,
               mostly with people in leadership roles who care about using their 
               voice well.
             </p>
@@ -49,8 +49,8 @@ export default function About() {
 
             <p>
               These days, most of my work is one-to-one—coaching leaders, preparing 
-              people for moments that matter, or serving as an outside thinking 
-              partner for organizations navigating complexity.
+              people for moments that matter, or serving as an outside consultant
+              to organizations navigating complexity.
             </p>
 
             <p>

@@ -46,7 +46,7 @@ export default function Home() {
               Advisory & Strategic Thinking
             </h3>
             <p className="text-stone-600 leading-relaxed">
-              Sometimes what's needed isn't coaching but a thinking partner—someone to 
+              Sometimes what's needed isn't coaching but a consultant—someone to
               help you see around corners, spot what's not being said, or make sense 
               of complexity. This tends to work best with leaders in mission-driven 
               organizations.

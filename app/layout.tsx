@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Alistair Webster",
-  description: "Coach and thinking partner",
+  description: "Coach and consultant",
 };
 
 export default function RootLayout({
@@ -14,8 +14,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className="light">
+      <body className="antialiased bg-stone-50 text-stone-900">
         <Navigation />
         <main>{children}</main>
         <Footer />

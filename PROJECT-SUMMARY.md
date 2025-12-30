@@ -2,7 +2,7 @@
 
 ## ✅ What's Been Built
 
-A calm, intentional personal website that positions you as a coach and thinking partner - not a portfolio or services catalog.
+A calm, intentional personal website that positions you as a coach and consultant - not a portfolio or services catalog.
 
 ### Pages Created
 

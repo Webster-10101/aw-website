@@ -4,7 +4,7 @@ A calm, intentional personal site built with Next.js and Tailwind CSS.
 
 ## About
 
-This site positions Alistair as a coach and thinking partner, with a focus on clarity of thought and voice. It's designed to feel quiet, confident, and editorial—not transactional or portfolio-like.
+This site positions Alistair as a coach and consultant, with a focus on clarity of thought and voice. It's designed to feel quiet, confident, and editorial—not transactional or portfolio-like.
 
 ## Tech Stack
 
