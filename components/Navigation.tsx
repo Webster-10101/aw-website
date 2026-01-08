@@ -13,29 +13,33 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-brand-blue/10 shadow-sm">
-      <div className="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-        <Link 
-          href="/" 
-          className="text-3xl font-bold text-brand-blue hover:text-brand-blue-light transition-colors"
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/50 bg-white/45 backdrop-blur-xl">
+      <div className="container-page py-4 md:py-5 flex justify-between items-center gap-6">
+        <Link
+          href="/"
+          className="font-display text-xl md:text-2xl text-brand-blue tracking-tight hover:text-brand-blue-light transition-colors whitespace-nowrap"
         >
           Alistair Webster
         </Link>
-        
-        <div className="flex gap-10">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`text-base font-semibold transition-colors ${
-                pathname === link.href
-                  ? "text-brand-blue"
-                  : "text-brand-blue/70 hover:text-brand-blue"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+
+        <div className="flex items-center gap-1 md:gap-2 rounded-full bg-white/50 border border-white/60 backdrop-blur-xl p-1">
+          {links.map((link) => {
+            const active = pathname === link.href;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={[
+                  "px-3 md:px-4 py-2 rounded-full text-sm md:text-[15px] font-semibold transition-colors",
+                  active
+                    ? "bg-brand-blue text-white shadow-sm"
+                    : "text-brand-blue/70 hover:text-brand-blue hover:bg-white/70",
+                ].join(" ")}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </nav>

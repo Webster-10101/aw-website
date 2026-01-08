@@ -11,15 +11,90 @@
 }
 
 body {
-  background: linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender-base) 50%, var(--lavender-deep) 100%);
+  background:
+    radial-gradient(1200px 800px at 15% 10%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 55%),
+    radial-gradient(900px 650px at 85% 20%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
+    linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender-base) 55%, var(--lavender-deep) 100%);
   background-attachment: fixed;
   color: var(--blue-dark);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+}
+
+@layer base {
+  ::selection {
+    background: rgba(58, 90, 127, 0.18);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto max-w-6xl px-6;
+  }
+
+  .page-shell {
+    @apply min-h-screen pt-28 md:pt-32 pb-24;
+  }
+
+  .eyebrow {
+    @apply text-sm tracking-[0.2em] uppercase text-brand-blue/60;
+  }
+
+  .heading-display {
+    @apply font-display font-semibold text-brand-blue tracking-tight;
+  }
+
+  .lead {
+    @apply text-lg md:text-xl text-brand-blue/75 leading-relaxed;
+  }
+
+  .panel {
+    @apply rounded-3xl border border-white/60 bg-white/60 backdrop-blur-xl;
+    box-shadow:
+      0 1px 0 rgba(58, 90, 127, 0.06),
+      0 18px 50px rgba(58, 90, 127, 0.10);
+  }
+
+  .panel-hover {
+    @apply transition-[box-shadow,transform,border-color,background-color] duration-300 ease-out;
+  }
+
+  .panel-hover:hover {
+    transform: translateY(-2px);
+    border-color: rgba(58, 90, 127, 0.18);
+    box-shadow:
+      0 1px 0 rgba(58, 90, 127, 0.06),
+      0 26px 70px rgba(58, 90, 127, 0.14);
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-semibold transition-colors duration-200;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-blue px-8 py-4 text-white shadow-md;
+  }
+
+  .btn-primary:hover {
+    background: var(--blue-brand);
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/70 px-8 py-4 text-brand-blue shadow-sm border border-white/70;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-white/85;
+  }
+
+  .link-arrow {
+    @apply inline-flex items-center gap-2 font-semibold text-brand-blue/80 hover:text-brand-blue transition-colors;
+  }
 }
 
 @layer utilities {

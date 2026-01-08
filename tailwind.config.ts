@@ -20,8 +20,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
-        serif: ['Charter', 'Georgia', 'serif'],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
+        serif: ["ui-serif", "Georgia", "serif"],
       },
     },
   },
