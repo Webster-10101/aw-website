@@ -9,24 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        lavender: {
-          light: '#F3F0FA',
-          DEFAULT: '#E8E4F3',
-          deep: '#DDD7F0',
+        coral: {
+          DEFAULT: '#E86A58',
+          light: '#F08575',
+          dark: '#D55A48',
         },
-        brand: {
-          blue: '#3A5A7F',
-          'blue-light': '#4A6B8A',
+        teal: {
+          DEFAULT: '#4A9B9B',
+          light: '#5FB5B5',
+        },
+        charcoal: {
+          DEFAULT: '#2D3436',
+          light: '#4A5568',
+        },
+        cream: {
+          DEFAULT: '#FFFBF7',
+          dark: '#FFF5ED',
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "ui-serif", "Georgia", "serif"],
-        serif: ["ui-serif", "Georgia", "serif"],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        serif: ['Georgia', 'Times New Roman', 'serif'],
       },
     },
   },
   plugins: [],
 };
 export default config;
-

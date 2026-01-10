@@ -3,18 +3,18 @@ import Link from "next/link";
 export default function About() {
   return (
     <div className="page-shell">
-      <div className="container-page max-w-5xl">
+      <div className="container-page">
         {/* Header */}
         <div className="mb-12 md:mb-16">
           <p className="eyebrow mb-4">About</p>
-          <h1 className="heading-display text-5xl md:text-6xl leading-tight">
+          <h1 className="heading-hero text-4xl md:text-5xl lg:text-6xl">
             A little context.
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="panel p-10 md:p-12 mb-10 md:mb-12">
-          <div className="space-y-6 text-brand-blue/75 leading-relaxed text-lg md:text-xl">
+        <div className="card p-10 md:p-14 mb-10">
+          <div className="space-y-6 body-text max-w-3xl">
             <p>
               I'm Alistair Webster. I work as a coach and thinking partner, 
               mostly with people in leadership roles who care about using their 
@@ -35,11 +35,11 @@ export default function About() {
 
             <p>
               I'm trained as a coach through{" "}
-              <a 
-                href="https://ultraspeaking.com" 
-                target="_blank" 
+              <a
+                href="https://ultraspeaking.com"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-brand-blue font-semibold hover:underline underline-offset-4"
+                className="link-coral"
               >
                 Ultraspeaking
               </a>
@@ -68,7 +68,7 @@ export default function About() {
         </div>
 
         {/* CTA */}
-        <section className="panel p-10 md:p-12">
+        <div className="card p-10 md:p-12">
           <p className="lead mb-8">
             If you'd like to talk about working together, or you're just curious 
             about whether coaching might be useful for you, get in touch.
@@ -81,7 +81,7 @@ export default function About() {
               Ways of working
             </Link>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   );

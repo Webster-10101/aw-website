@@ -3,97 +3,167 @@
 @tailwind utilities;
 
 :root {
-  --lavender-light: #F3F0FA;
-  --lavender-base: #E8E4F3;
-  --lavender-deep: #DDD7F0;
-  --blue-dark: #3A5A7F;
-  --blue-brand: #4A6B8A;
+  /* Warm, approachable palette */
+  --coral: #E86A58;
+  --coral-light: #F08575;
+  --coral-dark: #D55A48;
+  --teal: #4A9B9B;
+  --teal-light: #5FB5B5;
+  --charcoal: #2D3436;
+  --charcoal-light: #4A5568;
+  --cream: #FFFBF7;
+  --cream-dark: #FFF5ED;
+  
+  /* Gradient base */
+  --gradient-light: #FFF9F5;
+  --gradient-mid: #FFF5ED;
+  --gradient-deep: #FFEFE3;
 }
 
 body {
   background:
-    radial-gradient(1200px 800px at 15% 10%, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0) 55%),
-    radial-gradient(900px 650px at 85% 20%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0) 60%),
-    linear-gradient(135deg, var(--lavender-light) 0%, var(--lavender-base) 55%, var(--lavender-deep) 100%);
+    radial-gradient(ellipse 1400px 900px at 10% 5%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 50%),
+    radial-gradient(ellipse 1000px 700px at 90% 15%, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0) 55%),
+    linear-gradient(155deg, var(--gradient-light) 0%, var(--gradient-mid) 50%, var(--gradient-deep) 100%);
   background-attachment: fixed;
-  color: var(--blue-dark);
-  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol", sans-serif;
+  color: var(--charcoal);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
 @layer base {
   ::selection {
-    background: rgba(58, 90, 127, 0.18);
+    background: rgba(232, 106, 88, 0.2);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
   }
 }
 
 @layer components {
+  /* Layout */
   .container-page {
-    @apply mx-auto max-w-6xl px-6;
+    @apply mx-auto max-w-5xl px-6 md:px-8;
   }
 
   .page-shell {
-    @apply min-h-screen pt-28 md:pt-32 pb-24;
+    @apply min-h-screen pt-28 md:pt-36 pb-24;
   }
 
+  /* Typography */
   .eyebrow {
-    @apply text-sm tracking-[0.2em] uppercase text-brand-blue/60;
+    @apply text-xs md:text-sm tracking-[0.15em] uppercase font-sans font-semibold;
+    color: var(--coral);
   }
 
-  .heading-display {
-    @apply font-display font-semibold text-brand-blue tracking-tight;
+  .heading-hero {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.1;
+  }
+
+  .heading-section {
+    font-family: Georgia, serif;
+    font-weight: 600;
+    color: var(--charcoal);
+    line-height: 1.2;
   }
 
   .lead {
-    @apply text-lg md:text-xl text-brand-blue/75 leading-relaxed;
+    @apply text-lg md:text-xl leading-relaxed;
+    color: var(--charcoal-light);
   }
 
-  .panel {
-    @apply rounded-3xl border border-white/60 bg-white/60 backdrop-blur-xl;
-    box-shadow:
-      0 1px 0 rgba(58, 90, 127, 0.06),
-      0 18px 50px rgba(58, 90, 127, 0.10);
+  .body-text {
+    @apply text-base md:text-lg leading-relaxed;
+    color: var(--charcoal-light);
   }
 
-  .panel-hover {
-    @apply transition-[box-shadow,transform,border-color,background-color] duration-300 ease-out;
+  /* Cards */
+  .card {
+    @apply rounded-2xl bg-white border border-gray-100;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
   }
 
-  .panel-hover:hover {
-    transform: translateY(-2px);
-    border-color: rgba(58, 90, 127, 0.18);
-    box-shadow:
-      0 1px 0 rgba(58, 90, 127, 0.06),
-      0 26px 70px rgba(58, 90, 127, 0.14);
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
   }
 
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.1);
+  }
+
+  /* Buttons */
   .btn {
-    @apply inline-flex items-center justify-center rounded-full font-semibold transition-colors duration-200;
-    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/30 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center font-sans font-semibold transition-all duration-200 rounded-full;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
   }
 
   .btn-primary {
-    @apply btn bg-brand-blue px-8 py-4 text-white shadow-md;
+    @apply btn px-8 py-4 text-white text-base md:text-lg;
+    background: var(--coral);
+    box-shadow: 0 2px 8px rgba(232, 106, 88, 0.3);
   }
 
   .btn-primary:hover {
-    background: var(--blue-brand);
+    background: var(--coral-dark);
+    box-shadow: 0 4px 16px rgba(232, 106, 88, 0.4);
+    transform: translateY(-1px);
   }
 
   .btn-secondary {
-    @apply btn bg-white/70 px-8 py-4 text-brand-blue shadow-sm border border-white/70;
+    @apply btn px-8 py-4 text-base md:text-lg bg-white border-2;
+    color: var(--charcoal);
+    border-color: rgba(0,0,0,0.1);
   }
 
   .btn-secondary:hover {
-    @apply bg-white/85;
+    background: var(--cream);
+    border-color: rgba(0,0,0,0.15);
+  }
+
+  /* Links */
+  .link-coral {
+    color: var(--coral);
+    @apply font-semibold hover:underline underline-offset-4 transition-colors;
+  }
+
+  .link-coral:hover {
+    color: var(--coral-dark);
   }
 
   .link-arrow {
-    @apply inline-flex items-center gap-2 font-semibold text-brand-blue/80 hover:text-brand-blue transition-colors;
+    @apply inline-flex items-center gap-2 font-semibold transition-colors;
+    color: var(--teal);
+  }
+
+  .link-arrow:hover {
+    color: var(--charcoal);
+  }
+
+  /* Navigation */
+  .nav-link {
+    @apply text-sm md:text-base font-medium transition-colors;
+    color: var(--charcoal-light);
+  }
+
+  .nav-link:hover {
+    color: var(--charcoal);
+  }
+
+  .nav-link-active {
+    color: var(--coral);
+    font-weight: 600;
   }
 }
 
@@ -102,4 +172,3 @@ body {
     text-wrap: balance;
   }
 }
-
