@@ -25,12 +25,12 @@ export default function Working() {
           {/* 1:1 Coaching - Full Width Featured */}
           <div className="card card-hover p-10 md:p-14 lg:p-16 relative overflow-hidden">
             {/* Decorative accent */}
-            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-coral via-coral/50 to-transparent" />
+            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-navy via-navy/50 to-transparent" />
 
             <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
               <div className="lg:col-span-1">
                 <div className="icon-badge-coral w-20 h-20 mb-6">
-                  <span className="text-coral font-display font-semibold text-2xl">1:1</span>
+                  <span className="text-coral font-display font-medium text-3xl tracking-tight">01</span>
                 </div>
                 <h2 className="heading-section text-3xl md:text-4xl">Coaching</h2>
               </div>
@@ -67,7 +67,7 @@ export default function Working() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <div className="icon-badge-teal w-16 h-16 mb-6">
-                <span className="text-teal font-display font-semibold text-xl">Adv</span>
+                <span className="text-teal font-display font-medium text-2xl tracking-tight">02</span>
               </div>
               <h2 className="heading-section text-3xl md:text-4xl mb-6">
                 Advisory &
@@ -110,7 +110,7 @@ export default function Working() {
             <div className="grid lg:grid-cols-3 gap-10 lg:gap-16 items-start">
               <div className="lg:col-span-1">
                 <div className="icon-badge-coral w-16 h-16 mb-6">
-                  <span className="text-coral font-display font-semibold text-xl">Wk</span>
+                  <span className="text-coral font-display font-medium text-2xl tracking-tight">03</span>
                 </div>
                 <h2 className="heading-section text-3xl md:text-4xl">
                   Workshops &
@@ -150,7 +150,7 @@ export default function Working() {
             </div>
             <div className="order-1 lg:order-2">
               <div className="icon-badge-teal w-16 h-16 mb-6">
-                <span className="text-teal font-display font-semibold text-xl">AI</span>
+                <span className="text-teal font-display font-medium text-2xl tracking-tight">04</span>
               </div>
               <h2 className="heading-section text-3xl md:text-4xl mb-6">AI & Tools</h2>
               <div className="space-y-5 body-text">

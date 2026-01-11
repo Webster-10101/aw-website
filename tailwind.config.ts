@@ -10,23 +10,23 @@ const config: Config = {
     extend: {
       colors: {
         coral: {
-          DEFAULT: '#E25D4E',
-          light: '#F07A6D',
-          dark: '#C94D3F',
+          DEFAULT: '#E86A58',
+          light: '#F08575',
+          dark: '#D55A48',
         },
         teal: {
-          DEFAULT: '#3D8B8B',
-          light: '#52A3A3',
+          DEFAULT: '#4A9B9B',
+          light: '#5FB5B5',
         },
         charcoal: {
-          DEFAULT: '#1A1D1E',
-          light: '#4A5055',
-          muted: '#7A7F85',
+          DEFAULT: '#1E2328',
+          light: '#4A5568',
+          muted: '#718096',
         },
         cream: {
-          DEFAULT: '#FDFBF9',
-          warm: '#FBF7F3',
-          dark: '#F7F2ED',
+          DEFAULT: '#FEFDFB',
+          warm: '#FAF8F5',
+          dark: '#F5F2ED',
         },
       },
       fontFamily: {

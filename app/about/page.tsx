@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -74,6 +75,22 @@ export default function About() {
 
           {/* Sidebar */}
           <div className="lg:col-span-1 space-y-8">
+            {/* Photo */}
+            <div className="relative">
+              <div className="aspect-square rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/alistair-webster.jpg"
+                  alt="Alistair Webster"
+                  width={768}
+                  height={768}
+                  className="object-cover w-full h-full"
+                  priority
+                />
+              </div>
+              {/* Decorative accent */}
+              <div className="absolute -bottom-3 -right-3 w-24 h-24 bg-coral/10 rounded-2xl -z-10" />
+            </div>
+
             {/* Quick Facts Card */}
             <div className="card p-8 md:p-9">
               <h3 className="heading-section text-lg mb-6">At a glance</h3>

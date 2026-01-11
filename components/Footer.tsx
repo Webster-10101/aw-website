@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="lg:col-span-2">
               <Link
                 href="/"
-                className="font-display text-2xl text-charcoal font-medium tracking-tight hover:text-coral transition-colors duration-300 inline-block mb-5"
+                className="font-display text-2xl text-charcoal font-medium tracking-tight hover:text-navy transition-colors duration-300 inline-block mb-5"
               >
                 Alistair Webster
               </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
                 <li>
                   <a
                     href="mailto:hello@alistairwebster.com"
-                    className="text-charcoal-light hover:text-coral transition-colors duration-300"
+                    className="text-charcoal-light hover:text-navy transition-colors duration-300"
                   >
                     hello@alistairwebster.com
                   </a>
@@ -72,7 +72,7 @@ export default function Footer() {
                     href="https://speakupforgood.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-charcoal-light hover:text-coral transition-colors duration-300 inline-flex items-center gap-1.5"
+                    className="text-charcoal-light hover:text-navy transition-colors duration-300 inline-flex items-center gap-1.5"
                   >
                     Speak Up For Good
                     <svg
