@@ -114,7 +114,7 @@ export default function Footer() {
 
           {/* Giving pledge */}
           <div className="mb-12 text-sm text-charcoal-light leading-relaxed max-w-md">
-            I donate at least 10% of my income to the world&rsquo;s most effective charities through the{" "}
+            I donate 10% of my income to effective charities through the{" "}
             <a
               href="https://freelancingforgood.com/pledge/"
               target="_blank"
@@ -122,8 +122,8 @@ export default function Footer() {
               className="text-charcoal hover:text-navy transition-colors duration-300 underline underline-offset-2 decoration-charcoal/20"
             >
               Freelancing for Good Giving Pledge
-            </a>{" "}
-            with Giving What We Can.
+            </a>
+            , in partnership with Giving What We Can.
           </div>
 
           {/* Bottom Bar */}
