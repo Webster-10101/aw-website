@@ -7,9 +7,10 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const links = [
-    { href: "/", label: "Home" },
-    { href: "/working", label: "Working Together" },
-    { href: "/about", label: "About" },
+    { href: "/", label: "Home", mobileLabel: "Home" },
+    { href: "/working", label: "What I Do", mobileLabel: "Work" },
+    { href: "/about", label: "About", mobileLabel: "About" },
+    { href: "/contact", label: "Contact", mobileLabel: "Contact" },
   ];
 
   return (
@@ -58,7 +59,7 @@ export default function Navigation() {
                   active ? "text-coral" : "text-charcoal-light hover:text-charcoal"
                 }`}
               >
-                {link.label.split(" ")[0]}
+                {link.mobileLabel}
               </Link>
             );
           })}

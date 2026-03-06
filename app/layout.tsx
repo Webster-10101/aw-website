@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Alistair Webster",
-  description: "Coach and consultant",
+  description: "Coach, AI consultant, and community builder",
 };
 
 const fontSans = Inter({

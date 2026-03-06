@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { MicIcon, CommunityIcon, LaptopIcon, LinkedInIcon, SubstackIcon } from "@/components/SiteIcons";
 
 export default function Footer() {
   return (
@@ -19,8 +20,10 @@ export default function Footer() {
                 Alistair Webster
               </Link>
               <p className="text-charcoal-light max-w-md leading-relaxed">
-                Coach and thinking partner. Helping people think clearly and
-                speak with quiet confidence.
+                Speaking and confidence coach, Freelancing for Good co-founder,
+                and AI consultant. Helping people to speak up and be heard, work
+                smarter with AI, and find freedom and purpose through
+                freelancing.
               </p>
             </div>
 
@@ -41,7 +44,7 @@ export default function Footer() {
                     href="/working"
                     className="text-charcoal-light hover:text-charcoal transition-colors duration-300"
                   >
-                    Working Together
+                    What I Do
                   </Link>
                 </li>
                 <li>
@@ -50,6 +53,14 @@ export default function Footer() {
                     className="text-charcoal-light hover:text-charcoal transition-colors duration-300"
                   >
                     About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-charcoal-light hover:text-charcoal transition-colors duration-300"
+                  >
+                    Contact
                   </Link>
                 </li>
               </ul>
@@ -68,26 +79,33 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="https://speakupforgood.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-charcoal-light hover:text-navy transition-colors duration-300 inline-flex items-center gap-1.5"
-                  >
+                  <a href="https://speakupforgood.com" target="_blank" rel="noopener noreferrer" className="text-charcoal-light hover:text-charcoal transition-colors duration-300 inline-flex items-center gap-2">
+                    <MicIcon className="w-4 h-4 opacity-50" />
                     Speak Up For Good
-                    <svg
-                      className="w-3.5 h-3.5 opacity-50"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                      />
-                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://aiwithal.com" target="_blank" rel="noopener noreferrer" className="text-charcoal-light hover:text-charcoal transition-colors duration-300 inline-flex items-center gap-2">
+                    <LaptopIcon className="w-4 h-4 opacity-50" />
+                    AI with Al
+                  </a>
+                </li>
+                <li>
+                  <a href="https://freelancingforgood.com" target="_blank" rel="noopener noreferrer" className="text-charcoal-light hover:text-charcoal transition-colors duration-300 inline-flex items-center gap-2">
+                    <CommunityIcon className="w-4 h-4 opacity-50" />
+                    Freelancing for Good
+                  </a>
+                </li>
+                <li>
+                  <a href="https://speakupforgood.substack.com/" target="_blank" rel="noopener noreferrer" className="text-charcoal-light hover:text-charcoal transition-colors duration-300 inline-flex items-center gap-2">
+                    <SubstackIcon className="w-4 h-4 opacity-50" />
+                    Substack
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/alistair-webster/" target="_blank" rel="noopener noreferrer" className="text-charcoal-light hover:text-charcoal transition-colors duration-300 inline-flex items-center gap-2">
+                    <LinkedInIcon className="w-4 h-4 opacity-50" />
+                    LinkedIn
                   </a>
                 </li>
               </ul>
@@ -98,9 +116,6 @@ export default function Footer() {
           <div className="pt-8 border-t border-charcoal/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-charcoal-muted">
               © {new Date().getFullYear()} Alistair Webster
-            </p>
-            <p className="text-sm text-charcoal-muted">
-              Built with care
             </p>
           </div>
         </div>

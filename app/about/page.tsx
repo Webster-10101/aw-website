@@ -1,5 +1,27 @@
 import Link from "next/link";
 import Image from "next/image";
+import TerminalBlock from "@/components/TerminalBlock";
+
+const systemLines = [
+  { type: "prompt" as const, text: "al --status" },
+  { type: "blank" as const, text: "" },
+  { type: "comment" as const, text: "# ventures" },
+  { type: "success" as const, text: "Speaking coaching        clients active, pipeline growing" },
+  { type: "success" as const, text: "Freelancer community    members engaged, content flowing" },
+  { type: "success" as const, text: "AI consulting           workshops + client projects" },
+  { type: "blank" as const, text: "" },
+  { type: "comment" as const, text: "# side projects" },
+  { type: "success" as const, text: "Nonprofit — fellowship programme running" },
+  { type: "success" as const, text: "Record label — catalogue growing" },
+  { type: "success" as const, text: "Book — writing in progress" },
+  { type: "blank" as const, text: "" },
+  { type: "comment" as const, text: "# system health" },
+  { type: "success" as const, text: "Inbox zero" },
+  { type: "success" as const, text: "Weekly review up to date" },
+  { type: "output" as const, text: "Nothing slipping through the cracks" },
+  { type: "blank" as const, text: "" },
+  { type: "summary" as const, text: "6 projects. 1 system. 0 chaos." },
+];
 
 export default function About() {
   return (
@@ -22,25 +44,18 @@ export default function About() {
           <div className="lg:col-span-2">
             <div className="space-y-6 body-text">
               <p className="text-xl md:text-2xl text-charcoal leading-[1.6] font-display" style={{ fontWeight: 400 }}>
-                I'm Alistair Webster. I work as a coach and thinking partner,
-                mostly with people in leadership roles who care about using their
-                voice well.
+                Hi, I&rsquo;m Alistair Webster! I work as a speaking and
+                confidence coach and AI consultant.
               </p>
 
               <p>
-                My background is an odd mix. I've worked in nonprofits, run campaigns,
-                built digital tools, advised organizations through moments of change,
-                and spent years helping people prepare for high-stakes speaking moments.
+                My background is a bit of an odd mix. I&rsquo;ve worked in
+                travel, marketing, and nonprofits &mdash; but I&rsquo;ve always
+                loved the flexibility and freedom that comes with freelancing.
               </p>
 
               <p>
-                What ties it all together is an interest in clarity—helping people
-                figure out what they actually think, and then say it in a way that
-                lands.
-              </p>
-
-              <p>
-                I'm trained as a coach through{" "}
+                I&rsquo;m an{" "}
                 <a
                   href="https://ultraspeaking.com"
                   target="_blank"
@@ -49,26 +64,54 @@ export default function About() {
                 >
                   Ultraspeaking
                 </a>
-                , where I spent several years as a lead coach and program designer.
-                That work taught me how much can shift when people learn to think
-                clearly under pressure and trust their own voice.
+                -certified public speaking coach &mdash; having gone on my own
+                journey after realising how my own weaknesses were holding me
+                back. Now I love helping other people overcome their blockers
+                and thrive.
               </p>
 
               <p>
-                These days, most of my work is one-to-one—coaching leaders, preparing
-                people for moments that matter, or serving as an outside thinking
-                partner for organizations navigating complexity.
+                These days I coach people who speak publicly &mdash;
+                presentations, pitches &mdash; but also those who deal with
+                some form of social anxiety, or anyone who just wants to be
+                able to speak up a little more and be heard.
               </p>
 
               <p>
-                I'm also curious about AI and how it's changing the way we work.
-                Not in a "move fast and break things" way, but in asking: how do
-                we use these tools without losing what makes human thinking valuable?
+                My method combines live practice with neuroscience-backed
+                memory reconsolidation techniques &mdash; which help remove
+                the root causes of speaking and confidence issues. Rather than
+                training around performance blockers, I help people rewrite
+                them.
               </p>
 
               <p>
-                I live in the UK. When I'm not working, I'm usually reading, walking,
-                or thinking about ways to make complex things clearer.
+                Like a lot of people, I&rsquo;ve also been amazed and terrified
+                by the AI tools we now have available. They are not going
+                anywhere, so I think it&rsquo;s essential to stay on top of
+                developments and understand how to get the most out of these
+                tools, and be prepared for a changing future.
+              </p>
+
+              <p>
+                I use Claude Code to run my business, build tools that help me
+                do more of what I want to &mdash; and to keep me organised.
+                I&rsquo;ve spent hundreds of hours building systems with it and
+                I even wrote{" "}
+                <a
+                  href="https://claudeclarity.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-coral"
+                >
+                  a short book about it
+                </a>
+                .
+              </p>
+
+              <p>
+                I help other people and organisations do the same &mdash; set up
+                AI workflows that genuinely save time and repetitive effort.
               </p>
             </div>
           </div>
@@ -97,15 +140,11 @@ export default function About() {
               <dl className="space-y-5">
                 <div>
                   <dt className="eyebrow text-[11px] mb-1.5">Based in</dt>
-                  <dd className="text-charcoal font-medium">United Kingdom</dd>
+                  <dd className="text-charcoal font-medium">Edinburgh</dd>
                 </div>
                 <div>
                   <dt className="eyebrow text-[11px] mb-1.5">Focus</dt>
-                  <dd className="text-charcoal font-medium">Coaching & Advisory</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow text-[11px] mb-1.5">Background</dt>
-                  <dd className="text-charcoal font-medium">Ultraspeaking Lead Coach</dd>
+                  <dd className="text-charcoal font-medium">Speaking Coaching · FFG Community Co-Founder · AI Consulting</dd>
                 </div>
               </dl>
             </div>
@@ -126,6 +165,47 @@ export default function About() {
           </div>
         </div>
 
+        {/* The System — terminal mini case study */}
+        <div className="mt-28 md:mt-36">
+          <div className="divider-gradient mb-20" />
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+              <p className="eyebrow mb-4">How it all fits</p>
+              <h2 className="heading-section text-3xl md:text-4xl mb-6">
+                A lot of plates.
+              </h2>
+              <div className="space-y-4 body-text">
+                <p>
+                  I do a bunch of stuff. I love working on so many different
+                  things, but at the core I have to be very organised.
+                </p>
+                <p>
+                  I can only spin so many plates because I built a system around
+                  it, using Claude Code to build on and make maintaining existing
+                  productivity setups like Getting Things Done easy.
+                </p>
+                <p>
+                  This is the same kind of setup I help clients build. Whether
+                  you&rsquo;re a solo operator juggling too many balls, or a
+                  team that wants AI to help with the heavy lifting.{" "}
+                  <a
+                    href="https://aiwithal.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-coral"
+                  >
+                    See how it works.
+                  </a>
+                </p>
+              </div>
+            </div>
+            <TerminalBlock
+              lines={systemLines}
+              title="al — system status"
+            />
+          </div>
+        </div>
+
         {/* Bottom CTA */}
         <div className="mt-28 md:mt-36">
           <div className="divider-gradient mb-20" />
@@ -137,11 +217,11 @@ export default function About() {
               <div>
                 <h2 className="heading-section text-3xl md:text-4xl lg:text-[2.75rem] mb-4">
                   Curious about
-                  <span className="block text-charcoal-light/60">coaching?</span>
+                  <span className="block text-charcoal-light/60">working together?</span>
                 </h2>
                 <p className="lead">
-                  Whether you're preparing for something specific or just want to explore,
-                  I'm happy to have a conversation.
+                  Whether you&rsquo;re preparing for something specific or just
+                  want to chat. Feel free to get in touch.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 lg:justify-end">
@@ -149,7 +229,7 @@ export default function About() {
                   Email me
                 </a>
                 <Link href="/working" className="btn-secondary text-center">
-                  Ways of working
+                  What I do
                 </Link>
               </div>
             </div>
