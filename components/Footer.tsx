@@ -112,6 +112,20 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Giving pledge */}
+          <div className="mb-12 text-sm text-charcoal-light leading-relaxed max-w-md">
+            I donate at least 10% of my income to the world&rsquo;s most effective charities through the{" "}
+            <a
+              href="https://freelancingforgood.com/pledge/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-charcoal hover:text-navy transition-colors duration-300 underline underline-offset-2 decoration-charcoal/20"
+            >
+              Freelancing for Good Giving Pledge
+            </a>{" "}
+            with Giving What We Can.
+          </div>
+
           {/* Bottom Bar */}
           <div className="pt-8 border-t border-charcoal/[0.06] flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-charcoal-muted">

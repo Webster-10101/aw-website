@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { MicIcon, CommunityIcon, LaptopIcon } from "@/components/SiteIcons";
+
+export const metadata: Metadata = {
+  title: "What I Do",
+  description:
+    "Speaking and confidence coaching, the Freelancing for Good community, and AI consulting — helping people get unstuck and get out of their own way.",
+};
 
 const ventures = [
   {

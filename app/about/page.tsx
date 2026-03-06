@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import TerminalBlock from "@/components/TerminalBlock";
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Ultraspeaking-certified speaking coach, AI consultant, and Freelancing for Good co-founder. Based in Edinburgh.",
+};
 
 const systemLines = [
   { type: "prompt" as const, text: "al --status" },
