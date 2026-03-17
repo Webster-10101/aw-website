@@ -6,15 +6,46 @@ export default function ContactForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Message from ${name}`);
-    const body = encodeURIComponent(
-      `From: ${name}\nEmail: ${email}\n\n${message}`
-    );
-    window.location.href = `mailto:hello@alistairwebster.com?subject=${subject}&body=${body}`;
+    setStatus("sending");
+
+    try {
+      const res = await fetch("https://formspree.io/f/mwvrwbwq", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (res.ok) {
+        setStatus("sent");
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
+
+  if (status === "sent") {
+    return (
+      <div className="text-center py-12">
+        <p className="text-xl font-medium text-charcoal mb-2">Thanks for your message!</p>
+        <p className="text-charcoal-muted">I'll get back to you as soon as I can.</p>
+        <button
+          onClick={() => setStatus("idle")}
+          className="mt-6 text-sm link-coral"
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -29,6 +60,7 @@ export default function ContactForm() {
           <input
             type="text"
             id="name"
+            name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -46,6 +78,7 @@ export default function ContactForm() {
           <input
             type="email"
             id="email"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -62,6 +95,7 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
+            name="message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
@@ -70,9 +104,14 @@ export default function ContactForm() {
             placeholder="What's on your mind?"
           />
         </div>
-        <button type="submit" className="btn-primary">
-          Send message
+        <button type="submit" className="btn-primary" disabled={status === "sending"}>
+          {status === "sending" ? "Sending..." : "Send message"}
         </button>
+        {status === "error" && (
+          <p className="text-sm text-red-600">
+            Something went wrong. Please try again or email me directly.
+          </p>
+        )}
       </form>
 
       <p className="text-sm text-charcoal-muted mt-4">
