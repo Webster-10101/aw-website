@@ -28,6 +28,37 @@ const SITUATIONS = [
   { icon: "spark", title: "When you're already good.", body: "Storytelling, presence and spontaneity, the next level up." },
 ];
 
+const ELSEWHERE = [
+  {
+    icon: "meeting",
+    title: "Freelancing for Good",
+    body: "I co-founded a community of 1,000+ freelancers working for causes they care about. I see all the time how speaking holds good people back.",
+    link: "freelancingforgood.com",
+    href: LINKS.ffg,
+  },
+  {
+    icon: "spark",
+    title: "Claude Clarity",
+    body: "My book on building an AI-powered productivity system with Claude. Available on Kindle.",
+    link: "claudeclarity.com",
+    href: LINKS.claudeClarity,
+  },
+  {
+    icon: "presentation",
+    title: "Freelance work",
+    body: "Websites, copywriting and design, plus some AI consulting, for the right projects.",
+    link: "Get in touch",
+    href: LINKS.email,
+  },
+  {
+    icon: "waveform",
+    title: "Side projects",
+    body: "Freelance Radio, GBM Music (original music that led to sales and commissions) and whatever's capturing my interest.",
+    link: "See projects",
+    href: "/apps",
+  },
+];
+
 const FAQS: { q: string; a: React.ReactNode }[] = [
   {
     q: "Who is this for?",
@@ -283,43 +314,46 @@ export default async function Home() {
 
       {/* About */}
       <section className="section section-sunk" id="about">
-        <div className="wrap about">
-          <div className="about-art">
-            <PhotoDisc src="/images/alistair-webster.jpg" alt="Alistair Webster" size={340} wave={false} />
+        <div className="wrap">
+          <div className="about">
+            <div className="about-art">
+              <PhotoDisc src="/images/alistair-webster.jpg" alt="Alistair Webster" size={320} wave={false} />
+            </div>
+            <div className="about-copy">
+              <Note>A bit about me</Note>
+              <div className="about-body">
+                <p>
+                  I was the quiet kid (I still hate admitting that) who dreaded speaking up, from giving a speech to
+                  introducing myself or ordering a coffee. I even secretly quit my first online speaking lesson halfway
+                  through.
+                </p>
+                <p>
+                  What changed things was practical training, plus understanding why being seen felt like such a big deal
+                  in the first place. My brain was predicting catastrophe whenever I opened my mouth!
+                </p>
+                <p>
+                  That&rsquo;s what my coaching combines now: Ultraspeaking drills, counselling-skills training, and an
+                  interest in memory reconsolidation and how the nervous system responds under pressure.
+                </p>
+              </div>
+            </div>
           </div>
-          <div>
-            <div className="about-body">
-              <p>
-                I was the quiet kid (I still hate admitting that) who dreaded speaking up, from giving a speech to
-                introducing myself or ordering a coffee. I even secretly quit my first online speaking lesson halfway
-                through.
-              </p>
-              <p>
-                What changed things was practical training, plus understanding why being seen felt like such a big deal in
-                the first place. My brain was predicting catastrophe whenever I opened my mouth!
-              </p>
-              <p>
-                That&rsquo;s what my coaching combines now: Ultraspeaking drills, counselling-skills training, and an
-                interest in memory reconsolidation and how the nervous system responds under pressure.
-              </p>
-              <p>
-                I also co-founded <a href={LINKS.ffg}>Freelancing for Good</a>, a community of 1,000+ freelancers working
-                for causes they care about. I see all the time how speaking holds good people back, from winning the work
-                to landing the funding and making the connections they need.
-              </p>
-              <p>
-                As a freelancer myself, I spin a few plates: I build websites, offer strategic consulting, and work on{" "}
-                <a href="/apps">various projects that capture my interest</a>.
-              </p>
-            </div>
-            <div className="about-links">
-              <Button href={LINKS.ffg} variant="secondary">
-                Freelancing for Good
-              </Button>
-              <Button href="/apps" variant="secondary">
-                Projects
-              </Button>
-            </div>
+          <div className="about-more">
+            <h3 className="about-more-title">Other things I do</h3>
+            <ul className="about-cards">
+              {ELSEWHERE.map((c) => (
+                <li key={c.title}>
+                  <a className="about-card aw-panel" href={c.href}>
+                    <Icon name={c.icon} circle />
+                    <span className="about-card-title">{c.title}</span>
+                    <span className="about-card-body">{c.body}</span>
+                    <span className="about-card-link">
+                      {c.link} <Icon name="arrow-right" size={16} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

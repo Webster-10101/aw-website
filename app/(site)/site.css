@@ -91,14 +91,23 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 @media (max-width: 900px) { .tom { grid-template-columns: 1fr; gap: var(--space-5); } .quote-row { padding: var(--space-7) 0; } }
 
 /* About */
-.about { display: grid; grid-template-columns: .8fr 1.2fr; gap: var(--space-6); align-items: start; }
-.about-art { justify-self: center; position: sticky; top: 120px; }
+.about { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--space-6); align-items: center; }
+.about-art { justify-self: center; }
+.about-copy { display: grid; gap: var(--space-4); }
 .about-body { font: 400 19px/1.7 var(--font-sans); color: var(--ink-muted); display: grid; gap: 1em; max-width: 62ch; }
 .about-body p { margin: 0; }
-.about-body strong { color: var(--ink); }
-.about-body a { color: var(--link); font-weight: 600; text-decoration-thickness: 2px; text-underline-offset: 4px; }
-.about-links { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4); }
+.about-more { margin-top: var(--space-7); }
+.about-more-title { font: 700 22px/1.25 var(--font-sans); letter-spacing: -.02em; margin: 0 0 var(--space-4); color: var(--ink); }
+.about-cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-4); }
+.about-card { height: 100%; padding: var(--space-4); display: grid; grid-template-rows: auto auto 1fr auto; gap: 12px; text-decoration: none; color: var(--ink); transition: border-color .2s ease, transform .2s ease; }
+.about-card:hover { border-color: var(--line-strong); transform: translateY(-2px); }
+.about-card-title { font: 700 18px/1.3 var(--font-sans); letter-spacing: -.01em; margin-top: 4px; }
+.about-card-body { font: 400 15px/1.6 var(--font-sans); color: var(--ink-muted); }
+.about-card-link { display: inline-flex; align-items: center; gap: 6px; font: 600 15px/1.4 var(--font-sans); color: var(--link); }
+@media (prefers-reduced-motion: reduce) { .about-card { transition: none; } .about-card:hover { transform: none; } }
+@media (max-width: 1000px) { .about-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: var(--space-5); } .about-art { justify-self: start; } .about-art .aw-photodisc { --aw-disc: 220px !important; } }
+@media (max-width: 560px) { .about-cards { grid-template-columns: 1fr; } }
 
 /* App showcase — concept screen */
 .aw-app-stage { height: 560px; }

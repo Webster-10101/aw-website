@@ -7,5 +7,6 @@ export const LINKS = {
   substack: "https://speakupforgood.substack.com/",
   linkedin: "https://www.linkedin.com/in/alistair-webster/",
   ffg: "https://freelancingforgood.com",
+  claudeClarity: "https://claudeclarity.com",
   email: "mailto:hello@alistairwebster.com",
 };
