@@ -302,3 +302,16 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
   .contrast-reveal .aw-contrast-not li span { transition: none; }
   .wipe-link { transition: none; }
 }
+
+/* Hero waveform — gently "speaking" */
+@keyframes aw-talk {
+  0% { transform: scaleY(1); }
+  18% { transform: scaleY(.55); }
+  34% { transform: scaleY(1.12); }
+  52% { transform: scaleY(.7); }
+  68% { transform: scaleY(1.05); }
+  84% { transform: scaleY(.45); }
+  100% { transform: scaleY(1); }
+}
+.aw-wave-live rect { transform-box: fill-box; transform-origin: center; animation-name: aw-talk; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+@media (prefers-reduced-motion: reduce) { .aw-wave-live rect { animation: none; } }

@@ -163,7 +163,7 @@ export default async function Home() {
             <Note className="hero-note" arrow>
               Hi, I&rsquo;m Alistair, a speaking coach.
             </Note>
-            <PhotoDisc src="/images/alistair-disc.jpg" alt="Alistair Webster, smiling, on Arthur's Seat in Edinburgh" size={440} waveId="hero-wave" />
+            <PhotoDisc src="/images/alistair-disc.jpg" alt="Alistair Webster, smiling, on Arthur's Seat in Edinburgh" size={440} waveId="hero-wave" live />
           </div>
         </div>
       </section>

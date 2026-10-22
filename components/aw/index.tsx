@@ -25,10 +25,12 @@ export function Waveform({
   width = "100%",
   tone = "voice",
   thin = false,
+  live = false,
   className,
   style,
 }: {
   id: string;
+  live?: boolean;
   bars?: number;
   seed?: number;
   height?: number | string;
@@ -45,7 +47,7 @@ export function Waveform({
   const stops = tone === "dark" ? VOICE_ON_DARK : VOICE;
   const fill = tone === "ink" ? "currentColor" : tone === "muted" ? "var(--line-strong)" : `url(#${id})`;
   return (
-    <svg className={cx("aw-wave", className)} viewBox={`0 0 ${W} ${H}`} width={width} height={height} style={style} aria-hidden>
+    <svg className={cx("aw-wave", live && "aw-wave-live", className)} viewBox={`0 0 ${W} ${H}`} width={width} height={height} style={style} aria-hidden>
       {(tone === "voice" || tone === "dark") && (
         <defs>
           <linearGradient id={id} x1={0} x2={W} y1={0} y2={0} gradientUnits="userSpaceOnUse">
@@ -58,7 +60,11 @@ export function Waveform({
       <g fill={fill}>
         {Array.from({ length: bars }, (_, i) => {
           const bh = Math.max(bw, amp(i, bars, seed) * H);
-          return <rect key={i} x={i * step + (step - bw) / 2} y={(H - bh) / 2} width={bw} height={bh} rx={bw / 2} />;
+          // Live bars get a staggered, irregular rhythm so the wave reads like speech, not a metronome.
+          const anim = live
+            ? { animationDelay: `${-((i * 0.37) % 1.9).toFixed(2)}s`, animationDuration: `${(1.5 + ((i * 7) % 9) / 10).toFixed(2)}s` }
+            : undefined;
+          return <rect key={i} x={i * step + (step - bw) / 2} y={(H - bh) / 2} width={bw} height={bh} rx={bw / 2} style={anim} />;
         })}
       </g>
     </svg>
@@ -352,7 +358,9 @@ export function PhotoDisc({
   size = 420,
   wave = true,
   waveId,
+  live = false,
 }: {
+  live?: boolean;
   src: string;
   alt: string;
   size?: number;
@@ -363,7 +371,7 @@ export function PhotoDisc({
     <div className="aw-photodisc" style={{ ["--aw-disc" as string]: `${size}px` }}>
       {wave && waveId && (
         <div className="aw-photodisc-wave">
-          <Waveform id={waveId} bars={56} height={size * 0.42} seed={3} />
+          <Waveform id={waveId} bars={56} height={size * 0.42} seed={3} live={live} />
         </div>
       )}
       <div className="aw-photodisc-back" />
