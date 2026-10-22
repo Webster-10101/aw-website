@@ -1,7 +1,6 @@
 import {
   ArrowGrid,
   Button,
-  Contrast,
   Gradient,
   Highlight,
   Icon,
@@ -16,7 +15,6 @@ import {
   Venn,
   Waveform,
 } from "@/components/aw";
-import Reveal from "@/components/aw/Reveal";
 import WaitlistForm from "@/components/aw/WaitlistForm";
 import { LINKS } from "./links";
 import { latestPosts } from "./substack";
@@ -223,8 +221,10 @@ export default async function Home() {
         <div className="wrap">
           <div>
             <div className="aw-dark-inner">
-              <h2 className="aw-h aw-h-l">Good speaking takes three things.</h2>
-              <p className="aw-dark-lede">Each one helps on its own. Together, they&rsquo;re what makes it stick.</p>
+              <h2 className="aw-h aw-h-l">
+                Great speaking is about <Gradient>more than just technique.</Gradient>
+              </h2>
+              <p className="aw-dark-lede">It takes three things. Each one helps on its own; together, they&rsquo;re what makes it stick.</p>
               <div className="aw-approach">
                 <Venn labels={["Skills", "Psychology", "Practice"]} centre="you, at your best" />
                 <Pillars
@@ -465,7 +465,7 @@ export default async function Home() {
               <li>
                 <Icon name="calendar" size={18} />
                 <span>
-                  Eight weekly 1:1 sessions, <span className="tbc">60 minutes</span> each
+                  Eight weekly 1:1 sessions, 60 minutes each
                 </span>
               </li>
               <li>
@@ -475,7 +475,7 @@ export default async function Home() {
               <li>
                 <Icon name="mic" size={18} />
                 <span>
-                  About <span className="tbc">10 minutes a day</span> of practice in the app
+                  About 10 minutes a day of practice in the app
                 </span>
               </li>
               <li>
@@ -493,33 +493,6 @@ export default async function Home() {
               Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
             </p>
           </aside>
-        </div>
-      </section>
-
-      {/* More than tips and tricks */}
-      <section className="section">
-        <div className="wrap">
-          <div className="section-head">
-            <h2 className="aw-h aw-h-l">
-              <Highlight>More than</Highlight> tips, tricks and hacks
-            </h2>
-          </div>
-          <Reveal className="contrast-reveal">
-          <Contrast
-            notLabel="Tips and tricks on their own"
-            yesLabel="What we work on"
-            not={["One-size-fits-all tips", "A memorised script, and hoping", "Advice you forget by Monday"]}
-            yes={[
-              "What's going on when the pressure's on, and why",
-              "The patterns underneath, not just the moments they show up",
-              "Skills practised until they hold up live",
-              "Recovery techniques you can rely on",
-              "Ways to prepare effectively",
-              "Lasting change that goes beyond just speaking",
-            ]}
-            closing="A structured programme that helps you build real confidence."
-          />
-          </Reveal>
         </div>
       </section>
 
