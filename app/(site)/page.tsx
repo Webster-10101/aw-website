@@ -16,6 +16,7 @@ import {
   Venn,
   Waveform,
 } from "@/components/aw";
+import WaitlistForm from "@/components/aw/WaitlistForm";
 import { LINKS } from "./links";
 import { latestPosts } from "./substack";
 
@@ -218,7 +219,7 @@ export default async function Home() {
               "Ways to prepare effectively",
               "Lasting change that goes beyond just speaking",
             ]}
-            closing="A structured programme to help you build real confidence."
+            closing="A structured programme that helps you build real confidence."
           />
         </div>
       </section>
@@ -251,7 +252,7 @@ export default async function Home() {
       </section>
 
       {/* 5. Dark band — three things */}
-      <section className="band aw-dark">
+      <section className="band aw-dark band-animated">
         <div className="aw-dark-glow" aria-hidden />
         <div className="wrap">
           <div>
@@ -332,8 +333,9 @@ export default async function Home() {
                   in the first place. My brain was predicting catastrophe whenever I opened my mouth!
                 </p>
                 <p>
-                  That&rsquo;s what my coaching combines now: Ultraspeaking drills, counselling-skills training, and an
-                  interest in memory reconsolidation and how the nervous system responds under pressure.
+                  That&rsquo;s what my coaching combines now: Ultraspeaking-style drills, counselling-skills training, and
+                  an approach informed by memory reconsolidation research and CBT ideas about how the nervous system
+                  responds under pressure.
                 </p>
               </div>
             </div>
@@ -415,16 +417,17 @@ export default async function Home() {
             </div>
             <div className="aw-app-copy">
               <h2 className="aw-app-title">
-                Practise every week in the <Highlight>Speak Up</Highlight> app
+                Practise every day in the <Highlight>Speak Up</Highlight> app
               </h2>
               <p className="aw-app-body">
-                Daily warm-ups, drills and exercises, plus practice designed to complement our coaching sessions. Record
-                yourself, play it back, try again. It&rsquo;s included for a year with the eight-week programme, so you
-                keep going long after we finish.
+                Daily warm-ups and drills, a unique speaking fitness score, courses and AI coaching to help you keep
+                growing beyond our sessions. It&rsquo;s included for a year with the eight-week programme, and
+                it&rsquo;s coming soon on its own too.
               </p>
               <Button href="#programme" variant="secondary">
                 See what&rsquo;s included
               </Button>
+              <WaitlistForm />
             </div>
           </div>
         </div>
@@ -523,10 +526,10 @@ export default async function Home() {
               items={[
                 <><strong>Eight 1:1 sessions</strong> shaped around what you&rsquo;re actually preparing for.</>,
                 <>A year of the <strong>Speak Up app</strong> for structured practice between sessions.</>,
-                <><strong>Assessments</strong> at the start and end, so you can see what changed.</>,
-                <><strong>Real rehearsal</strong> for a specific talk, pitch or speech.</>,
+                <><strong>Assessments</strong> to measure your progress and see your confidence grow in numbers.</>,
+                <><strong>Real rehearsal</strong> based around your specific goals and challenges.</>,
                 <><strong>Storytelling and structure</strong>, so your point lands.</>,
-                <><strong>Presence and delivery:</strong> pace, pause and voice.</>,
+                <><strong>Presence and delivery:</strong> develop key skills and techniques to speak with confidence.</>,
               ]}
             />
             <div className="programme-quote">
@@ -566,11 +569,8 @@ export default async function Home() {
           <div className="tips-head">
             <div className="section-head">
               <h2 className="aw-h aw-h-l">Speaking tips you need to hear</h2>
-              <p className="lede">Short, practical ideas from my newsletter.</p>
+              <p className="lede">Short, practical ideas from my public speaking newsletter.</p>
             </div>
-            <Button href={LINKS.substack} variant="secondary" arrow>
-              Subscribe
-            </Button>
           </div>
           <div className="tips">
             {posts.map((p, i) => (
@@ -585,6 +585,15 @@ export default async function Home() {
                 </span>
               </a>
             ))}
+          </div>
+          <div className="subscribe aw-panel">
+            <p>
+              <strong>Get new posts by email.</strong> Subscribe to my public speaking newsletter. Free, and easy to
+              leave.
+            </p>
+            <Button href={LINKS.substack} arrow>
+              Subscribe
+            </Button>
           </div>
         </div>
       </section>
@@ -616,8 +625,8 @@ export default async function Home() {
               Ready to <Gradient>find your voice?</Gradient>
             </h2>
             <p className="lede">
-              Book a free intro call and we&rsquo;ll talk it through. Or take the Speaker Quiz first: five minutes, and
-              you&rsquo;ll get a personalised plan.
+              Book a free intro call and we&rsquo;ll talk it through. Or take the Speaker Quiz first: in five minutes,
+              you&rsquo;ll learn your strengths and challenges, and get your own personalised plan.
             </p>
           </div>
           <div className="ctas">
