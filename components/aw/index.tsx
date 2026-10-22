@@ -247,9 +247,9 @@ export function Venn({ labels, centre }: { labels: [string, string, string]; cen
       <circle cx={150} cy={135} r={112} fill={PILLAR_COLOURS[0]} fillOpacity={0.62} />
       <circle cx={250} cy={135} r={112} fill={PILLAR_COLOURS[1]} fillOpacity={0.62} />
       <circle cx={200} cy={222} r={112} fill={PILLAR_COLOURS[2]} fillOpacity={0.62} />
-      <text x={96} y={110} textAnchor="middle">{labels[0]}</text>
-      <text x={304} y={110} textAnchor="middle">{labels[1]}</text>
-      <text x={200} y={304} textAnchor="middle">{labels[2]}</text>
+      <text x={124} y={112} textAnchor="middle">{labels[0]}</text>
+      <text x={276} y={112} textAnchor="middle">{labels[1]}</text>
+      <text x={200} y={290} textAnchor="middle">{labels[2]}</text>
       <text x={200} y={176} textAnchor="middle" className="centre">{centre}</text>
     </svg>
   );

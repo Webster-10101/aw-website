@@ -17,6 +17,7 @@ import {
   Waveform,
 } from "@/components/aw";
 import { LINKS } from "./links";
+import { latestPosts } from "./substack";
 
 const SITUATIONS = [
   { icon: "meeting", title: "In meetings.", body: "Say it the first time, without rehearsing it in your head." },
@@ -98,7 +99,8 @@ const FAQS: { q: string; a: React.ReactNode }[] = [
   },
 ];
 
-export default function Home() {
+export default async function Home() {
+  const posts = await latestPosts(3);
   return (
     <>
       {/* 1. Hero */}
@@ -169,7 +171,9 @@ export default function Home() {
       <section className="section">
         <div className="wrap">
           <div className="section-head">
-            <h2 className="aw-h aw-h-l">More than tips and tricks</h2>
+            <h2 className="aw-h aw-h-l">
+              <Highlight>More than</Highlight> tips, tricks and hacks
+            </h2>
           </div>
           <Contrast
             notLabel="Tips and tricks on their own"
@@ -179,6 +183,9 @@ export default function Home() {
               "What's going on when the pressure's on, and why",
               "The patterns underneath, not just the moments they show up",
               "Skills practised until they hold up live",
+              "Recovery techniques you can rely on",
+              "Ways to prepare effectively",
+              "Lasting change that goes beyond just speaking",
             ]}
             closing="Tips and techniques to help you build real confidence."
           />
@@ -189,7 +196,9 @@ export default function Home() {
       <section className="section section-sunk">
         <div className="wrap split">
           <div className="section-head">
-            <h2 className="aw-h aw-h-l">Trust yourself when it counts.</h2>
+            <h2 className="aw-h aw-h-l">
+              Trust yourself <Highlight>when it counts.</Highlight>
+            </h2>
             <p className="lede">
               Why is it so hard to speak under pressure the way we do when it&rsquo;s off? Through coaching that recreates
               that pressure and works on the root causes, you&rsquo;ll build the confidence to show up as yourself,
@@ -211,10 +220,10 @@ export default function Home() {
       </section>
 
       {/* 5. Dark band — three things */}
-      <section className="band">
+      <section className="band aw-dark">
+        <div className="aw-dark-glow" aria-hidden />
         <div className="wrap">
-          <div className="aw-dark">
-            <div className="aw-dark-glow" aria-hidden />
+          <div>
             <div className="aw-dark-inner">
               <h2 className="aw-h aw-h-l">Good speaking takes three things.</h2>
               <p className="aw-dark-lede">Each one helps on its own. Together, they&rsquo;re what makes it stick.</p>
@@ -245,7 +254,7 @@ export default function Home() {
       </section>
 
       <section className="quote-row">
-        <div className="wrap">
+        <div className="wrap tom">
           <PullQuote
             quote={
               <>
@@ -261,6 +270,14 @@ export default function Home() {
               </a>
             }
           />
+          <blockquote className="tom-aside aw-panel">
+            <p>
+              &ldquo;What surprised me most is how far beyond speaking this went. Alistair helped me see a bigger pattern
+              in my life: over-preparing to avoid mistakes. That insight opened me up to new experiences, and{" "}
+              <Highlight>honestly changed my life</Highlight>.&rdquo;
+            </p>
+            <cite>Tom, on what changed</cite>
+          </blockquote>
         </div>
       </section>
 
@@ -382,11 +399,9 @@ export default function Home() {
       {/* Ultraspeaking */}
       <section className="section section-sunk">
         <div className="wrap">
-          <div className="section-head">
-            <h2 className="aw-h aw-h-l">Trained in the Ultraspeaking method</h2>
-          </div>
           <div className="ultra">
             <div>
+              <h2 className="aw-h aw-h-l ultra-title">Trained in the Ultraspeaking method</h2>
               <div className="ultra-body">
                 <p>I&rsquo;m an Ultraspeaking-certified coach, trained by some of the best in the business.</p>
                 <p>
@@ -407,7 +422,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="why">
+            <div className="why aw-panel">
               <h3>Why it works</h3>
               <ul>
                 <li>
@@ -487,11 +502,18 @@ export default function Home() {
           </div>
           <aside className="price-card aw-panel" aria-label="Prices">
             <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Includes a year of Speak Up app access" />
+            <Button href={LINKS.bookProgramme} arrow>
+              Book the programme
+            </Button>
             <hr />
             <PriceBlock amount="£150" label="Single session" detail="60 minutes for a specific talk, pitch or event" />
-            <Button href={LINKS.introCall} arrow>
-              Book a free intro call
+            <Button href={LINKS.bookSession} variant="secondary">
+              Book a session
             </Button>
+            <hr />
+            <p className="price-intro">
+              Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
+            </p>
             <p className="guarantee">
               *Show up, do the work, and if you don&rsquo;t feel the difference, I&rsquo;ll <a href="/terms">make it right</a>.
             </p>
@@ -512,33 +534,15 @@ export default function Home() {
             </Button>
           </div>
           <div className="tips">
-            <a className="tip aw-panel" href={LINKS.substack}>
-              <span />
-              <p className="tip-title">
-                Pause <Gradient>before</Gradient> the point, not after it.
-              </p>
-              <span className="tip-foot">
-                Alistair Webster <Mark id="tip-mark-1" size={32} />
-              </span>
-            </a>
-            <a className="tip aw-panel dark" href={LINKS.substack}>
-              <span />
-              <p className="tip-title">
-                You don&rsquo;t need to become someone else. <Gradient>Get out of your own way.</Gradient>
-              </p>
-              <span className="tip-foot">
-                Alistair Webster <Mark id="tip-mark-2" size={32} tone="dark" />
-              </span>
-            </a>
-            <a className="tip aw-panel" href={LINKS.substack}>
-              <span />
-              <p className="tip-title">
-                3 ways to stop <Gradient>rushing</Gradient> when you speak
-              </p>
-              <span className="tip-foot">
-                Alistair Webster <span>Read →</span>
-              </span>
-            </a>
+            {posts.map((p, i) => (
+              <a key={p.url} className={`tip aw-panel${i === 1 ? " dark" : ""}`} href={p.url}>
+                <span className="tip-date">{p.date}</span>
+                <p className="tip-title">{p.title}</p>
+                <span className="tip-foot">
+                  Read on Substack <Mark id={`tip-mark-${i}`} size={32} tone={i === 1 ? "dark" : "voice"} />
+                </span>
+              </a>
+            ))}
           </div>
         </div>
       </section>
