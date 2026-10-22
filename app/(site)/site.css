@@ -152,6 +152,13 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .guarantee { font: 400 14px/1.55 var(--font-sans); color: var(--ink-muted); margin: 0; }
 .guarantee a { color: var(--link); font-weight: 600; }
 .programme-quote { margin-top: var(--space-6); max-width: 760px; }
+.footnote { position: relative; display: inline-block; vertical-align: super; line-height: 0; }
+.footnote-btn { font: 800 .55em/1 var(--font-sans); color: var(--berry); background: none; border: 0; padding: 4px 6px; cursor: help; }
+.footnote-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+.footnote-tip { position: absolute; z-index: 5; top: 34px; left: 50%; transform: translateX(-70%); width: min(320px, 80vw); padding: 16px 18px; background: var(--night); color: var(--on-night); border-radius: var(--radius-md); font: 500 15px/1.5 var(--font-sans); letter-spacing: 0; opacity: 0; visibility: hidden; transition: opacity .15s ease; }
+.footnote-tip a { color: #ff7aa8; font-weight: 700; }
+.footnote:hover .footnote-tip, .footnote:focus-within .footnote-tip { opacity: 1; visibility: visible; }
+@media (prefers-reduced-motion: reduce) { .footnote-tip { transition: none; } }
 .aw-h sup { font-size: .45em; vertical-align: super; color: var(--berry); margin-left: 2px; }
 @media (max-width: 960px) { .programme { grid-template-columns: 1fr; } .price-card { position: static; } }
 

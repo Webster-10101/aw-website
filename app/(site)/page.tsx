@@ -470,7 +470,15 @@ export default async function Home() {
           <div className="programme-copy">
             <h2 className="aw-h aw-h-l">
               Transform your speaking confidence in eight weeks. <Highlight plain swoosh>Guaranteed.</Highlight>
-              <sup>*</sup>
+              <span className="footnote">
+                <button type="button" className="footnote-btn" aria-describedby="guarantee-tip" aria-label="About the guarantee">
+                  *
+                </button>
+                <span role="tooltip" id="guarantee-tip" className="footnote-tip">
+                  Show up, do the work, and if you don&rsquo;t feel the difference, I&rsquo;ll{" "}
+                  <a href="/terms">make it right</a>.
+                </span>
+              </span>
             </h2>
             <p className="lede">
               Over eight weeks, we&rsquo;ll work out where you want to improve, build your skills and work on the habits
@@ -513,9 +521,6 @@ export default async function Home() {
             <hr />
             <p className="price-intro">
               Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
-            </p>
-            <p className="guarantee">
-              *Show up, do the work, and if you don&rsquo;t feel the difference, I&rsquo;ll <a href="/terms">make it right</a>.
             </p>
           </aside>
         </div>
