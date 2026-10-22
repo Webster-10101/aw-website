@@ -146,9 +146,9 @@ export default async function Home() {
               <span className="aw-h-line aw-gradient-text">Find your voice.</span>
             </h1>
             <p className="lede">
-              Whether it&rsquo;s freezing under pressure, rambling without getting to the point or dreading your turn to
-              introduce yourself, we all wish we were better speakers. I&rsquo;ll help you express yourself with ease and
-              authenticity, and rewire your speaking confidence.
+              Whether you freeze under pressure, struggle to get to the point, or already speak well but want more
+              presence and personality, I&rsquo;ll help you express yourself with ease and authenticity, and rewire your
+              speaking confidence.
             </p>
             <div className="ctas">
               <Button href={LINKS.quiz} arrow>

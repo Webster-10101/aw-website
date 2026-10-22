@@ -39,11 +39,17 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .hero-art { position: relative; justify-self: center; padding-top: 56px; }
 .hero-note { position: absolute; top: 0; left: -8px; font-size: 26px; }
 @media (max-width: 900px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-art { order: -1; justify-self: start; padding-top: 48px; }
-  .hero-art .aw-photodisc { --aw-disc: 260px !important; }
-  .hero { padding-top: var(--space-4); }
+  .hero-grid { grid-template-columns: 1fr; gap: var(--space-4); }
+  /* Phone: small portrait + note on one row, so the headline and promise land on the first screen */
+  .hero-art { order: -1; justify-self: start; padding-top: 0; display: flex; align-items: center; gap: 14px; }
+  .hero-art .aw-photodisc { --aw-disc: 96px !important; flex: none; }
+  .hero-art .aw-photodisc-wave { display: none; }
+  .hero-note { position: static; font-size: 22px; max-width: 14em; }
+  .hero-note svg { display: none; }
+  .hero { padding: var(--space-4) 0 var(--space-7); }
+  .hero-copy { gap: 20px; }
 }
+@media (max-width: 640px) { .hero .aw-h-xl { font-size: 46px; } }
 
 /* Story — staggered numbered cards */
 .story-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); align-items: start; }
@@ -329,3 +335,6 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .about-copy .badge { margin-top: var(--space-2); justify-self: start; }
 /* Unconfirmed facts — dev only; must be resolved before launch */
 .tbc { outline: 2px dashed var(--tangerine); outline-offset: 2px; border-radius: 4px; }
+
+/* Gradient text clips descenders at tight line-heights — give it room */
+.aw-h .aw-gradient-text { padding-bottom: .1em; margin-bottom: -.1em; }
