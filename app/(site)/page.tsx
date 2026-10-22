@@ -158,6 +158,7 @@ export default async function Home() {
                 Book a free intro call
               </Button>
             </div>
+            <p className="cta-note">Five minutes to explore your speaking strengths and what to work on next.</p>
           </div>
           <div className="hero-art">
             <Note className="hero-note" arrow>
@@ -193,64 +194,26 @@ export default async function Home() {
             <div className="story-step">
               <span className="story-num" aria-hidden>3</span>
               <StoryCard icon="spark" title="With the right practice, speaking starts to feel like you.">
-                You contribute without overthinking it. Your stories land. You prepare less and connect more.
+                You contribute without overthinking it. Your stories land. You stop scripting every word and connect more.
               </StoryCard>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* 3. More than tips and tricks */}
-      <section className="section">
-        <div className="wrap">
-          <div className="section-head">
-            <h2 className="aw-h aw-h-l">
-              <Highlight>More than</Highlight> tips, tricks and hacks
-            </h2>
-          </div>
-          <Reveal className="contrast-reveal">
-          <Contrast
-            notLabel="Tips and tricks on their own"
-            yesLabel="What we work on"
-            not={["Breathing hacks and power poses", "A memorised script, and hoping", "Advice you forget by Monday"]}
-            yes={[
-              "What's going on when the pressure's on, and why",
-              "The patterns underneath, not just the moments they show up",
-              "Skills practised until they hold up live",
-              "Recovery techniques you can rely on",
-              "Ways to prepare effectively",
-              "Lasting change that goes beyond just speaking",
-            ]}
-            closing="A structured programme that helps you build real confidence."
-          />
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 4. Trust yourself */}
-      <section className="section section-sunk">
-        <div className="wrap split">
-          <div className="section-head">
-            <h2 className="aw-h aw-h-l">
+          <div className="situations-wrap">
+            <h3 className="situations-title">
               Trust yourself <Highlight>when it counts.</Highlight>
-            </h2>
-            <p className="lede">
-              Why is it so hard to speak under pressure the way we do when it&rsquo;s off? Through coaching that recreates
-              that pressure and works on the root causes, you&rsquo;ll build the confidence to show up as yourself,
-              whatever the situation. Whether that&rsquo;s Monday morning&rsquo;s meeting or the speech of your life.
-            </p>
+            </h3>
+            <ul className="situations">
+              {SITUATIONS.map((s) => (
+                <li key={s.title}>
+                  <Icon name={s.icon} circle />
+                  <div>
+                    <h3>{s.title}</h3>
+                    <p>{s.body}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul className="situations">
-            {SITUATIONS.map((s) => (
-              <li key={s.title}>
-                <Icon name={s.icon} circle />
-                <div>
-                  <h3>{s.title}</h3>
-                  <p>{s.body}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -263,10 +226,13 @@ export default async function Home() {
               <h2 className="aw-h aw-h-l">Good speaking takes three things.</h2>
               <p className="aw-dark-lede">Each one helps on its own. Together, they&rsquo;re what makes it stick.</p>
               <div className="aw-approach">
-                <Venn labels={["Authenticity", "Psychology", "Practice"]} centre="you, at your best" />
+                <Venn labels={["Skills", "Psychology", "Practice"]} centre="you, at your best" />
                 <Pillars
                   items={[
-                    { title: "Authenticity", body: "Exercises that get you out of your head and help you enjoy being seen." },
+                    {
+                      title: "Skills",
+                      body: "Storytelling, presence, structure and spontaneity, through exercises that get you out of your head and help you enjoy being seen.",
+                    },
                     {
                       title: "Psychology",
                       body: "My coaching takes a CBT-informed approach, working on the root causes rather than the symptoms.",
@@ -340,25 +306,31 @@ export default async function Home() {
                   an approach informed by memory reconsolidation research and CBT ideas about how the nervous system
                   responds under pressure.
                 </p>
+                <p>
+                  I&rsquo;m a certified Ultraspeaking coach. Their method is built on speaking games and practice rather
+                  than theory, which is the backbone of the skills side of my coaching.
+                </p>
+              </div>
+              <div className="badge aw-panel">
+                <Icon name="check" circle />
+                <div>
+                  <b>Ultraspeaking L1 Coach Certification</b>
+                  <span>Ultraspeaking · Issued Aug 2025</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="about-more">
-            <h3 className="about-more-title">Other things I do</h3>
-            <ul className="about-cards">
-              {ELSEWHERE.map((c) => (
-                <li key={c.title}>
-                  <a className="about-card aw-panel" href={c.href}>
-                    <Icon name={c.icon} circle />
-                    <span className="about-card-title">{c.title}</span>
-                    <span className="about-card-body">{c.body}</span>
-                    <span className="about-card-link">
-                      {c.link} <Icon name="arrow-right" size={16} />
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="ultra-quote">
+            <Testimonial
+              quote={
+                <>
+                  You gave me personalised feedback that really helped. <Highlight>I actually spoke for the entire hour</Highlight>, which
+                  I&rsquo;m not used to, and it felt great! You helped me believe more in my own skills as a speaker.
+                </>
+              }
+              name="Liudmila"
+              role="Coaching client"
+            />
           </div>
         </div>
       </section>
@@ -420,12 +392,16 @@ export default async function Home() {
             </div>
             <div className="aw-app-copy">
               <h2 className="aw-app-title">
-                Practise every day in the <Highlight>Speak Up</Highlight> app
+                Your progress doesn&rsquo;t stop <Highlight>between sessions.</Highlight>
               </h2>
               <p className="aw-app-body">
-                Daily warm-ups and drills, a unique speaking fitness score, courses and AI coaching to help you keep
-                growing beyond our sessions. It&rsquo;s included for a year with the eight-week programme, and
-                it&rsquo;s coming soon on its own too.
+                Practice is where new habits stick. In <strong>Speak Up</strong>, my own app, you get short daily warm-ups
+                and drills built around what we&rsquo;re working on, so you keep improving between our calls, and a
+                speaking fitness score so you can see it happening.
+              </p>
+              <p className="aw-app-body">
+                It&rsquo;s included for a year with the eight-week programme, along with courses and AI coaching to help
+                you keep growing long after we finish.
               </p>
               <Button href="#programme" variant="secondary">
                 See what&rsquo;s included
@@ -436,76 +412,8 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Ultraspeaking */}
-      <section className="section section-sunk">
-        <div className="wrap">
-          <div className="ultra">
-            <div>
-              <h2 className="aw-h aw-h-l ultra-title">Trained in the Ultraspeaking method</h2>
-              <div className="ultra-body">
-                <p>I&rsquo;m an Ultraspeaking-certified coach, trained by some of the best in the business.</p>
-                <p>
-                  Ultraspeaking&rsquo;s approach, praised by creators like Ali Abdaal, Anne-Laure Le Cunff and Lucy
-                  Simkins, isn&rsquo;t about memorising scripts or chasing perfect delivery. It&rsquo;s about finding your
-                  authentic voice and building lasting confidence.
-                </p>
-                <p>
-                  Through coaching and speaking games, I help you communicate with impact, overcome imposter syndrome, and
-                  inspire others.
-                </p>
-              </div>
-              <div className="badge aw-panel">
-                <Icon name="check" circle />
-                <div>
-                  <b>Ultraspeaking L1 Coach Certification</b>
-                  <span>Ultraspeaking · Issued Aug 2025</span>
-                </div>
-              </div>
-            </div>
-            <div className="why aw-panel">
-              <h3>Why it works</h3>
-              <ul>
-                <li>
-                  <Icon name="mic" circle />
-                  <div>
-                    <b>Learn by doing.</b>
-                    <span>Speaking games and exercises, not theory or lectures.</span>
-                  </div>
-                </li>
-                <li>
-                  <Icon name="waveform" circle />
-                  <div>
-                    <b>Sound like yourself.</b>
-                    <span>Your natural style, not a rehearsed performance.</span>
-                  </div>
-                </li>
-                <li>
-                  <Icon name="presentation" circle />
-                  <div>
-                    <b>Built for real life.</b>
-                    <span>Techniques that hold up in the meetings, pitches and speeches you actually face.</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="ultra-quote">
-            <Testimonial
-              quote={
-                <>
-                  You gave me personalised feedback that really helped. <Highlight>I actually spoke for the entire hour</Highlight>, which
-                  I&rsquo;m not used to, and it felt great! You helped me believe more in my own skills as a speaker.
-                </>
-              }
-              name="Liudmila"
-              role="Coaching client"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* 7. Programme and price */}
-      <section className="section" id="programme">
+      <section className="section section-sunk" id="programme">
         <div className="wrap programme">
           <div className="programme-copy">
             <h2 className="aw-h aw-h-l">
@@ -553,6 +461,28 @@ export default async function Home() {
             <Button href={LINKS.bookProgramme} arrow>
               Book the programme
             </Button>
+            <ul className="practical">
+              <li>
+                <Icon name="calendar" size={18} />
+                <span>
+                  Eight weekly 1:1 sessions, <span className="tbc">60 minutes</span> each
+                </span>
+              </li>
+              <li>
+                <Icon name="meeting" size={18} />
+                <span>Online, or in person in Edinburgh</span>
+              </li>
+              <li>
+                <Icon name="mic" size={18} />
+                <span>
+                  About <span className="tbc">10 minutes a day</span> of practice in the app
+                </span>
+              </li>
+              <li>
+                <Icon name="check" size={18} />
+                <span>After booking, you pay securely, pick your first session, and we set the rest for the same time each week</span>
+              </li>
+            </ul>
             <hr />
             <PriceBlock amount="£150" label="Single session" detail="60 minutes for a specific talk, pitch or event" />
             <Button href={LINKS.bookSession} variant="secondary">
@@ -563,6 +493,33 @@ export default async function Home() {
               Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
             </p>
           </aside>
+        </div>
+      </section>
+
+      {/* More than tips and tricks */}
+      <section className="section">
+        <div className="wrap">
+          <div className="section-head">
+            <h2 className="aw-h aw-h-l">
+              <Highlight>More than</Highlight> tips, tricks and hacks
+            </h2>
+          </div>
+          <Reveal className="contrast-reveal">
+          <Contrast
+            notLabel="Tips and tricks on their own"
+            yesLabel="What we work on"
+            not={["One-size-fits-all tips", "A memorised script, and hoping", "Advice you forget by Monday"]}
+            yes={[
+              "What's going on when the pressure's on, and why",
+              "The patterns underneath, not just the moments they show up",
+              "Skills practised until they hold up live",
+              "Recovery techniques you can rely on",
+              "Ways to prepare effectively",
+              "Lasting change that goes beyond just speaking",
+            ]}
+            closing="A structured programme that helps you build real confidence."
+          />
+          </Reveal>
         </div>
       </section>
 
@@ -628,16 +585,16 @@ export default async function Home() {
               Ready to <Gradient>find your voice?</Gradient>
             </h2>
             <p className="lede">
-              Book a free intro call and we&rsquo;ll talk it through. Or take the Speaker Quiz first: in five minutes,
-              you&rsquo;ll learn your strengths and challenges, and get your own personalised plan.
+              Take the Speaker Quiz: in five minutes, you&rsquo;ll learn your strengths and challenges, and get your
+              own personalised plan. Or book a free intro call and we&rsquo;ll talk it through.
             </p>
           </div>
           <div className="ctas">
-            <Button href={LINKS.introCall} arrow>
-              Book a free intro call
-            </Button>
-            <Button href={LINKS.quiz} variant="secondary">
+            <Button href={LINKS.quiz} arrow>
               Take the Speaker Quiz
+            </Button>
+            <Button href={LINKS.introCall} variant="secondary">
+              Book a free intro call
             </Button>
           </div>
           <Testimonial
@@ -650,6 +607,28 @@ export default async function Home() {
             name="Nailya B"
             role="Coaching client"
           />
+        </div>
+      </section>
+      {/* Other projects */}
+      <section className="section" id="projects">
+        <div className="wrap">
+          <div className="about-more">
+            <h2 className="about-more-title">Other things I do</h2>
+            <ul className="about-cards">
+              {ELSEWHERE.map((c) => (
+                <li key={c.title}>
+                  <a className="about-card aw-panel" href={c.href}>
+                    <Icon name={c.icon} circle />
+                    <span className="about-card-title">{c.title}</span>
+                    <span className="about-card-body">{c.body}</span>
+                    <span className="about-card-link">
+                      {c.link} <Icon name="arrow-right" size={16} />
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </>

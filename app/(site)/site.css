@@ -315,3 +315,17 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 }
 .aw-wave-live rect { transform-box: fill-box; transform-origin: center; animation-name: aw-talk; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
 @media (prefers-reduced-motion: reduce) { .aw-wave-live rect { animation: none; } }
+
+/* Feedback round: quiz note, situations inside story, practical details, placeholders */
+.cta-note { margin: -8px 0 0; font: 500 15px/1.5 var(--font-sans); color: var(--ink-subtle); }
+.situations-wrap { margin-top: var(--space-7); display: grid; gap: var(--space-5); }
+.situations-title { margin: 0; font: 800 36px/1.1 var(--font-sans); letter-spacing: -.03em; color: var(--ink); }
+.situations-wrap .situations { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 900px) { .situations-wrap .situations { grid-template-columns: repeat(2, minmax(0, 1fr)); } .situations-title { font-size: 28px; } }
+@media (max-width: 560px) { .situations-wrap .situations { grid-template-columns: 1fr; } }
+.practical { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.practical li { display: grid; grid-template-columns: 20px 1fr; gap: 10px; font: 500 14px/1.5 var(--font-sans); color: var(--ink-muted); }
+.practical .aw-icon { color: var(--berry); margin-top: 1px; }
+.about-copy .badge { margin-top: var(--space-2); justify-self: start; }
+/* Unconfirmed facts — dev only; must be resolved before launch */
+.tbc { outline: 2px dashed var(--tangerine); outline-offset: 2px; border-radius: 4px; }
