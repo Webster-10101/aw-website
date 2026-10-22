@@ -16,6 +16,7 @@ import {
   Venn,
   Waveform,
 } from "@/components/aw";
+import Reveal from "@/components/aw/Reveal";
 import WaitlistForm from "@/components/aw/WaitlistForm";
 import { LINKS } from "./links";
 import { latestPosts } from "./substack";
@@ -207,6 +208,7 @@ export default async function Home() {
               <Highlight>More than</Highlight> tips, tricks and hacks
             </h2>
           </div>
+          <Reveal className="contrast-reveal">
           <Contrast
             notLabel="Tips and tricks on their own"
             yesLabel="What we work on"
@@ -221,6 +223,7 @@ export default async function Home() {
             ]}
             closing="A structured programme that helps you build real confidence."
           />
+          </Reveal>
         </div>
       </section>
 
@@ -276,7 +279,7 @@ export default async function Home() {
                 />
               </div>
               <p className="band-foot">
-                <a className="text-link" href="#programme">
+                <a className="wipe-link" href="#programme">
                   How the programme works →
                 </a>
               </p>

@@ -44,7 +44,7 @@ export default function WaitlistForm() {
   return (
     <form className="waitlist" onSubmit={onSubmit} noValidate>
       <label htmlFor="waitlist-email" className="waitlist-label">
-        Want the app on its own? Join the waitlist.
+        Want to try the app? Join the waitlist.
       </label>
       <div className="waitlist-row">
         <input
