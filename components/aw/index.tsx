@@ -242,14 +242,19 @@ export function Contrast({
 /* ---- Approach: three overlapping discs in the dark band ---- */
 const PILLAR_COLOURS = ["#ff4f86", "#ff8a4c", "#ffc145"];
 export function Venn({ labels, centre }: { labels: [string, string, string]; centre: string }) {
+  const discs = [
+    { cx: 150, cy: 140 },
+    { cx: 250, cy: 140 },
+    { cx: 200, cy: 226 },
+  ];
   return (
-    <svg className="aw-venn" viewBox="0 0 400 360" role="img" aria-label={`${labels.join(", ")} overlap; ${centre} sits where they meet.`}>
-      <circle cx={150} cy={135} r={112} fill={PILLAR_COLOURS[0]} fillOpacity={0.62} />
-      <circle cx={250} cy={135} r={112} fill={PILLAR_COLOURS[1]} fillOpacity={0.62} />
-      <circle cx={200} cy={222} r={112} fill={PILLAR_COLOURS[2]} fillOpacity={0.62} />
-      <text x={124} y={112} textAnchor="middle">{labels[0]}</text>
-      <text x={276} y={112} textAnchor="middle">{labels[1]}</text>
-      <text x={200} y={290} textAnchor="middle">{labels[2]}</text>
+    <svg className="aw-venn" viewBox="0 0 400 370" role="img" aria-label={`${labels.join(", ")} overlap; ${centre} sits where they meet.`}>
+      {discs.map((d, i) => (
+        <circle key={i} cx={d.cx} cy={d.cy} r={108} fill={PILLAR_COLOURS[i]} fillOpacity={0.16} stroke={PILLAR_COLOURS[i]} strokeWidth={2} />
+      ))}
+      <text x={102} y={98} textAnchor="middle" style={{ fill: PILLAR_COLOURS[0] }}>{labels[0]}</text>
+      <text x={298} y={98} textAnchor="middle" style={{ fill: PILLAR_COLOURS[1] }}>{labels[1]}</text>
+      <text x={200} y={306} textAnchor="middle" style={{ fill: PILLAR_COLOURS[2] }}>{labels[2]}</text>
       <text x={200} y={176} textAnchor="middle" className="centre">{centre}</text>
     </svg>
   );

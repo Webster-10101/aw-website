@@ -45,14 +45,14 @@ const ELSEWHERE = [
   },
   {
     icon: "presentation",
-    title: "Freelance work",
+    title: "Consulting",
     body: "Websites, copywriting and design, plus some AI consulting, for the right projects.",
     link: "Get in touch",
     href: LINKS.email,
   },
   {
     icon: "waveform",
-    title: "Side projects",
+    title: "Other projects",
     body: "Freelance Radio, GBM Music (original music that led to sales and commissions) and whatever's capturing my interest.",
     link: "See projects",
     href: "/apps",
@@ -218,7 +218,7 @@ export default async function Home() {
               "Ways to prepare effectively",
               "Lasting change that goes beyond just speaking",
             ]}
-            closing="Tips and techniques to help you build real confidence."
+            closing="A structured programme to help you build real confidence."
           />
         </div>
       </section>
@@ -576,7 +576,10 @@ export default async function Home() {
             {posts.map((p, i) => (
               <a key={p.url} className={`tip aw-panel${i === 1 ? " dark" : ""}`} href={p.url}>
                 <span className="tip-date">{p.date}</span>
-                <p className="tip-title">{p.title}</p>
+                <p className="tip-title">
+                  {p.title.split(" ").slice(0, -2).join(" ")}{" "}
+                  <Gradient>{p.title.split(" ").slice(-2).join(" ")}</Gradient>
+                </p>
                 <span className="tip-foot">
                   Read on Substack <Mark id={`tip-mark-${i}`} size={32} tone={i === 1 ? "dark" : "voice"} />
                 </span>

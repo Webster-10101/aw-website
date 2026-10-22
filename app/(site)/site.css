@@ -77,7 +77,9 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .band.aw-dark { border-radius: 0; padding: var(--space-8) 0; }
 .band .aw-dark-glow { right: 4%; top: -200px; width: 720px; height: 720px; }
 .band-foot { margin-top: var(--space-4); }
-.aw-venn text { font-size: 15px; }
+.aw-venn circle { mix-blend-mode: normal; }
+.aw-venn text { font-size: 14.5px; }
+.aw-venn .centre { font-size: 21px; fill: var(--on-night); }
 @media (max-width: 760px) { .band.aw-dark { padding: var(--space-7) 0; } }
 
 /* Tom */
