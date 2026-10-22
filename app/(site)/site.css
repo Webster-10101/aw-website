@@ -338,3 +338,21 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 
 /* Gradient text clips descenders at tight line-heights — give it room */
 .aw-h .aw-gradient-text { padding-bottom: .1em; margin-bottom: -.1em; }
+
+/* Programme progression */
+.stages { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; gap: 0; counter-reset: stage; }
+.stage { position: relative; padding: 0 0 var(--space-4) 44px; }
+.stage::before { counter-increment: stage; content: counter(stage); position: absolute; left: 0; top: 0; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font: 700 13px/1 var(--font-sans); color: #fff; background: var(--berry); z-index: 1; }
+.stage:nth-child(2)::before { background: #d6394c; }
+.stage:nth-child(3)::before { background: var(--tangerine); }
+.stage-year::before { content: "+"; background: var(--saffron); font-size: 16px; }
+.stage::after { content: ""; position: absolute; left: 13px; top: 28px; bottom: 0; width: 2px; background: var(--line); }
+.stage:last-child::after { display: none; }
+.stage-when { font: 600 13px/1 var(--font-sans); color: var(--ink-subtle); display: block; margin: 7px 0 6px; }
+.stage h3 { margin: 0 0 4px; font: 700 20px/1.3 var(--font-sans); letter-spacing: -.01em; color: var(--ink); }
+.stage p { margin: 0; font: 400 16px/1.6 var(--font-sans); color: var(--ink-muted); max-width: 52ch; }
+.stage-year h3 { color: var(--ink); }
+.price-after { margin: 0; font: 400 13px/1.5 var(--font-sans); color: var(--ink-subtle); }
+.guarantee { font-size: 15px; color: var(--ink); }
+.programme-quote { margin-top: var(--space-6); display: flex; justify-content: center; }
+.programme-quote { max-width: none; }

@@ -1,5 +1,4 @@
 import {
-  ArrowGrid,
   Button,
   Gradient,
   Highlight,
@@ -56,6 +55,29 @@ const ELSEWHERE = [
     body: "Freelance Radio, GBM Music (original music that led to sales and commissions) and whatever's capturing my interest.",
     link: "See projects",
     href: "/apps",
+  },
+];
+
+const STAGES = [
+  {
+    when: "Week 1",
+    title: "Find your focus",
+    body: "A self-assessment of where you are and what you want, then a plan built around it.",
+  },
+  {
+    when: "Weeks 2–6",
+    title: "Build skills, shift habits",
+    body: "Coaching, exercises and feedback in our sessions, with short daily practice in Speak Up.",
+  },
+  {
+    when: "Weeks 7–8",
+    title: "Put it to work",
+    body: "Rehearsal for your real talks and situations, then a final assessment to see what's changed.",
+  },
+  {
+    when: "Then",
+    title: "A year of practice",
+    body: "Speak Up keeps you improving long after our sessions finish.",
   },
 ];
 
@@ -414,90 +436,71 @@ export default async function Home() {
 
       {/* 7. Programme and price */}
       <section className="section section-sunk" id="programme">
-        <div className="wrap programme">
-          <div className="programme-copy">
-            <h2 className="aw-h aw-h-l">
-              Transform your speaking confidence in eight weeks. <Highlight plain swoosh>Guaranteed.</Highlight>
-              <span className="footnote">
-                <button type="button" className="footnote-btn" aria-describedby="guarantee-tip" aria-label="About the guarantee">
-                  *
-                </button>
-                <span role="tooltip" id="guarantee-tip" className="footnote-tip">
-                  Show up, do the work, and if you don&rsquo;t feel the difference, I&rsquo;ll{" "}
-                  <a href="/terms">make it right</a>.
-                </span>
-              </span>
-            </h2>
-            <p className="lede">
-              Over eight weeks, we&rsquo;ll work out where you want to improve, build your skills and work on the habits
-              that might be holding you back. Then you keep going, with a full year in the Speak Up app.
-            </p>
-            <ArrowGrid
-              columns={2}
-              items={[
-                <><strong>Eight 1:1 sessions</strong> shaped around what you&rsquo;re actually preparing for.</>,
-                <>A year of the <strong>Speak Up app</strong> for structured practice between sessions.</>,
-                <><strong>Assessments</strong> to measure your progress and see your confidence grow in numbers.</>,
-                <><strong>Real rehearsal</strong> based around your specific goals and challenges.</>,
-                <><strong>Storytelling and structure</strong>, so your point lands.</>,
-                <><strong>Presence and delivery:</strong> develop key skills and techniques to speak with confidence.</>,
-              ]}
-            />
-            <div className="programme-quote">
-              <Testimonial
-                quote={
-                  <>
-                    The way you stayed at ease and heard my questions inspired me to do the same &mdash; to take my time and
-                    own my speaking. This was <Highlight>one of the most impactful coaching sessions I&rsquo;ve had</Highlight>.
-                  </>
-                }
-                name="Evelyn Q"
-                role="Coaching client"
-              />
+        <div className="wrap">
+          <div className="programme">
+            <div className="programme-copy">
+              <h2 className="aw-h aw-h-l">Eight weeks to become a more confident, compelling speaker.</h2>
+              <p className="lede">
+                Personal coaching, practical exercises and a structured way to keep improving between sessions.
+              </p>
+              <ol className="stages">
+                {STAGES.map((st, i) => (
+                  <li key={st.when} className={i === STAGES.length - 1 ? "stage stage-year" : "stage"}>
+                    <span className="stage-when">{st.when}</span>
+                    <h3>{st.title}</h3>
+                    <p>{st.body}</p>
+                  </li>
+                ))}
+              </ol>
             </div>
+            <aside className="price-card aw-panel" aria-label="Prices">
+              <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Everything below, in one programme" />
+              <ul className="practical">
+                <li><Icon name="calendar" size={18} /><span>Eight weekly 1:1 sessions, 60 minutes each</span></li>
+                <li><Icon name="check" size={18} /><span>A self-assessment at the start and end, so you can see how your confidence has changed</span></li>
+                <li><Icon name="spark" size={18} /><span>A plan shaped around your goals, plus rehearsal for your real talks</span></li>
+                <li><Icon name="mic" size={18} /><span>A full year of Speak Up: about 10 minutes a day of guided practice</span></li>
+                <li><Icon name="meeting" size={18} /><span>Online, or in person in Edinburgh</span></li>
+              </ul>
+              <Button href={LINKS.bookProgramme} arrow>
+                Book the programme
+              </Button>
+              <p className="guarantee">
+                <strong>Guaranteed:</strong> show up, do the work, and if you don&rsquo;t feel the difference,
+                I&rsquo;ll <a href="/terms">make it right</a>.
+              </p>
+              <p className="price-after">
+                After booking, you pay securely, pick your first session, and we set the rest for the same time each
+                week.
+              </p>
+              <hr />
+              <PriceBlock amount="£195" label="Single session" detail="Focused help with one specific talk, pitch or event." />
+              <Button href={LINKS.bookSession} variant="secondary">
+                Book a session
+              </Button>
+              <hr />
+              <p className="price-intro">
+                Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
+              </p>
+            </aside>
           </div>
-          <aside className="price-card aw-panel" aria-label="Prices">
-            <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Includes a year of Speak Up app access" />
-            <Button href={LINKS.bookProgramme} arrow>
-              Book the programme
-            </Button>
-            <ul className="practical">
-              <li>
-                <Icon name="calendar" size={18} />
-                <span>
-                  Eight weekly 1:1 sessions, 60 minutes each
-                </span>
-              </li>
-              <li>
-                <Icon name="meeting" size={18} />
-                <span>Online, or in person in Edinburgh</span>
-              </li>
-              <li>
-                <Icon name="mic" size={18} />
-                <span>
-                  About 10 minutes a day of practice in the app
-                </span>
-              </li>
-              <li>
-                <Icon name="check" size={18} />
-                <span>After booking, you pay securely, pick your first session, and we set the rest for the same time each week</span>
-              </li>
-            </ul>
-            <hr />
-            <PriceBlock amount="£150" label="Single session" detail="60 minutes for a specific talk, pitch or event" />
-            <Button href={LINKS.bookSession} variant="secondary">
-              Book a session
-            </Button>
-            <hr />
-            <p className="price-intro">
-              Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
-            </p>
-          </aside>
+          <div className="programme-quote">
+            <Testimonial
+              quote={
+                <>
+                  The way you stayed at ease and heard my questions inspired me to do the same &mdash; to take my time and
+                  own my speaking. This was <Highlight>one of the most impactful coaching sessions I&rsquo;ve had</Highlight>.
+                </>
+              }
+              name="Evelyn Q"
+              role="Coaching client"
+            />
+          </div>
         </div>
       </section>
 
       {/* 8. Tips */}
-      <section className="section section-sunk">
+      <section className="section">
         <div className="wrap">
           <div className="tips-head">
             <div className="section-head">
@@ -532,7 +535,7 @@ export default async function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="section" id="faq">
+      <section className="section section-sunk" id="faq">
         <div className="wrap">
           <div className="section-head">
             <h2 className="aw-h aw-h-l">Questions people ask</h2>
@@ -551,7 +554,7 @@ export default async function Home() {
       </section>
 
       {/* 9. Final CTA */}
-      <section className="section section-sunk final">
+      <section className="section final">
         <div className="wrap">
           <div className="section-head">
             <h2 className="aw-h aw-h-l">
@@ -583,7 +586,7 @@ export default async function Home() {
         </div>
       </section>
       {/* Other projects */}
-      <section className="section" id="projects">
+      <section className="section section-sunk" id="projects">
         <div className="wrap">
           <div className="about-more">
             <h2 className="about-more-title">Other things I do</h2>
