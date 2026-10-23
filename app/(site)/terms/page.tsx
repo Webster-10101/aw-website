@@ -23,7 +23,7 @@ export default function TermsPage() {
             </strong>
           </p>
           <p>
-            If you&rsquo;ve come to all eight sessions, done the practice we agreed, and completed both
+            If you&rsquo;ve come to all eight sessions, practised in Speak Up on at least three days a week, and completed both
             self-assessments, and you still don&rsquo;t feel a real difference, tell me within 7 days of your final
             session and I&rsquo;ll refund your programme fee in full.
           </p>
