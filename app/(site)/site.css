@@ -380,3 +380,11 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .outcomes .aw-arrows { gap: var(--space-3); }
 .stage:nth-child(4)::before { background: #e0702c; }
 .programme-copy .aw-quote { margin-top: var(--space-3); }
+.hero-centred { text-align: center; padding-bottom: var(--space-6); }
+.hero-centred .hero-copy { max-width: 940px; margin: 0 auto; justify-items: center; }
+.hero-centred .aw-eyebrow { justify-self: center; transform: rotate(-2deg); transform-origin: center; }
+.hero-centred .lede { margin: 0 auto; }
+.hero-centred .ctas { justify-content: center; }
+.hero-centred .cta-note { margin-top: -8px; }
+.hero-wave { max-width: 720px; margin: var(--space-6) auto 0; opacity: .9; }
+@media (max-width: 640px) { .hero-centred { text-align: left; } .hero-centred .hero-copy { justify-items: start; } .hero-centred .aw-eyebrow { justify-self: start; } .hero-centred .ctas { justify-content: flex-start; } .hero-wave { margin-top: var(--space-5); } }

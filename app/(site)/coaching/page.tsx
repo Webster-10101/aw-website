@@ -6,10 +6,10 @@ import {
   Gradient,
   Highlight,
   Note,
-  PhotoDisc,
   Pillars,
   PullQuote,
   Testimonial,
+  Waveform,
 } from "@/components/aw";
 import Reveal from "@/components/aw/Reveal";
 import { LINKS } from "../links";
@@ -43,8 +43,8 @@ export default function CoachingPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero">
-        <div className="wrap hero-grid">
+      <section className="hero hero-centred">
+        <div className="wrap">
           <div className="hero-copy">
             <Note>The 8-week Speaking Transformation</Note>
             <h1 className="aw-h aw-h-xl coaching-h1">
@@ -65,8 +65,8 @@ export default function CoachingPage() {
             </div>
             <p className="cta-note">£1,400 · eight weekly 1:1 sessions · a year of Speak Up · guaranteed</p>
           </div>
-          <div className="hero-art">
-            <PhotoDisc src="/images/alistair-webster.jpg" alt="Alistair Webster" size={400} waveId="coaching-wave" live />
+          <div className="hero-wave" aria-hidden>
+            <Waveform id="coaching-wave" bars={64} seed={7} height={72} live />
           </div>
         </div>
       </section>
