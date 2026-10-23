@@ -30,7 +30,7 @@ export default function AboutPage() {
               <p>
                 I co-founded <a href="/ffg">Freelancing for Good</a>, a community of 1,000+ impact-motivated
                 freelancers. I also wrote <a href={LINKS.claudeClarity}>Claude Clarity</a>, and I help people and teams
-                build productivity systems that save time and get more done, and show them how to use AI to improve their output.
+                build productivity systems that save time and get more done, and show them how to use AI to improve their output and do more of the work they care about.
               </p>
               <p>
                 I like to keep busy. I also consult for a small nonprofit, build and manage websites and content, and run
