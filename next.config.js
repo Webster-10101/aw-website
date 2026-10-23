@@ -13,6 +13,9 @@ function commitSha() {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [{ source: "/apps", destination: "/projects", permanent: true }];
+  },
   env: {
     NEXT_PUBLIC_APP_VERSION: version,
     NEXT_PUBLIC_COMMIT_SHA: commitSha(),

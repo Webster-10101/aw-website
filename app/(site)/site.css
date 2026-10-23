@@ -446,3 +446,10 @@ textarea.field { resize: vertical; min-height: 140px; }
 .ffg-why p { margin: 0; font: 400 18px/1.7 var(--font-sans); color: var(--ink-muted); }
 @media (max-width: 900px) { .ffg-cards { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .ffg-cards { grid-template-columns: 1fr; } }
+
+/* ---------- /projects ---------- */
+.projects { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.project-soon:hover { transform: none; border-color: var(--line); }
+.soon-tag { justify-self: start; font: 600 13px/1 var(--font-sans); color: var(--berry); background: var(--berry-tint); padding: 7px 12px; border-radius: var(--radius-pill); }
+@media (max-width: 900px) { .projects { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .projects { grid-template-columns: 1fr; } }

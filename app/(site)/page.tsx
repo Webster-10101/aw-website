@@ -55,7 +55,7 @@ const ELSEWHERE = [
     title: "Other projects",
     body: "Freelance Radio, GBM Music (original music that led to sales and commissions) and whatever's capturing my interest.",
     link: "See projects",
-    href: "/apps",
+    href: "/projects",
   },
 ];
 
@@ -270,7 +270,7 @@ export default async function Home() {
       </section>
 
       {/* 6. The app */}
-      <section className="section">
+      <section className="section" id="app">
         <div className="wrap">
           <div className="aw-app">
             <div className="aw-app-stage">
