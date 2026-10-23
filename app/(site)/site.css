@@ -356,3 +356,16 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .guarantee { font-size: 15px; color: var(--ink); }
 .programme-quote { margin-top: var(--space-6); display: flex; justify-content: center; }
 .programme-quote { max-width: none; }
+
+/* ---------- Legal pages (/terms, /privacy) ---------- */
+.legal-page { padding-top: var(--space-7); }
+.legal { max-width: 760px; display: grid; gap: var(--space-5); }
+.legal > .aw-h-l { margin-top: -8px; }
+.legal-updated { margin: -12px 0 0; font: 400 14px/1.5 var(--font-sans); color: var(--ink-subtle); }
+.legal section { display: grid; gap: 12px; }
+.legal p:not(.aw-eyebrow), .legal li { margin: 0; font: 400 17px/1.7 var(--font-sans); color: var(--ink-muted); }
+.legal ul { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; }
+.legal a { color: var(--berry); }
+.legal-guarantee { padding: var(--space-6); border-color: color-mix(in srgb, var(--berry) 30%, var(--line)); scroll-margin-top: 96px; }
+.legal p.legal-promise:not(.aw-eyebrow) { font-size: 22px; line-height: 1.4; color: var(--ink); }
+@media (max-width: 640px) { .legal-guarantee { padding: var(--space-5); } .legal p.legal-promise:not(.aw-eyebrow) { font-size: 19px; } }

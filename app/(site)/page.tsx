@@ -467,7 +467,7 @@ export default async function Home() {
               </Button>
               <p className="guarantee">
                 <strong>Guaranteed:</strong> show up, do the work, and if you don&rsquo;t feel the difference,
-                I&rsquo;ll <a href="/terms">make it right</a>.
+                I&rsquo;ll <a href="/terms#guarantee">make it right</a>.
               </p>
               <p className="price-after">
                 After booking, you pay securely, pick your first session, and we set the rest for the same time each
