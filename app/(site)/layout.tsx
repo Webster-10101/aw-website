@@ -38,7 +38,7 @@ const sans = Plus_Jakarta_Sans({
 const hand = Caveat({ subsets: ["latin"], weight: ["600"], variable: "--font-hand", display: "swap" });
 
 const NAV = [
-  { label: "Coaching", href: "/#programme" },
+  { label: "Coaching", href: "/coaching" },
   { label: "About", href: "/#about" },
   { label: "FFG", href: LINKS.ffg },
   { label: "Projects", href: "/apps" },
@@ -87,7 +87,7 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
               <div>
                 <h2>Explore</h2>
                 <ul>
-                  <li><a href="/#programme">Coaching</a></li>
+                  <li><a href="/coaching">Coaching</a></li>
                   <li><a href="/#about">About</a></li>
                   <li><a href={LINKS.ffg}>Freelancing for Good</a></li>
                   <li><a href="/apps">Projects</a></li>

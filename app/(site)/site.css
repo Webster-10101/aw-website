@@ -369,3 +369,14 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .legal-guarantee { padding: var(--space-6); border-color: color-mix(in srgb, var(--berry) 30%, var(--line)); scroll-margin-top: 96px; }
 .legal p.legal-promise:not(.aw-eyebrow) { font-size: 22px; line-height: 1.4; color: var(--ink); }
 @media (max-width: 640px) { .legal-guarantee { padding: var(--space-5); } .legal p.legal-promise:not(.aw-eyebrow) { font-size: 19px; } }
+
+/* ---------- /coaching ---------- */
+.coaching-h1 { font-size: 72px; }
+@media (max-width: 900px) { .coaching-h1 { font-size: 52px; } }
+@media (max-width: 640px) { .coaching-h1 { font-size: 40px; } }
+.for-you-title { margin: 0 0 var(--space-5); }
+.outcomes { padding: var(--space-5); display: grid; gap: var(--space-4); position: sticky; top: 110px; }
+.outcomes .aw-h-m { margin: 0; }
+.outcomes .aw-arrows { gap: var(--space-3); }
+.stage:nth-child(4)::before { background: #e0702c; }
+.programme-copy .aw-quote { margin-top: var(--space-3); }

@@ -35,6 +35,7 @@ export default function TermsPage() {
           <ul>
             <li>The 8-week Speaking Transformation is £1,400, paid when you book.</li>
             <li>A single session is £195, paid when you book.</li>
+            <li>If you book the programme within a month of a single session, the £195 comes off the programme price.</li>
             <li>I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add.</li>
           </ul>
         </section>

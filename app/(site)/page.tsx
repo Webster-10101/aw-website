@@ -7,7 +7,6 @@ import {
   Note,
   PhotoDisc,
   Pillars,
-  PriceBlock,
   PullQuote,
   StoryCard,
   Testimonial,
@@ -17,6 +16,8 @@ import {
 import WaitlistForm from "@/components/aw/WaitlistForm";
 import { LINKS } from "./links";
 import { latestPosts } from "./substack";
+import { FAQS } from "./faqs";
+import { Phases, PriceCard } from "./programme";
 
 const SITUATIONS = [
   { icon: "meeting", title: "In meetings.", body: "Say it the first time, without rehearsing it in your head." },
@@ -55,100 +56,6 @@ const ELSEWHERE = [
     body: "Freelance Radio, GBM Music (original music that led to sales and commissions) and whatever's capturing my interest.",
     link: "See projects",
     href: "/apps",
-  },
-];
-
-const STAGES = [
-  {
-    when: "Week 1",
-    title: "Find your focus",
-    body: "A self-assessment of where you are and what you want, then a plan built around it.",
-  },
-  {
-    when: "Weeks 2–6",
-    title: "Build skills, shift habits",
-    body: "Coaching, exercises and feedback in our sessions, with short daily practice in Speak Up.",
-  },
-  {
-    when: "Weeks 7–8",
-    title: "Put it to work",
-    body: "Rehearsal for your real talks and situations, then a final assessment to see what's changed.",
-  },
-  {
-    when: "Then",
-    title: "A year of practice",
-    body: "Speak Up keeps you improving long after our sessions finish.",
-  },
-];
-
-const FAQS: { q: string; a: React.ReactNode }[] = [
-  {
-    q: "Who is this for?",
-    a: "If you're here, probably you! Anyone who wants to feel more confident and comfortable when they speak, whether you're pitching for funding, presenting at work, giving a wedding speech, leading a team, or simply wanting to feel more at home in your own skin.",
-  },
-  {
-    q: "What makes your approach different?",
-    a: "I create a supportive space, then push you (gently) out of your comfort zone, because that's where growth happens. We combine Ultraspeaking's practical exercises (a method that's helped thousands of people) with a CBT-informed look at what's going on under pressure, plus the Speak Up app so you keep practising between sessions. And I started out terrified of speaking myself, so I understand the blocks, not just the techniques.",
-  },
-  {
-    q: "How quickly will I see results?",
-    a: "Most clients notice a shift in their very first session. For lasting change, we go deeper over the eight weeks, giving you time to practise, refine and embed new habits. And if you show up and do the work but don't feel the difference, I'll make it right.",
-  },
-  {
-    q: "What if I'm extremely nervous about speaking?",
-    a: "Then you're in exactly the right place. We start gently, at your pace, and build confidence step by step. You'll never be thrown in unprepared. The process is supportive, playful and (surprisingly) fun.",
-  },
-  {
-    q: "Isn't this just who I am? Can I really change?",
-    a: "Yes. Speaking confidence isn't a fixed trait, it's a skill. I've seen people go from shaking hands and dry mouths to giving talks they're proud of, and actually enjoying it. It doesn't mean you stop being you. It means you can express yourself more fully, and trust yourself when it counts.",
-  },
-  {
-    q: "What happens in a session?",
-    a: "We usually jump straight into short speaking games, designed to put you under just enough pressure to learn, but not so much that it's overwhelming. Each session is tailored to your goals: a presentation, handling Q&A, speaking up in meetings, or introducing yourself in a room.",
-  },
-  {
-    q: "Is this therapy?",
-    a: "No. I'm a coach, and our focus is how you speak. My coaching draws on counselling-skills training and a CBT-informed approach, but if something bigger comes up, I'll say so and point you towards the right support.",
-  },
-  {
-    q: "Online or in person?",
-    a: "Usually online, which works wherever you are. If you're in Edinburgh, in person can be arranged when it's convenient.",
-  },
-  {
-    q: "What happens after the eight weeks?",
-    a: "You keep a full year in the Speak Up app, so practice carries on. If you want a top-up before a big moment, single sessions are always available.",
-  },
-  {
-    q: "I've got something big next week. Can you help?",
-    a: "I know the feeling! We'll do an intensive one-off session focused on your immediate need: targeted practice to help you feel ready, even if time is short. If you want to build longer-term skills afterwards, we can talk about the programme.",
-  },
-  {
-    q: "How do I book?",
-    a: (
-      <>
-        Start with a <a href={LINKS.introCall}>free 20-minute intro call</a>. It's a chance to see if we're a good fit, and
-        you'll get a taste of the method. Then you can book and pay for sessions or the programme through my calendar.
-      </>
-    ),
-  },
-  {
-    q: "Do you work with teams?",
-    a: (
-      <>
-        Yes. I run interactive speaking workshops, as lunch-and-learns, half days or full days.{" "}
-        <a href="https://speakupforgood.com/workshops">See team workshops →</a>
-      </>
-    ),
-  },
-  {
-    q: "Do you work with comedians and performers?",
-    a: (
-      <>
-        Yes! Based in Edinburgh, I work with stand-up comedians and live performers on material, nerves, presence and
-        recovery, whether you're prepping for the Fringe or working on a new set.{" "}
-        <a href="https://speakupforgood.com/comedians">See coaching for comedians →</a>
-      </>
-    ),
   },
 ];
 
@@ -267,7 +174,7 @@ export default async function Home() {
                 />
               </div>
               <p className="band-foot">
-                <a className="wipe-link" href="#programme">
+                <a className="wipe-link" href="/coaching">
                   How the programme works →
                 </a>
               </p>
@@ -443,46 +350,9 @@ export default async function Home() {
               <p className="lede">
                 Personal coaching, practical exercises and a structured way to keep improving between sessions.
               </p>
-              <ol className="stages">
-                {STAGES.map((st, i) => (
-                  <li key={st.when} className={i === STAGES.length - 1 ? "stage stage-year" : "stage"}>
-                    <span className="stage-when">{st.when}</span>
-                    <h3>{st.title}</h3>
-                    <p>{st.body}</p>
-                  </li>
-                ))}
-              </ol>
+              <Phases />
             </div>
-            <aside className="price-card aw-panel" aria-label="Prices">
-              <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Everything below, in one programme" />
-              <ul className="practical">
-                <li><Icon name="calendar" size={18} /><span>Eight weekly 1:1 sessions, 60 minutes each</span></li>
-                <li><Icon name="check" size={18} /><span>A self-assessment at the start and end, so you can see how your confidence has changed</span></li>
-                <li><Icon name="spark" size={18} /><span>A plan shaped around your goals, plus rehearsal for your real talks</span></li>
-                <li><Icon name="mic" size={18} /><span>A full year of Speak Up: about 10 minutes a day of guided practice</span></li>
-                <li><Icon name="meeting" size={18} /><span>Online, or in person in Edinburgh</span></li>
-              </ul>
-              <Button href={LINKS.bookProgramme} arrow>
-                Book the programme
-              </Button>
-              <p className="guarantee">
-                <strong>Guaranteed:</strong> show up, do the work, and if you don&rsquo;t feel the difference,
-                I&rsquo;ll <a href="/terms#guarantee">make it right</a>.
-              </p>
-              <p className="price-after">
-                After booking, you pay securely, pick your first session, and we set the rest for the same time each
-                week.
-              </p>
-              <hr />
-              <PriceBlock amount="£195" label="Single session" detail="Focused help with one specific talk, pitch or event." />
-              <Button href={LINKS.bookSession} variant="secondary">
-                Book a session
-              </Button>
-              <hr />
-              <p className="price-intro">
-                Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
-              </p>
-            </aside>
+            <PriceCard />
           </div>
           <div className="programme-quote">
             <Testimonial
