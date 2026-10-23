@@ -29,15 +29,12 @@ export default function AboutPage() {
               </p>
               <p>
                 I co-founded <a href={LINKS.ffg}>Freelancing for Good</a>, a community of 1,000+ impact-motivated
-                freelancers. I wrote <a href={LINKS.claudeClarity}>Claude Clarity</a>, and I help organisations and teams
-                use AI workflows to save time and get more done.
+                freelancers. I also wrote <a href={LINKS.claudeClarity}>Claude Clarity</a>, and I help people and teams
+                build productivity systems that save time and get more done, with AI doing some of the heavy lifting.
               </p>
               <p>
-                I like to keep busy. I also work for a small nonprofit, run a record label and a radio station, and still
-                freelance on everything from copywriting to web design.
-              </p>
-              <p>
-                Curious how I keep all these plates spinning? <a href={LINKS.claudeClarity}>Read about how I work</a>.
+                I like to keep busy. I also consult for a small nonprofit, build and manage websites and content, and run
+                a record label, GBM Music, and a radio station, <a href="https://freelancerad.io">Freelance Radio</a>.
               </p>
             </div>
             <dl className="glance">
@@ -51,7 +48,7 @@ export default function AboutPage() {
               </div>
             </dl>
             <div className="ctas">
-              <Button href={LINKS.email} arrow>
+              <Button href="/contact" arrow>
                 Get in touch
               </Button>
               <Button href="/coaching" variant="secondary">

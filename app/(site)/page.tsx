@@ -33,8 +33,8 @@ const ELSEWHERE = [
     icon: "meeting",
     title: "Freelancing for Good",
     body: "I co-founded a community of 1,000+ freelancers working for causes they care about. I see all the time how speaking holds good people back.",
-    link: "freelancingforgood.com",
-    href: LINKS.ffg,
+    link: "More about FFG",
+    href: "/ffg",
   },
   {
     icon: "spark",
@@ -48,7 +48,7 @@ const ELSEWHERE = [
     title: "Consulting",
     body: "Websites, copywriting and design, plus some AI consulting, for the right projects.",
     link: "Get in touch",
-    href: LINKS.email,
+    href: "/contact",
   },
   {
     icon: "waveform",

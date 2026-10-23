@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Gradient, Note } from "@/components/aw";
-import { LINKS } from "../links";
 
 export const metadata: Metadata = {
   title: "Terms — Alistair Webster",
@@ -83,8 +82,7 @@ export default function TermsPage() {
         <section>
           <h2 className="aw-h aw-h-m">The legal bit</h2>
           <p>
-            These terms are governed by the law of Scotland. Questions? Email{" "}
-            <a href={LINKS.email}>hello@alistairwebster.com</a>.
+            These terms are governed by the law of Scotland. Questions? <a href="/contact">Get in touch</a>.
           </p>
         </section>
       </div>

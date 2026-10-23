@@ -40,7 +40,8 @@ export default function PrivacyPage() {
               them. I also keep my own notes. Both are used only to coach you.
             </li>
             <li>
-              <strong>Emails you send me:</strong> kept so I can reply and help you.
+              <strong>Messages you send me:</strong> your name, email address and message, through the contact form
+              (delivered by Resend) or by email, kept so I can reply and help you.
             </li>
             <li>
               <strong>Site analytics:</strong> I use Fathom Analytics, which doesn&rsquo;t use cookies or collect
