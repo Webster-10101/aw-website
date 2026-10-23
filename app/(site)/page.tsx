@@ -239,6 +239,11 @@ export default async function Home() {
                   I&rsquo;m a certified Ultraspeaking coach. Their method is built on speaking games and practice rather
                   than theory, which is the backbone of the skills side of my coaching.
                 </p>
+                <p>
+                  <a className="text-link" href="/about">
+                    More about me →
+                  </a>
+                </p>
               </div>
               <div className="badge aw-panel">
                 <Icon name="check" circle />

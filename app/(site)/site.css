@@ -403,3 +403,15 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .story-who strong { color: var(--ink); font-weight: 700; }
 .story-avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--paper-sunk); font: 700 14px/1 var(--font-sans); color: var(--ink); }
 @media (max-width: 640px) { .story-intro { font-size: 19px; } .story blockquote { padding-left: 16px; } }
+
+/* ---------- /about ---------- */
+.about-page { display: grid; grid-template-columns: .7fr 1.3fr; gap: var(--space-6); align-items: start; }
+.about-page-art { justify-self: center; padding-top: var(--space-5); }
+.about-page-copy { display: grid; gap: var(--space-4); max-width: 680px; }
+.about-page-lede { margin: -8px 0 0; font: 600 22px/1.4 var(--font-sans); color: var(--ink); }
+.about-body a { color: var(--berry); }
+.glance { margin: var(--space-2) 0 0; display: grid; gap: 10px; padding: var(--space-4) 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.glance div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; }
+.glance dt { font: 600 14px/1.6 var(--font-sans); color: var(--ink-subtle); }
+.glance dd { margin: 0; font: 500 16px/1.6 var(--font-sans); color: var(--ink); }
+@media (max-width: 900px) { .about-page { grid-template-columns: 1fr; } .about-page-art { justify-self: start; padding-top: 0; } .about-page-art .aw-photodisc { --aw-disc: 160px !important; } }
