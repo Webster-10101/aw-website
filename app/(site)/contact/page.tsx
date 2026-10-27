@@ -24,7 +24,7 @@ export default function ContactPage() {
           <ul className="contact-alt">
             <li>
               <strong>Thinking about coaching?</strong> You can also{" "}
-              <a href={LINKS.introCall}>book a free 20-minute intro call</a> straight away.
+              <a href={LINKS.introCall}>book a free 45-minute intro call</a> straight away.
             </li>
             <li>
               <strong>Freelancing for Good?</strong> Member and job questions are best sent via{" "}

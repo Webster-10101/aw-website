@@ -119,7 +119,7 @@ export default function TomStory() {
               Want to work <Gradient>like this?</Gradient>
             </h2>
             <p className="lede">
-              Eight weeks of 1:1 coaching, with a year of practice in Speak Up. Or start with a free 20-minute intro call.
+              Eight weeks of 1:1 coaching, with a year of practice in Speak Up. Or start with a free 45-minute intro call.
             </p>
           </div>
           <div className="ctas">

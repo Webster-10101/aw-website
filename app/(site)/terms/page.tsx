@@ -12,21 +12,20 @@ export default function TermsPage() {
       <div className="wrap legal">
         <Note>The small print</Note>
         <h1 className="aw-h aw-h-l">Terms</h1>
-        <p className="legal-updated">Last updated 23 October 2026</p>
+        <p className="legal-updated">Last updated 27 October 2026</p>
 
         <section id="guarantee" className="legal-guarantee aw-panel">
           <h2 className="aw-h aw-h-m">The guarantee</h2>
           <p className="legal-promise">
             <strong>
-              Show up, do the work, and if you don&rsquo;t feel the difference, <Gradient>I&rsquo;ll make it right.</Gradient>
+              Give the coaching four sessions. If it isn&rsquo;t right for you, <Gradient>I&rsquo;ll refund your programme fee in full.</Gradient>
             </strong>
           </p>
           <p>
-            If you&rsquo;ve come to all eight sessions, practised in Speak Up on at least three days a week, and completed both
-            self-assessments, and you still don&rsquo;t feel a real difference, tell me within 7 days of your final
-            session and I&rsquo;ll refund your programme fee in full.
+            After attending your first four sessions, if you don&rsquo;t feel the coaching is the right approach for you,
+            tell me within seven days of your fourth session, before session five, and I&rsquo;ll refund your programme fee in full.
           </p>
-          <p>No forms, no arguing. If you&rsquo;ve shown up and it hasn&rsquo;t worked, that&rsquo;s on me.</p>
+          <p>No forms, no arguing. This gives you time to experience the coaching before deciding whether to continue.</p>
         </section>
 
         <section>

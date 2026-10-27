@@ -60,8 +60,8 @@ export function PriceCard() {
         Book the programme
       </Button>
       <p className="guarantee">
-        <strong>Guaranteed:</strong> show up, do the work, and if you don&rsquo;t feel the difference,
-        I&rsquo;ll <a href="/terms#guarantee">make it right</a>.
+        <strong>Four-session fit guarantee:</strong> if the coaching isn&rsquo;t right for you after four sessions,
+        ask within seven days of session four, before session five, for a full refund. <a href="/terms#guarantee">Read the guarantee</a>.
       </p>
       <p className="price-after">
         After booking, you pay securely, pick your first session, and we set the rest for the same time each week.

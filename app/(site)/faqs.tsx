@@ -13,7 +13,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "How quickly will I see results?",
-    a: "Most clients notice a shift in their very first session. For lasting change, we go deeper over the eight weeks, giving you time to practise, refine and embed new habits. And if you show up and do the work but don't feel the difference, I'll make it right.",
+    a: "Most clients notice a shift in their very first session. For lasting change, we go deeper over the eight weeks, giving you time to practise, refine and embed new habits. If the coaching isn't the right approach for you after four sessions, ask within seven days of session four, before session five, and I'll refund your programme fee in full.",
   },
   {
     q: "What if I'm extremely nervous about speaking?",
@@ -47,7 +47,7 @@ export const FAQS: Faq[] = [
     q: "How do I book?",
     a: (
       <>
-        Start with a <a href={LINKS.introCall}>free 20-minute intro call</a>. It's a chance to see if we're a good fit, and
+        Start with a <a href={LINKS.introCall}>free 45-minute intro call</a>. It's a chance to see if we're a good fit, and
         you'll get a taste of the method. Then you can book and pay for sessions or the programme through my calendar.
       </>
     ),

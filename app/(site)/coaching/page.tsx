@@ -19,7 +19,7 @@ import { Phases, PriceCard } from "../programme";
 export const metadata: Metadata = {
   title: "The 8-week Speaking Transformation — Alistair Webster",
   description:
-    "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £1,400, guaranteed.",
+    "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £1,400, with a four-session fit guarantee.",
 };
 
 const FOR_YOU = [
@@ -63,7 +63,7 @@ export default function CoachingPage() {
                 Book a free intro call
               </Button>
             </div>
-            <p className="cta-note">£1,400 · eight weekly 1:1 sessions · a year of Speak Up · guaranteed</p>
+            <p className="cta-note">£1,400 · eight weekly 1:1 sessions · a year of Speak Up · four-session fit guarantee</p>
           </div>
           <div className="hero-wave" aria-hidden>
             <Waveform id="coaching-wave" bars={64} seed={7} height={72} live />
@@ -213,7 +213,8 @@ export default function CoachingPage() {
               </h2>
               <p className="lede">
                 Eight weeks of personal coaching, a plan built around you, and a year of practice to make it stick.
-                And if you show up and do the work but don&rsquo;t feel the difference, you get your money back.
+                If the coaching isn&rsquo;t the right approach for you after four sessions, ask within seven days of session four,
+                before session five, and I&rsquo;ll refund your programme fee in full. <a href="/terms#guarantee">Read the guarantee</a>.
               </p>
               <Testimonial
                 quote={
@@ -259,7 +260,7 @@ export default function CoachingPage() {
               Ready to <Gradient>transform how you show up?</Gradient>
             </h2>
             <p className="lede">
-              Book the programme, or start with a free 20-minute intro call to see if we&rsquo;re a good fit.
+              Book the programme, or start with a free 45-minute intro call to see if we&rsquo;re a good fit.
             </p>
           </div>
           <div className="ctas">
