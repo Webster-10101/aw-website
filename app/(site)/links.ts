@@ -8,6 +8,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/alistair-webster/",
   ffg: "https://freelancingforgood.com",
   claudeClarity: "https://claudeclarity.com",
+  claudeClarityAmazon: "https://www.amazon.co.uk/dp/B0FTMB9GJ1",
   email: "mailto:hello@alistairwebster.com",
 };
 

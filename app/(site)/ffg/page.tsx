@@ -57,9 +57,13 @@ export default function FfgPage() {
           <div className="ffg-why">
             <h2 className="aw-h aw-h-m">Why it matters to me</h2>
             <p>
-              I see all the time how speaking holds good people back. Brilliant freelancers undersell themselves on
-              calls, freeze in pitches, or stay quiet in rooms where their ideas are needed. It&rsquo;s a big part of why
-              I coach.
+              I&rsquo;ve been freelance for a long time, and I love helping others discover the freedom and flexibility
+              of this kind of work.
+            </p>
+            <p>
+              But there&rsquo;s often something missing that ties it all together. That&rsquo;s why it matters so much to
+              find work that means something, and to belong to a real community. Freelancing for Good aims to help
+              freelancers do important work, while adapting to the challenges and opportunities of AI.
             </p>
           </div>
           <div className="ctas">

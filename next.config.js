@@ -22,6 +22,8 @@ const nextConfig = {
   env: {
     NEXT_PUBLIC_APP_VERSION: version,
     NEXT_PUBLIC_COMMIT_SHA: commitSha(),
+    // The version badge shows on local builds and previews, never on the live site.
+    NEXT_PUBLIC_SHOW_VERSION: process.env.VERCEL_ENV === "production" ? "0" : "1",
   },
 };
 

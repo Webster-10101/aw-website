@@ -30,7 +30,7 @@ export default function ContactPage() {
             </li>
             <li>
               <strong>Freelancing for Good?</strong> Member and job questions are best sent via{" "}
-              <a href={LINKS.ffg}>freelancingforgood.com</a>.
+              <a href="https://freelancingforgood.com/contact">freelancingforgood.com</a>.
             </li>
             <li>
               <strong>Elsewhere:</strong> <a href={LINKS.linkedin}>LinkedIn</a> ·{" "}

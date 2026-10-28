@@ -30,23 +30,24 @@ export default function AboutPage() {
               </p>
               <p>
                 I co-founded <a href="/ffg">Freelancing for Good</a>, a community of 1,000+ impact-motivated
-                freelancers. I also wrote <a href={LINKS.claudeClarity}>Claude Clarity</a>, a book about how I use Claude to
-                stay on top of my projects and commitments. I help people and teams build productivity systems that save
-                time, and use AI to improve their output and do more of the work they care about.
+                freelancers. I&rsquo;ve been a freelancer myself for many years, working on all sorts of projects.
               </p>
               <p>
-                I like to keep busy. I also consult for a small nonprofit, build and manage websites and content, and run
-                a record label, GBM Music, and a radio station, <a href="https://freelancerad.io">Freelance Radio</a>.
+                I recently wrote <a href={LINKS.claudeClarityAmazon}>Claude Clarity</a>, a book about how I use Claude to
+                adapt as a freelancer and stay on top of my projects and commitments in this new era. I help people and
+                teams build productivity systems that save time, and adapt to the rise of AI to improve their output and
+                do more of the work they care about.
+              </p>
+              <p>
+                I also consult for nonprofits, build and manage websites and content, and make music through{" "}
+                <a href="https://goodbackgroundmusic.co.uk">GBM Music</a>. I recently launched an online radio station,{" "}
+                <a href="https://freelancerad.io">Freelance Radio</a>. It&rsquo;s great background music while you work!
               </p>
             </div>
             <dl className="glance">
               <div>
                 <dt>Based in</dt>
                 <dd>Edinburgh</dd>
-              </div>
-              <div>
-                <dt>Work</dt>
-                <dd>Speaking coach · FFG co-founder · Author · Freelancer</dd>
               </div>
             </dl>
             <div className="ctas">

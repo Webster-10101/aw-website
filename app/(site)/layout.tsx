@@ -4,7 +4,7 @@ import "./aw.css";
 import "./site.css";
 import FathomEvents from "@/components/FathomEvents";
 import { Button, Note } from "@/components/aw";
-import { LINKS, track } from "./links";
+import { LINKS } from "./links";
 
 const siteUrl = "https://alistairwebster.com";
 const description =
@@ -69,8 +69,8 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
                 ))}
               </ul>
             </nav>
-            <Button href={track(LINKS.quiz, "nav")} size="sm" arrow>
-              Take the quiz
+            <Button href="/contact" size="sm" arrow>
+              Get in touch
             </Button>
           </div>
         </header>
@@ -82,7 +82,6 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
                 <a href="/" className="aw-wordmark">
                   Alistair Webster
                 </a>
-                <Note className="footer-sign">Speak soon.</Note>
               </div>
               <div>
                 <h2>Explore</h2>
@@ -111,9 +110,11 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
             </div>
             <div className="footer-base">
               <span>© {new Date().getFullYear()} Alistair Webster</span>
-              <span className="version">
-                v{process.env.NEXT_PUBLIC_APP_VERSION} · {process.env.NEXT_PUBLIC_COMMIT_SHA}
-              </span>
+              {process.env.NEXT_PUBLIC_SHOW_VERSION === "1" && (
+                <span className="version">
+                  v{process.env.NEXT_PUBLIC_APP_VERSION} · {process.env.NEXT_PUBLIC_COMMIT_SHA}
+                </span>
+              )}
             </div>
           </div>
         </footer>
