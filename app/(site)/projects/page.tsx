@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Gradient, Icon, Note } from "@/components/aw";
 import { LINKS } from "../links";
 
-export const metadata: Metadata = {
-  title: "Projects — Alistair Webster",
-  description: "Side projects, tools and experiments by Alistair Webster, mostly built with Claude Code.",
-};
+export const metadata: Metadata = pageMeta(
+  "Projects",
+  "Side projects, tools and experiments by Alistair Webster, mostly built with Claude Code.",
+  "/projects"
+);
 
 const PROJECTS = [
   {

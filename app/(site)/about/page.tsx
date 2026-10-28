@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Button, Gradient, Note, PhotoDisc } from "@/components/aw";
 import { LINKS } from "../links";
 
-export const metadata: Metadata = {
-  title: "About — Alistair Webster",
-  description:
-    "Speaking coach, co-founder of Freelancing for Good, author of Claude Clarity, and a freelancer on everything from copywriting to web design. Based in Edinburgh.",
-};
+export const metadata: Metadata = pageMeta(
+  "About",
+  "Speaking coach, co-founder of Freelancing for Good, author of Claude Clarity, and a freelancer on everything from copywriting to web design. Based in Edinburgh.",
+  "/about"
+);
 
 export default function AboutPage() {
   return (

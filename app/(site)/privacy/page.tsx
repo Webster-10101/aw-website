@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Note } from "@/components/aw";
 import { LINKS } from "../links";
 
-export const metadata: Metadata = {
-  title: "Privacy — Alistair Webster",
-  description: "What personal information Alistair Webster collects, why, and how long it's kept.",
-};
+export const metadata: Metadata = pageMeta(
+  "Privacy",
+  "What personal information Alistair Webster collects, why, and how long it's kept.",
+  "/privacy"
+);
 
 export default function PrivacyPage() {
   return (

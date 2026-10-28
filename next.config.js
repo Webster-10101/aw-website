@@ -14,7 +14,10 @@ function commitSha() {
 const nextConfig = {
   reactStrictMode: true,
   async redirects() {
-    return [{ source: "/apps", destination: "/projects", permanent: true }];
+    return [
+      { source: "/apps", destination: "/projects", permanent: true },
+      { source: "/working", destination: "/about", permanent: true },
+    ];
   },
   env: {
     NEXT_PUBLIC_APP_VERSION: version,

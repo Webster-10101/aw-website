@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Gradient, Note } from "@/components/aw";
 
-export const metadata: Metadata = {
-  title: "Terms — Alistair Webster",
-  description: "Booking terms and the guarantee for coaching with Alistair Webster.",
-};
+export const metadata: Metadata = pageMeta(
+  "Terms",
+  "Booking terms and the guarantee for coaching with Alistair Webster.",
+  "/terms"
+);
 
 export default function TermsPage() {
   return (

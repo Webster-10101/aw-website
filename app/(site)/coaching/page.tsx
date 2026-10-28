@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import {
   ArrowGrid,
   Button,
@@ -16,11 +17,11 @@ import { LINKS } from "../links";
 import { COACHING_FAQS } from "../faqs";
 import { Phases, PriceCard } from "../programme";
 
-export const metadata: Metadata = {
-  title: "The 8-week Speaking Transformation — Alistair Webster",
-  description:
-    "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £1,400, with a four-session fit guarantee.",
-};
+export const metadata: Metadata = pageMeta(
+  "The 8-week Speaking Transformation",
+  "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £1,400, with a four-session fit guarantee.",
+  "/coaching"
+);
 
 const FOR_YOU = [
   "You freeze, go blank or rush when the pressure's on",

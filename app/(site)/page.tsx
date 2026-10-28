@@ -13,11 +13,14 @@ import {
   Venn,
   Waveform,
 } from "@/components/aw";
+import type { Metadata } from "next";
 import WaitlistForm from "@/components/aw/WaitlistForm";
 import { LINKS } from "./links";
 import { latestPosts } from "./substack";
 import { FAQS } from "./faqs";
 import { Phases, PriceCard } from "./programme";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 const SITUATIONS = [
   { icon: "meeting", title: "In meetings.", body: "Say it the first time, without rehearsing it in your head." },

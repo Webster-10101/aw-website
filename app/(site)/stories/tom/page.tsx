@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../../meta";
 import { Button, Gradient, Highlight, Note } from "@/components/aw";
 import { LINKS } from "../../links";
 
-export const metadata: Metadata = {
-  title: "Tom's story — Alistair Webster",
-  description:
-    "Tom Gauthier was already a confident speaker, until things went off-script. How coaching helped him move from performing to speaking from connection.",
-};
+export const metadata: Metadata = pageMeta(
+  "Tom's story",
+  "Tom Gauthier was already a confident speaker, until things went off-script. How coaching helped him move from performing to speaking from connection.",
+  "/stories/tom"
+);
 
 export default function TomStory() {
   return (

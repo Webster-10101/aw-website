@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Button, Gradient, Icon, Note } from "@/components/aw";
 import { LINKS } from "../links";
 
-export const metadata: Metadata = {
-  title: "Freelancing for Good — Alistair Webster",
-  description:
-    "Alistair Webster co-founded Freelancing for Good, a community of 1,000+ freelancers working with charities, nonprofits and mission-driven organisations.",
-};
+export const metadata: Metadata = pageMeta(
+  "Freelancing for Good",
+  "Alistair Webster co-founded Freelancing for Good, a community of 1,000+ freelancers working with charities, nonprofits and mission-driven organisations.",
+  "/ffg"
+);
 
 const WHAT = [
   {

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "../meta";
 import { Gradient, Note } from "@/components/aw";
 import ContactForm from "@/components/aw/ContactForm";
 import { LINKS } from "../links";
 
-export const metadata: Metadata = {
-  title: "Contact — Alistair Webster",
-  description: "Get in touch with Alistair Webster about coaching, Freelancing for Good, or a project.",
-};
+export const metadata: Metadata = pageMeta(
+  "Contact",
+  "Get in touch with Alistair Webster about coaching, Freelancing for Good, or a project.",
+  "/contact"
+);
 
 export default function ContactPage() {
   return (
