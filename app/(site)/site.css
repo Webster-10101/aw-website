@@ -458,17 +458,22 @@ textarea.field { resize: vertical; min-height: 140px; }
 .form-privacy { margin: 0; font-size: 13px; color: var(--ink-subtle); }
 .form-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
 
-/* Speaker Quiz CTA: the voice gradient fades in and drifts on hover */
-.btn-voice { position: relative; isolation: isolate; }
+/* Speaker Quiz CTA: the voice gradient slides in from the left on hover, then drifts */
+.btn-voice { position: relative; isolation: isolate; transition: transform .2s ease, color .3s ease; }
 .btn-voice::before {
   content: ""; position: absolute; inset: -1.5px; z-index: -1; border-radius: inherit;
   background: linear-gradient(90deg, var(--berry), var(--tangerine), var(--saffron), var(--tangerine), var(--berry));
   background-size: 250% 100%; background-position: 0% 50%;
-  opacity: 0; transition: opacity .35s ease;
+  clip-path: inset(0 100% 0 0 round 999px);
+  transition: clip-path .5s cubic-bezier(.22, 1, .36, 1);
 }
-.btn-voice:hover::before, .btn-voice:focus-visible::before { opacity: 1; animation: voice-drift 3.5s linear infinite; }
+.btn-voice:hover::before, .btn-voice:focus-visible::before {
+  clip-path: inset(0 0 0 0 round 999px);
+  animation: voice-drift 3.5s linear .5s infinite;
+}
 .btn-voice:hover, .btn-voice:focus-visible { color: #fff; }
 @keyframes voice-drift { to { background-position: 100% 50%; } }
 @media (prefers-reduced-motion: reduce) {
-  .btn-voice:hover::before, .btn-voice:focus-visible::before { animation: none; }
+  .btn-voice::before { clip-path: none; opacity: 0; transition: opacity .3s ease; }
+  .btn-voice:hover::before, .btn-voice:focus-visible::before { opacity: 1; animation: none; }
 }
