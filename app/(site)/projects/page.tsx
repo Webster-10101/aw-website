@@ -20,7 +20,7 @@ const PROJECTS = [
   {
     icon: "quiz",
     title: "The Speaker Quiz",
-    body: "Five minutes to find your speaking strengths and what to work on next.",
+    body: "A few minutes to find your speaking strengths and what to work on next.",
     link: "Take the quiz",
     href: LINKS.quiz,
   },

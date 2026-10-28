@@ -72,6 +72,9 @@ export default function ContactForm() {
           {status === "sending" ? "Sending…" : "Send message"}
         </button>
       </div>
+      <p className="form-privacy">
+        I&rsquo;ll only use your details to reply to you. <a href="/privacy">Privacy</a>
+      </p>
       {status === "error" && (
         <p className="waitlist-msg waitlist-error" role="alert">
           {error}

@@ -88,7 +88,7 @@ export default async function Home() {
                 Book a free intro call
               </Button>
             </div>
-            <p className="cta-note">Five minutes to explore your speaking strengths and what to work on next.</p>
+            <p className="cta-note">A few minutes to explore your speaking strengths and what to work on next.</p>
           </div>
           <div className="hero-art">
             <Note className="hero-note" arrow>
@@ -167,7 +167,7 @@ export default async function Home() {
                     },
                     {
                       title: "Psychology",
-                      body: "My coaching takes a CBT-informed approach, working on the root causes rather than the symptoms.",
+                      body: "My coaching takes a CBT-informed approach, working on what's underneath, not just the surface habits.",
                     },
                     {
                       title: "Practice",
@@ -439,7 +439,7 @@ export default async function Home() {
               Ready to <Gradient>find your voice?</Gradient>
             </h2>
             <p className="lede">
-              Take the Speaker Quiz: in five minutes, you&rsquo;ll learn your strengths and challenges, and get your
+              Take the Speaker Quiz: in a few minutes, you&rsquo;ll learn your strengths and challenges, and get your
               own personalised plan. Or book a free intro call and we&rsquo;ll talk it through.
             </p>
           </div>

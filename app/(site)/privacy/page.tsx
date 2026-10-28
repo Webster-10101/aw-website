@@ -55,7 +55,11 @@ export default function PrivacyPage() {
 
         <section>
           <h2 className="aw-h aw-h-m">Things I link to</h2>
-          <p>The Speaker Quiz, Speak Up, Substack and LinkedIn have their own privacy policies.</p>
+          <p>
+            The Speaker Quiz and Speak Up are covered by the{" "}
+            <a href="https://speakupforgood.com/privacy">Speak Up For Good privacy policy</a>. Substack and LinkedIn have
+            their own.
+          </p>
         </section>
 
         <section>

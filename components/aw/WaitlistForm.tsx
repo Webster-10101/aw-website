@@ -61,6 +61,9 @@ export default function WaitlistForm() {
           {status === "sending" ? "Joining…" : "Join the waitlist"}
         </button>
       </div>
+      <p className="form-privacy">
+        I&rsquo;ll only use your email to tell you about Speak Up. <a href="/privacy">Privacy</a>
+      </p>
       {status === "error" && (
         <p className="waitlist-msg waitlist-error" role="alert">
           {message}

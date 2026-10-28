@@ -453,3 +453,7 @@ textarea.field { resize: vertical; min-height: 140px; }
 .soon-tag { justify-self: start; font: 600 13px/1 var(--font-sans); color: var(--berry); background: var(--berry-tint); padding: 7px 12px; border-radius: var(--radius-pill); }
 @media (max-width: 900px) { .projects { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .projects { grid-template-columns: 1fr; } }
+
+/* Privacy note under forms */
+.form-privacy { margin: 0; font-size: 13px; color: var(--ink-subtle); }
+.form-privacy a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
