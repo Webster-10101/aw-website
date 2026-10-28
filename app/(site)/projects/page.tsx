@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "../meta";
 import { Gradient, Icon, Note } from "@/components/aw";
-import { LINKS } from "../links";
+import { LINKS, track } from "../links";
 
 export const metadata: Metadata = pageMeta(
   "Projects",
@@ -22,7 +22,7 @@ const PROJECTS = [
     title: "The Speaker Quiz",
     body: "A few minutes to find your speaking strengths and what to work on next.",
     link: "Take the quiz",
-    href: LINKS.quiz,
+    href: track(LINKS.quiz, "projects-quiz"),
   },
   {
     icon: "spark",

@@ -4,7 +4,7 @@ import "./aw.css";
 import "./site.css";
 import FathomEvents from "@/components/FathomEvents";
 import { Button, Note } from "@/components/aw";
-import { LINKS } from "./links";
+import { LINKS, track } from "./links";
 
 const siteUrl = "https://alistairwebster.com";
 const description =
@@ -69,7 +69,7 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
                 ))}
               </ul>
             </nav>
-            <Button href={LINKS.quiz} size="sm" arrow>
+            <Button href={track(LINKS.quiz, "nav")} size="sm" arrow>
               Take the quiz
             </Button>
           </div>

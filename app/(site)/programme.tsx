@@ -1,5 +1,5 @@
 import { Button, Icon, PriceBlock } from "@/components/aw";
-import { LINKS } from "./links";
+import { LINKS, track } from "./links";
 
 // Shared by the homepage (#programme) and /coaching, so the offer only lives in one place.
 
@@ -45,7 +45,7 @@ export function Phases() {
   );
 }
 
-export function PriceCard() {
+export function PriceCard({ from }: { from: string }) {
   return (
     <aside className="price-card aw-panel" aria-label="Prices">
       <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Everything below, in one programme" />
@@ -56,7 +56,7 @@ export function PriceCard() {
         <li><Icon name="mic" size={18} /><span>A full year of Speak Up: about 10 minutes a day of guided practice</span></li>
         <li><Icon name="meeting" size={18} /><span>Online, or in person in Edinburgh</span></li>
       </ul>
-      <Button href={LINKS.bookProgramme} arrow>
+      <Button href={track(LINKS.bookProgramme, `${from}-price`)} arrow>
         Book the programme
       </Button>
       <p className="guarantee">
@@ -69,12 +69,12 @@ export function PriceCard() {
       <hr />
       <PriceBlock amount="£195" label="Single session" detail="Focused help with one specific talk, pitch or event." />
       <p className="price-after">If you book the programme within a month, the £195 comes off the price.</p>
-      <Button href={LINKS.bookSession} variant="secondary">
+      <Button href={track(LINKS.bookSession, `${from}-price-single`)} variant="secondary">
         Book a session
       </Button>
       <hr />
       <p className="price-intro">
-        Not sure yet? <a href={LINKS.introCall}>Book a free intro call</a> and we&rsquo;ll talk it through.
+        Not sure yet? <a href={track(LINKS.introCall, `${from}-price`)}>Book a free intro call</a> and we&rsquo;ll talk it through.
       </p>
     </aside>
   );

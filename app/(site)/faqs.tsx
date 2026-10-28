@@ -1,4 +1,4 @@
-import { LINKS } from "./links";
+import { LINKS, track } from "./links";
 
 export type Faq = { q: string; a: React.ReactNode };
 
@@ -47,7 +47,7 @@ export const FAQS: Faq[] = [
     q: "How do I book?",
     a: (
       <>
-        Start with a <a href={LINKS.introCall}>free 45-minute intro call</a>. It's a chance to see if we're a good fit, and
+        Start with a <a href={track(LINKS.introCall, "faq")}>free 45-minute intro call</a>. It's a chance to see if we're a good fit, and
         you'll get a taste of the method. Then you can book and pay for sessions or the programme through my calendar.
       </>
     ),

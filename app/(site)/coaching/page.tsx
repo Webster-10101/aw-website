@@ -13,7 +13,7 @@ import {
   Waveform,
 } from "@/components/aw";
 import Reveal from "@/components/aw/Reveal";
-import { LINKS } from "../links";
+import { LINKS, track } from "../links";
 import { COACHING_FAQS } from "../faqs";
 import { Phases, PriceCard } from "../programme";
 
@@ -57,10 +57,10 @@ export default function CoachingPage() {
               so speaking feels like you: clearer, calmer and more compelling.
             </p>
             <div className="ctas">
-              <Button href={LINKS.bookProgramme} arrow>
+              <Button href={track(LINKS.bookProgramme, "coaching-hero")} arrow>
                 Book the programme
               </Button>
-              <Button href={LINKS.introCall} variant="secondary">
+              <Button href={track(LINKS.introCall, "coaching-hero")} variant="secondary">
                 Book a free intro call
               </Button>
             </div>
@@ -229,7 +229,7 @@ export default function CoachingPage() {
                 role="Coaching client"
               />
             </div>
-            <PriceCard />
+            <PriceCard from="coaching" />
           </div>
         </div>
       </section>
@@ -265,10 +265,10 @@ export default function CoachingPage() {
             </p>
           </div>
           <div className="ctas">
-            <Button href={LINKS.bookProgramme} arrow>
+            <Button href={track(LINKS.bookProgramme, "coaching-final")} arrow>
               Book the programme
             </Button>
-            <Button href={LINKS.introCall} variant="secondary">
+            <Button href={track(LINKS.introCall, "coaching-final")} variant="secondary">
               Book a free intro call
             </Button>
           </div>

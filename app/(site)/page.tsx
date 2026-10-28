@@ -15,7 +15,7 @@ import {
 } from "@/components/aw";
 import type { Metadata } from "next";
 import WaitlistForm from "@/components/aw/WaitlistForm";
-import { LINKS } from "./links";
+import { LINKS, track } from "./links";
 import { latestPosts } from "./substack";
 import { FAQS } from "./faqs";
 import { Phases, PriceCard } from "./programme";
@@ -81,10 +81,10 @@ export default async function Home() {
               speaking confidence.
             </p>
             <div className="ctas">
-              <Button href={LINKS.quiz} arrow>
+              <Button href={track(LINKS.quiz, "home-hero")} arrow>
                 Take the Speaker Quiz
               </Button>
-              <Button href={LINKS.introCall} variant="secondary">
+              <Button href={track(LINKS.introCall, "home-hero")} variant="secondary">
                 Book a free intro call
               </Button>
             </div>
@@ -360,7 +360,7 @@ export default async function Home() {
               </p>
               <Phases />
             </div>
-            <PriceCard />
+            <PriceCard from="home" />
           </div>
           <div className="programme-quote">
             <Testimonial
@@ -444,10 +444,10 @@ export default async function Home() {
             </p>
           </div>
           <div className="ctas">
-            <Button href={LINKS.quiz} arrow>
+            <Button href={track(LINKS.quiz, "home-footer")} arrow>
               Take the Speaker Quiz
             </Button>
-            <Button href={LINKS.introCall} variant="secondary">
+            <Button href={track(LINKS.introCall, "home-footer")} variant="secondary">
               Book a free intro call
             </Button>
           </div>

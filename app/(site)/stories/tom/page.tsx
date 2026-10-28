@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "../../meta";
 import { Button, Gradient, Highlight, Note } from "@/components/aw";
-import { LINKS } from "../../links";
+import { LINKS, track } from "../../links";
 
 export const metadata: Metadata = pageMeta(
   "Tom's story",
@@ -127,7 +127,7 @@ export default function TomStory() {
             <Button href="/coaching" arrow>
               See the 8-week programme
             </Button>
-            <Button href={LINKS.introCall} variant="secondary">
+            <Button href={track(LINKS.introCall, "tom-intro")} variant="secondary">
               Book a free intro call
             </Button>
           </div>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { pageMeta } from "../meta";
 import { Gradient, Note } from "@/components/aw";
 import ContactForm from "@/components/aw/ContactForm";
-import { LINKS } from "../links";
+import { LINKS, track } from "../links";
 
 export const metadata: Metadata = pageMeta(
   "Contact",
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <ul className="contact-alt">
             <li>
               <strong>Thinking about coaching?</strong> You can also{" "}
-              <a href={LINKS.introCall}>book a free 45-minute intro call</a> straight away.
+              <a href={track(LINKS.introCall, "contact")}>book a free 45-minute intro call</a> straight away.
             </li>
             <li>
               <strong>Freelancing for Good?</strong> Member and job questions are best sent via{" "}

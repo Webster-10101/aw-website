@@ -10,3 +10,13 @@ export const LINKS = {
   claudeClarity: "https://claudeclarity.com",
   email: "mailto:hello@alistairwebster.com",
 };
+
+// Tags an outbound quiz or booking link so Calendly and the quiz can see which button it came from.
+export function track(url: string, content: string): string {
+  const u = new URL(url);
+  u.searchParams.set("utm_source", "alistairwebster");
+  u.searchParams.set("utm_medium", "website");
+  u.searchParams.set("utm_campaign", "coaching");
+  u.searchParams.set("utm_content", content);
+  return u.toString();
+}

@@ -25,7 +25,8 @@ export default function FathomEvents() {
         if (url.hostname === window.location.hostname) return;
 
         const name = url.hostname.replace("www.", "");
-        window.fathom?.trackEvent(`Click: ${name}`);
+        const placement = url.searchParams.get("utm_content");
+        window.fathom?.trackEvent(placement ? `Click: ${name} (${placement})` : `Click: ${name}`);
       } catch {
         // invalid URL, ignore
       }
