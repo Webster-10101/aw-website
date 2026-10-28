@@ -81,7 +81,7 @@ export default async function Home() {
               speaking confidence.
             </p>
             <div className="ctas">
-              <Button href={track(LINKS.quiz, "home-hero")} arrow>
+              <Button href={track(LINKS.quiz, "home-hero")} arrow className="btn-voice">
                 Take my Speaker Quiz
               </Button>
               <Button href={track(LINKS.introCall, "home-hero")} variant="secondary">

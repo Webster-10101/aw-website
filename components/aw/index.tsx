@@ -139,6 +139,7 @@ export function Button({
   arrow = false,
   children,
   external = false,
+  className,
 }: {
   href: string;
   variant?: "primary" | "secondary";
@@ -146,11 +147,12 @@ export function Button({
   arrow?: boolean;
   children: ReactNode;
   external?: boolean;
+  className?: string;
 }) {
   return (
     <a
       href={href}
-      className={cx("aw-btn", `aw-btn-${variant}`, size === "sm" && "aw-btn-sm")}
+      className={cx("aw-btn", `aw-btn-${variant}`, size === "sm" && "aw-btn-sm", className)}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
     >
       {children}
