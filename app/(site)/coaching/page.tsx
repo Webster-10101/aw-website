@@ -57,7 +57,7 @@ export default function CoachingPage() {
               so speaking feels like you: clearer, calmer and more compelling.
             </p>
             <div className="ctas">
-              <Button href={track(LINKS.bookProgramme, "coaching-hero")} arrow>
+              <Button href={track(LINKS.bookProgramme, "coaching-hero")} arrow className="btn-voice">
                 Book the programme
               </Button>
               <Button href={track(LINKS.introCall, "coaching-hero")} variant="secondary">
@@ -265,7 +265,7 @@ export default function CoachingPage() {
             </p>
           </div>
           <div className="ctas">
-            <Button href={track(LINKS.bookProgramme, "coaching-final")} arrow>
+            <Button href={track(LINKS.bookProgramme, "coaching-final")} arrow className="btn-voice">
               Book the programme
             </Button>
             <Button href={track(LINKS.introCall, "coaching-final")} variant="secondary">

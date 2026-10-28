@@ -56,7 +56,7 @@ export function PriceCard({ from }: { from: string }) {
         <li><Icon name="mic" size={18} /><span>A full year of Speak Up: about 10 minutes a day of guided practice</span></li>
         <li><Icon name="meeting" size={18} /><span>Online, or in person in Edinburgh</span></li>
       </ul>
-      <Button href={track(LINKS.bookProgramme, `${from}-price`)} arrow>
+      <Button href={track(LINKS.bookProgramme, `${from}-price`)} arrow className="btn-voice">
         Book the programme
       </Button>
       <p className="guarantee">
