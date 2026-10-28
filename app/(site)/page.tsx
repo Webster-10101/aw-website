@@ -82,7 +82,7 @@ export default async function Home() {
             </p>
             <div className="ctas">
               <Button href={track(LINKS.quiz, "home-hero")} arrow>
-                Take the Speaker Quiz
+                Take my Speaker Quiz
               </Button>
               <Button href={track(LINKS.introCall, "home-hero")} variant="secondary">
                 Book a free intro call
