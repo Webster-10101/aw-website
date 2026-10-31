@@ -48,7 +48,7 @@ export function Phases() {
 export function PriceCard({ from }: { from: string }) {
   return (
     <aside className="price-card aw-panel" aria-label="Prices">
-      <PriceBlock amount="£1,400" label="8-week Speaking Transformation" detail="Everything below, in one programme" />
+      <PriceBlock amount="£850" label="8-week Speaking Transformation" detail="Pay in full or two payments of £425" />
       <ul className="practical">
         <li><Icon name="calendar" size={18} /><span>Eight weekly 1:1 sessions, 60 minutes each</span></li>
         <li><Icon name="check" size={18} /><span>A self-assessment at the start and end, so you can see how your confidence has changed</span></li>
@@ -57,18 +57,19 @@ export function PriceCard({ from }: { from: string }) {
         <li><Icon name="meeting" size={18} /><span>Online, or in person in Edinburgh</span></li>
       </ul>
       <Button href={track(LINKS.bookProgramme, `${from}-price`)} arrow className="btn-voice">
-        Book the programme
+        Pay in full — £850
       </Button>
+      <p className="price-after"><a href={track(LINKS.bookProgrammeSplit, `${from}-price-split`)}>Choose two payments of £425</a>: first at booking, second before session five. The second payment is collected separately, not charged automatically.</p>
       <p className="guarantee">
         <strong>Four-session fit guarantee:</strong> if the coaching isn&rsquo;t right for you after four sessions,
         ask within seven days of session four, before session five, for a full refund. <a href="/terms#guarantee">Read the guarantee</a>.
       </p>
       <p className="price-after">
-        After booking, you pay securely, pick your first session, and we set the rest for the same time each week.
+        Pay securely when you book your first session, then we set the rest for the same time each week.
       </p>
       <hr />
-      <PriceBlock amount="£195" label="Single session" detail="Focused help with one specific talk, pitch or event." />
-      <p className="price-after">If you book the programme within a month, the £195 comes off the price.</p>
+      <PriceBlock amount="£150" label="Single session" detail="Focused help with one specific talk, pitch or event." />
+      <p className="price-after">If you book the programme within a month, the £150 comes off the price. Contact me before booking to arrange the credit.</p>
       <Button href={track(LINKS.bookSession, `${from}-price-single`)} variant="secondary">
         Book a session
       </Button>

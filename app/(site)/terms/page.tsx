@@ -14,7 +14,7 @@ export default function TermsPage() {
       <div className="wrap legal">
         <Note>The small print</Note>
         <h1 className="aw-h aw-h-l">Terms</h1>
-        <p className="legal-updated">Last updated 27 October 2026</p>
+        <p className="legal-updated">Last updated 31 October 2026</p>
 
         <section id="guarantee" className="legal-guarantee aw-panel">
           <h2 className="aw-h aw-h-m">The guarantee</h2>
@@ -27,15 +27,15 @@ export default function TermsPage() {
             After attending your first four sessions, if you don&rsquo;t feel the coaching is the right approach for you,
             tell me within seven days of your fourth session, before session five, and I&rsquo;ll refund your programme fee in full.
           </p>
-          <p>No forms, no arguing. This gives you time to experience the coaching before deciding whether to continue.</p>
+          <p>For split payments, I refund all programme payments made and cancel any remaining instalment. No forms, no arguing. This gives you time to experience the coaching before deciding whether to continue.</p>
         </section>
 
         <section>
           <h2 className="aw-h aw-h-m">Booking and payment</h2>
           <ul>
-            <li>The 8-week Speaking Transformation is £1,400, paid when you book.</li>
-            <li>A single session is £195, paid when you book.</li>
-            <li>If you book the programme within a month of a single session, the £195 comes off the programme price.</li>
+            <li>The 8-week Speaking Transformation is £850. Pay in full when you book, or choose two payments of £425: the first at booking and the second before session five. The second payment is collected separately, not charged automatically.</li>
+            <li>A single session is £150, paid when you book.</li>
+            <li>If you book the programme within a month of a single session, the £150 comes off the programme price. Contact me before booking to arrange the credit.</li>
             <li>I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add.</li>
           </ul>
         </section>

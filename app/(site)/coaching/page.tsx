@@ -19,7 +19,7 @@ import { Phases, PriceCard } from "../programme";
 
 export const metadata: Metadata = pageMeta(
   "The 8-week Speaking Transformation",
-  "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £1,400, with a four-session fit guarantee.",
+  "Eight weeks of 1:1 speaking coaching with Alistair Webster: build your skills, work on what's underneath, and practise daily in Speak Up. £850, with a four-session fit guarantee.",
   "/coaching"
 );
 
@@ -64,7 +64,7 @@ export default function CoachingPage() {
                 Book a free intro call
               </Button>
             </div>
-            <p className="cta-note">£1,400 · eight weekly 1:1 sessions · a year of Speak Up · four-session fit guarantee</p>
+            <p className="cta-note">£850 or 2 × £425 · eight weekly 1:1 sessions · a year of Speak Up · four-session fit guarantee</p>
           </div>
           <div className="hero-wave" aria-hidden>
             <Waveform id="coaching-wave" bars={64} seed={7} height={72} live />

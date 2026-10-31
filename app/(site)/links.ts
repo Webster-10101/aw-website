@@ -2,6 +2,7 @@
 export const LINKS = {
   introCall: "https://calendly.com/alistair-webster/intro-call",
   bookProgramme: "https://calendly.com/alistair-webster/speaking-transformation",
+  bookProgrammeSplit: "https://calendly.com/alistair-webster/speaking-transformation-two-payments",
   bookSession: "https://calendly.com/alistair-webster/single-session",
   quiz: "https://speakupforgood.com/speaker-quiz",
   substack: "https://speakupforgood.substack.com/",
