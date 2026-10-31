@@ -13,7 +13,7 @@ export const FAQS: Faq[] = [
   },
   {
     q: "How quickly will I see results?",
-    a: "Most clients notice a shift in their very first session. For lasting change, we go deeper over the eight weeks, giving you time to practise, refine and embed new habits. If the coaching isn't the right approach for you after four sessions, ask within seven days of session four, before session five, and I'll refund your programme fee in full.",
+    a: "Most clients notice a shift in their very first session. For lasting change, we go deeper over the eight weeks, giving you time to practise, refine and embed new habits. If the coaching isn't the right approach for you after two sessions, ask within seven days of session two, before session three, and I'll refund your programme fee in full.",
   },
   {
     q: "What if I'm extremely nervous about speaking?",
