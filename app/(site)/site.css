@@ -483,3 +483,5 @@ textarea.field { resize: vertical; min-height: 140px; }
 .fit-guarantee h3 { margin: 0 0 6px; color: var(--ink); font: 600 14px/1.5 var(--font-sans); }
 .fit-guarantee p { margin: 0; color: #62616a; font: 400 13px/1.65 var(--font-sans); }
 .fit-guarantee a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+.fit-guarantee .guarantee-tick { color: #a37c29; margin-right: 4px; font-size: 16px; }

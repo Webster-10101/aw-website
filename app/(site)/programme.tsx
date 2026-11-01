@@ -74,7 +74,7 @@ export function PriceCard({ from }: { from: string }) {
         Not sure yet? <a href={track(LINKS.introCall, `${from}-price`)}>Book a free intro call</a> and we&rsquo;ll talk it through.
       </p>
       <section className="fit-guarantee" aria-label="Two-session fit guarantee">
-        <h3>Two-session fit guarantee</h3>
+        <h3><span className="guarantee-tick" aria-hidden="true">✓</span> Two-session fit guarantee</h3>
         <p>If the coaching isn&rsquo;t right for you after two sessions, I&rsquo;ll refund everything you&rsquo;ve paid and cancel any remaining payment. Just let me know within seven days of session two, before session three. <a href="/terms#guarantee">Read the guarantee</a>.</p>
       </section>
     </aside>
