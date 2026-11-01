@@ -14,7 +14,7 @@ export default function TermsPage() {
       <div className="wrap legal">
         <Note>The small print</Note>
         <h1 className="aw-h aw-h-l">Terms</h1>
-        <p className="legal-updated">Last updated 31 October 2026</p>
+        <p className="legal-updated">Last updated 1 November 2026</p>
 
         <section id="guarantee" className="legal-guarantee aw-panel">
           <h2 className="aw-h aw-h-m">The guarantee</h2>
@@ -33,7 +33,9 @@ export default function TermsPage() {
         <section>
           <h2 className="aw-h aw-h-m">Booking and payment</h2>
           <ul>
-            <li>The 8-week Speaking Transformation is £850. Pay in full when you book, or choose two payments of £425: the first at booking and the second before session five. The second payment is collected separately, not charged automatically.</li>
+            <li>The 8-week Speaking Transformation is £850. Pay in full when you book, or choose two payments of £425: the first at checkout and one final £425 automatically one calendar month later, using the payment method you authorise at checkout. There are no further programme payments. Rescheduling sessions does not change this payment date. If that date does not exist in the following month, payment is due on its last day.</li>
+            <li>After the first split payment, you can book your first session using the prepaid booking link. There is no additional payment when booking that session.</li>
+            <li>If you already booked under an earlier payment arrangement, that agreement still applies.</li>
             <li>A single session is £150, paid when you book.</li>
             <li>If you book the programme within a month of a single session, the £150 comes off the programme price. Contact me before booking to arrange the credit.</li>
             <li>I&rsquo;m not VAT registered, so there&rsquo;s no VAT to add.</li>

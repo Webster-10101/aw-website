@@ -59,7 +59,7 @@ export function PriceCard({ from }: { from: string }) {
       <Button href={track(LINKS.bookProgramme, `${from}-price`)} arrow className="btn-voice">
         Pay in full — £850
       </Button>
-      <p className="price-after"><a href={track(LINKS.bookProgrammeSplit, `${from}-price-split`)}>Choose two payments of £425</a>: first at booking, second before session five. The second payment is collected separately, not charged automatically.</p>
+      <p className="price-after"><a href={track(LINKS.bookProgrammeSplit, `${from}-price-split`)}>Choose two payments of £425</a>: £425 now, then the final £425 automatically one calendar month later.</p>
       <p className="price-after">
         Pay securely when you book your first session, then we set the rest for the same time each week.
       </p>
