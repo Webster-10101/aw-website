@@ -60,13 +60,6 @@ export function PriceCard({ from }: { from: string }) {
         Pay in full — £850
       </Button>
       <p className="price-after"><a href={track(LINKS.bookProgrammeSplit, `${from}-price-split`)}>Choose two payments of £425</a>: first at booking, second before session five. The second payment is collected separately, not charged automatically.</p>
-      <section className="fit-guarantee" aria-label="Two-session fit guarantee">
-        <p className="fit-guarantee-label">Two-session fit guarantee</p>
-        <h3>Try two sessions.<br />Feel the fit.</h3>
-        <p>If the coaching isn&rsquo;t right for you, I&rsquo;ll refund everything you&rsquo;ve paid for the programme and cancel any remaining payment.</p>
-        <p className="fit-guarantee-detail">Just let me know within seven days of session two, before session three.</p>
-        <a href="/terms#guarantee">Read the guarantee <span aria-hidden="true">↗</span></a>
-      </section>
       <p className="price-after">
         Pay securely when you book your first session, then we set the rest for the same time each week.
       </p>
@@ -80,6 +73,10 @@ export function PriceCard({ from }: { from: string }) {
       <p className="price-intro">
         Not sure yet? <a href={track(LINKS.introCall, `${from}-price`)}>Book a free intro call</a> and we&rsquo;ll talk it through.
       </p>
+      <section className="fit-guarantee" aria-label="Two-session fit guarantee">
+        <h3>Two-session fit guarantee</h3>
+        <p>If the coaching isn&rsquo;t right for you after two sessions, I&rsquo;ll refund everything you&rsquo;ve paid and cancel any remaining payment. Just let me know within seven days of session two, before session three. <a href="/terms#guarantee">Read the guarantee</a>.</p>
+      </section>
     </aside>
   );
 }
