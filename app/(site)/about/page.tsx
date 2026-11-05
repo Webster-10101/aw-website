@@ -39,7 +39,7 @@ export default function AboutPage() {
                 do more of the work they care about.
               </p>
               <p>
-                I also consult for nonprofits, build and manage websites and content, and make music through{" "}
+                I also consult for nonprofits, <a href="/web-design">build and manage websites</a> and content, and make music through{" "}
                 <a href="https://goodbackgroundmusic.co.uk">GBM Music</a>. I recently launched an online radio station,{" "}
                 <a href="https://freelancerad.io">Freelance Radio</a>. It&rsquo;s great background music while you work!
               </p>

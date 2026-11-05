@@ -4,9 +4,9 @@ import { useState, type FormEvent } from "react";
 
 type Status = "idle" | "sending" | "done" | "error";
 
-const TOPICS = ["Coaching", "Freelancing for Good", "Consulting or a project", "Something else"];
+const TOPICS = ["Coaching", "Websites or design", "Freelancing for Good", "Consulting or a project", "Something else"];
 
-export default function ContactForm() {
+export default function ContactForm({ defaultTopic = "Coaching" }: { defaultTopic?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
 
@@ -56,7 +56,7 @@ export default function ContactForm() {
       </div>
       <label>
         <span>What&rsquo;s it about?</span>
-        <select name="topic" className="field" defaultValue="Coaching">
+        <select name="topic" className="field" defaultValue={defaultTopic}>
           {TOPICS.map((t) => (
             <option key={t}>{t}</option>
           ))}

@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 // Needs RESEND_API_KEY, CONTACT_TO (Al's inbox) and CONTACT_FROM (an address on a Resend-verified domain).
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const TOPICS = ["Coaching", "Freelancing for Good", "Consulting or a project", "Something else"];
+const TOPICS = ["Coaching", "Websites or design", "Freelancing for Good", "Consulting or a project", "Something else"];
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 

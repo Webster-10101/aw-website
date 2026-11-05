@@ -90,6 +90,7 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
                   <li><a href="/about">About</a></li>
                   <li><a href="/ffg">Freelancing for Good</a></li>
                   <li><a href="/projects">Projects</a></li>
+                  <li><a href="/web-design">Web design</a></li>
                 </ul>
               </div>
               <div>
