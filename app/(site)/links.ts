@@ -4,7 +4,7 @@ export const LINKS = {
   bookProgramme: "https://calendly.com/alistair-webster/speaking-transformation",
   bookProgrammeSplit: "https://alistairwebster.com/coaching/pay-in-two",
   bookSession: "https://calendly.com/alistair-webster/single-session",
-  quiz: "https://speakupforgood.com/speaker-quiz",
+  quiz: "/speaker-quiz",
   substack: "https://speakupforgood.substack.com/",
   linkedin: "https://www.linkedin.com/in/alistair-webster/",
   ffg: "https://freelancingforgood.com",
@@ -15,10 +15,10 @@ export const LINKS = {
 
 // Tags an outbound quiz or booking link so Calendly and the quiz can see which button it came from.
 export function track(url: string, content: string): string {
-  const u = new URL(url);
+  const u = new URL(url, "https://alistairwebster.com");
   u.searchParams.set("utm_source", "alistairwebster");
   u.searchParams.set("utm_medium", "website");
   u.searchParams.set("utm_campaign", "coaching");
   u.searchParams.set("utm_content", content);
-  return u.toString();
+  return url.startsWith("/") ? u.pathname + u.search : u.toString();
 }

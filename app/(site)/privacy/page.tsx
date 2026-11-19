@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <div className="wrap legal">
         <Note>The small print</Note>
         <h1 className="aw-h aw-h-l">Privacy</h1>
-        <p className="legal-updated">Last updated 23 October 2026</p>
+        <p className="legal-updated">Last updated 18 November 2026</p>
 
         <section>
           <h2 className="aw-h aw-h-m">Who I am</h2>
@@ -32,6 +32,18 @@ export default function PrivacyPage() {
             <li>
               <strong>Speak Up waitlist:</strong> your email address, so I can tell you when the app opens. It&rsquo;s
               stored with Resend, my email provider, and every email has an unsubscribe link.
+            </li>
+            <li>
+              <strong>Speaker quiz:</strong> your first name, email address, the IP address you submit from, your
+              quiz answers (including anything you choose to write in the optional questions) and which campaign link
+              brought you, if any. I use these to email you your growth plan and to keep a record of who has taken
+              the quiz. Your answers are stored in Supabase, my database provider, and sent to Anthropic&rsquo;s
+              Claude (with OpenAI as a backup) to write your plan; neither uses them to train its models. The plan is
+              emailed through Resend. Asking for your plan doesn&rsquo;t sign you up to anything else.
+            </li>
+            <li>
+              <strong>Speaking emails:</strong> a separate choice. Only if you tick the box in the quiz, your name and email address
+              are kept with Resend so I can send you occasional speaking emails. Every one has an unsubscribe link.
             </li>
             <li>
               <strong>Booking a call or coaching:</strong> your name, email address and anything you write in the
@@ -56,7 +68,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="aw-h aw-h-m">Things I link to</h2>
           <p>
-            The Speaker Quiz and Speak Up are covered by the{" "}
+            The Speak Up app is covered by the{" "}
             <a href="https://speakupforgood.com/privacy">Speak Up For Good privacy policy</a>. Substack and LinkedIn have
             their own.
           </p>
@@ -73,7 +85,8 @@ export default function PrivacyPage() {
         <section>
           <h2 className="aw-h aw-h-m">How long I keep it</h2>
           <ul>
-            <li>Waitlist: until you unsubscribe or ask me to remove you.</li>
+            <li>Waitlist and speaking emails: until you unsubscribe or ask me to remove you.</li>
+            <li>Quiz answers and results: for as long as you&rsquo;re a coaching contact, or until you ask me to delete them.</li>
             <li>Session recordings and notes: one year after we finish working together.</li>
             <li>Booking and payment records: six years, as UK tax rules require.</li>
           </ul>
