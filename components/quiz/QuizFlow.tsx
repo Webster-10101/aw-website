@@ -5,6 +5,7 @@ import { Gradient, Icon, Note } from "@/components/aw";
 import { addAttribution, getQuizAttribution, quizBookingUrl } from "@/lib/quiz/attribution";
 import { QUESTIONS, isAnswered, type Question } from "@/lib/quiz/questions";
 import { scoreArchetype } from "@/lib/quiz/scoring";
+import { saveAnswers, saveOptional } from "@/lib/quiz/session";
 
 type Answers = Record<string, unknown>;
 
@@ -31,7 +32,10 @@ export default function QuizFlow() {
 
   function finish(final: Answers) {
     const { primary } = scoreArchetype(final);
-    const params = new URLSearchParams({ archetype: primary, answers: JSON.stringify(final) });
+    const params = new URLSearchParams({ archetype: primary });
+    saveOptional({});
+    // Answers stay in the browser tab; only if storage is unavailable do they travel in the URL.
+    if (!saveAnswers(final)) params.set("answers", JSON.stringify(final));
     window.location.href = addAttribution(`/speaker-quiz/additional-questions?${params.toString()}`, getQuizAttribution());
   }
 

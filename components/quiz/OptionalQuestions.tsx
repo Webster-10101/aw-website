@@ -5,21 +5,23 @@ import { useSearchParams } from "next/navigation";
 import { Icon, Note } from "@/components/aw";
 import { addAttribution, getQuizAttribution } from "@/lib/quiz/attribution";
 import { OPTIONAL_QUESTIONS } from "@/lib/quiz/questions";
+import { saveOptional } from "@/lib/quiz/session";
 import { Progress } from "./QuizFlow";
 
 export default function OptionalQuestions() {
   const params = useSearchParams();
   const archetype = params.get("archetype");
+  // Only present when the browser couldn't store answers in the tab.
   const answers = params.get("answers");
   const [index, setIndex] = useState(0);
   const [optional, setOptional] = useState<Record<string, string | string[]>>({});
 
   useEffect(() => {
     getQuizAttribution();
-    if (!archetype || !answers) window.location.replace("/speaker-quiz");
-  }, [archetype, answers]);
+    if (!archetype) window.location.replace("/speaker-quiz");
+  }, [archetype]);
 
-  if (!archetype || !answers) return null;
+  if (!archetype) return null;
 
   const q = OPTIONAL_QUESTIONS[index];
   const last = index === OPTIONAL_QUESTIONS.length - 1;
@@ -30,7 +32,9 @@ export default function OptionalQuestions() {
   }
 
   function toResults() {
-    const next = new URLSearchParams({ archetype: archetype!, answers: answers!, optionalAnswers: JSON.stringify(optional) });
+    const next = new URLSearchParams({ archetype: archetype! });
+    if (answers) next.set("answers", answers);
+    if (!saveOptional(optional)) next.set("optionalAnswers", JSON.stringify(optional));
     window.location.href = addAttribution(`/speaker-quiz/results?${next.toString()}`, getQuizAttribution());
   }
 

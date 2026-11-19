@@ -40,6 +40,8 @@ export function buildPrompt(id: ArchetypeId, scales: SlidingScales, optional: Op
 
 IMPORTANT: This plan is generated automatically from the person's quiz answers. Alistair has not read their answers or met them. Never say or imply that he has personally reviewed their answers, spoken with them, or knows them.
 
+The scores are this person's quiz results only. Don't claim how common or rare a score, type or behaviour is, and don't compare them with other people or quote statistics. You have no data for that.
+
 WRITING STYLE:
 - Use simple words, short varied sentences, natural flow
 - Use metaphors or vivid everyday examples. Never invent personal stories, past clients, or facts about Alistair

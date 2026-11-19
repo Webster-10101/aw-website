@@ -4,18 +4,32 @@ import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { Gradient, Icon, Note } from "@/components/aw";
 import { ARCHETYPES } from "@/lib/quiz/archetypes";
-import { getQuizAttribution, quizBookingUrl } from "@/lib/quiz/attribution";
+import { addAttribution, getQuizAttribution, quizBookingUrl } from "@/lib/quiz/attribution";
 import { SCALES, parseAnswers, scaleLabel, scoreArchetype, toArchetypeId } from "@/lib/quiz/scoring";
+import { loadAnswers, loadOptional } from "@/lib/quiz/session";
 
 type Status = "idle" | "sending" | "done" | "error";
 
 export default function Results() {
   const params = useSearchParams();
-  // Older links used "mainAnswers"; current ones use "answers".
-  const answers = useMemo(() => parseAnswers(params.get("answers") ?? params.get("mainAnswers")), [params]);
-  const optionalRaw = params.get("optionalAnswers");
+  // Answers normally live in this browser tab, so a shared link shows only the type.
+  // Older links (and browsers without storage) carry them in the URL as "answers" or "mainAnswers".
+  const urlAnswers = useMemo(() => parseAnswers(params.get("answers") ?? params.get("mainAnswers")), [params]);
+  const urlType = toArchetypeId(params.get("archetype") ?? params.get("primary"));
+  const [stored, setStored] = useState<{ answers: Record<string, unknown> | null; optional: Record<string, unknown> } | null>(null);
+
+  useEffect(() => {
+    const saved = loadAnswers();
+    const valid = saved ? parseAnswers(JSON.stringify(saved)) : null;
+    // Ignore answers from an earlier quiz if this link is for a different type (e.g. someone else's shared link).
+    const matches = valid && (!urlType || scoreArchetype(valid).primary === urlType);
+    setStored({ answers: matches ? valid : null, optional: matches ? loadOptional() ?? {} : {} });
+  }, [urlType]);
+
+  const answers = urlAnswers ?? stored?.answers ?? null;
   const result = useMemo(() => (answers ? scoreArchetype(answers) : null), [answers]);
-  const id = result?.primary ?? toArchetypeId(params.get("archetype") ?? params.get("primary"));
+  const id = result?.primary ?? urlType;
+  const ready = urlAnswers !== null || stored !== null;
 
   const [booking, setBooking] = useState("https://calendly.com/alistair-webster/intro-call");
   const [status, setStatus] = useState<Status>("idle");
@@ -35,11 +49,14 @@ export default function Results() {
     const form = new FormData(e.currentTarget);
     setStatus("sending");
     setMessage("");
-    let optionalAnswers = {};
-    try {
-      optionalAnswers = optionalRaw ? JSON.parse(optionalRaw) : {};
-    } catch {
-      optionalAnswers = {};
+    let optionalAnswers: Record<string, unknown> = stored?.optional ?? {};
+    const optionalRaw = params.get("optionalAnswers");
+    if (optionalRaw) {
+      try {
+        optionalAnswers = JSON.parse(optionalRaw);
+      } catch {
+        optionalAnswers = {};
+      }
     }
     try {
       const res = await fetch("/api/speaker-quiz", {
@@ -155,7 +172,18 @@ export default function Results() {
 
       <section className="section section-sunk quiz-plan-section">
         <div className="wrap quiz-plan">
-          {status === "done" ? (
+          {!ready ? null : !answers ? (
+            <div className="quiz-plan-copy">
+              <Note>Curious about yours?</Note>
+              <h2 className="aw-h aw-h-l">What kind of speaker are you?</h2>
+              <p className="lede">Ten quick questions, about two minutes, and a growth plan for your type by email.</p>
+              <div className="ctas">
+                <a className="aw-btn aw-btn-primary" href={addAttribution("/speaker-quiz", getQuizAttribution())}>
+                  Take the quiz <Icon name="arrow-right" />
+                </a>
+              </div>
+            </div>
+          ) : status === "done" ? (
             <div className="quiz-done aw-panel" role="status">
               <h2 className="aw-h aw-h-m">Thanks, you&rsquo;re all set</h2>
               <p className="quiz-body">{message}</p>

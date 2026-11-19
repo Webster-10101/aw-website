@@ -97,7 +97,7 @@ export const QUESTIONS: Question[] = [
       { id: "should_have_said", label: "“I should have said that differently”" },
       { id: "sounded_dumb", label: "“I hope I didn’t sound stupid”" },
       { id: "hope_comfortable", label: "“I hope everyone felt comfortable with that”" },
-      { id: "looked_good", label: "“That came across well and professional”" },
+      { id: "looked_good", label: "“I sounded polished and professional”" },
       { id: "made_impact", label: "“I made my point powerfully”" },
       { id: "was_accurate", label: "“The information was accurate and clear”" },
       { id: "job_done", label: "“I said what needed to be said”" },
