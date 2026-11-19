@@ -6,6 +6,7 @@ import { addAttribution, getQuizAttribution, quizBookingUrl } from "@/lib/quiz/a
 import { QUESTIONS, isAnswered, type Question } from "@/lib/quiz/questions";
 import { scoreArchetype } from "@/lib/quiz/scoring";
 import { saveAnswers, saveOptional } from "@/lib/quiz/session";
+import { step, trackQuiz } from "@/lib/quiz/track";
 
 type Answers = Record<string, unknown>;
 
@@ -27,11 +28,13 @@ export default function QuizFlow() {
 
   function goTo(i: number) {
     setIndex(i);
+    trackQuiz(`${step(i + 1)} reached question ${i + 1}`);
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function finish(final: Answers) {
     const { primary } = scoreArchetype(final);
+    trackQuiz(`${step(QUESTIONS.length + 1)} finished questions`);
     const params = new URLSearchParams({ archetype: primary });
     saveOptional({});
     // Answers stay in the browser tab; only if storage is unavailable do they travel in the URL.
@@ -75,7 +78,10 @@ export default function QuizFlow() {
             </li>
           </ul>
           <div className="ctas">
-            <button type="button" className="aw-btn aw-btn-primary" onClick={() => setStarted(true)}>
+            <button type="button" className="aw-btn aw-btn-primary" onClick={() => {
+                setStarted(true);
+                trackQuiz("01 started");
+              }}>
               Start the quiz <Icon name="arrow-right" />
             </button>
           </div>

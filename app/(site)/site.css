@@ -28,7 +28,8 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--focus); outlin
 .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid transparent; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); height: 84px; }
 .nav-links { display: flex; gap: 36px; list-style: none; margin: 0; padding: 0; }
-.nav-links a { font: 500 15px/1 var(--font-sans); color: var(--ink); text-decoration: none; }
+.nav-links a { font: 500 15px/1 var(--font-sans); color: var(--ink); text-decoration: none; white-space: nowrap; }
+@media (max-width: 1080px) { .nav-links { gap: 22px; } }
 .nav-links a:hover { color: var(--berry); }
 @media (max-width: 860px) { .nav-links { display: none; } .nav-inner { height: 68px; } }
 

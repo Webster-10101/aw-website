@@ -39,6 +39,7 @@ const hand = Caveat({ subsets: ["latin"], weight: ["600"], variable: "--font-han
 
 const NAV = [
   { label: "Coaching", href: "/coaching" },
+  { label: "Speaker quiz", href: "/speaker-quiz" },
   { label: "About", href: "/about" },
   { label: "FFG", href: "/ffg" },
   { label: "Projects", href: "/projects" },
@@ -87,6 +88,7 @@ export default function SiteLayout({ children }: Readonly<{ children: React.Reac
                 <h2>Explore</h2>
                 <ul>
                   <li><a href="/coaching">Coaching</a></li>
+                  <li><a href="/speaker-quiz">Speaker quiz</a></li>
                   <li><a href="/about">About</a></li>
                   <li><a href="/ffg">Freelancing for Good</a></li>
                   <li><a href="/projects">Projects</a></li>

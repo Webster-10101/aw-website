@@ -7,6 +7,7 @@ import { ARCHETYPES } from "@/lib/quiz/archetypes";
 import { addAttribution, getQuizAttribution, quizBookingUrl } from "@/lib/quiz/attribution";
 import { SCALES, parseAnswers, scaleLabel, scoreArchetype, toArchetypeId } from "@/lib/quiz/scoring";
 import { loadAnswers, loadOptional } from "@/lib/quiz/session";
+import { trackQuiz } from "@/lib/quiz/track";
 
 type Status = "idle" | "sending" | "done" | "error";
 
@@ -30,6 +31,11 @@ export default function Results() {
   const result = useMemo(() => (answers ? scoreArchetype(answers) : null), [answers]);
   const id = result?.primary ?? urlType;
   const ready = urlAnswers !== null || stored !== null;
+
+  useEffect(() => {
+    if (!ready || !id) return;
+    trackQuiz(answers ? "12 saw results" : "shared link viewed");
+  }, [ready, id, answers]);
 
   const [booking, setBooking] = useState("https://calendly.com/alistair-webster/intro-call");
   const [status, setStatus] = useState<Status>("idle");
@@ -75,10 +81,12 @@ export default function Results() {
       const data = await res.json().catch(() => ({}));
       if (res.ok && data.ok) {
         setStatus("done");
+        trackQuiz("13 requested plan");
         setMessage(data.message ?? "Your growth plan is on its way to your inbox.");
       } else {
         setStatus("error");
         setMessage(data.error ?? "Something went wrong. Please try again.");
+        trackQuiz("plan request failed");
       }
     } catch {
       setStatus("error");
