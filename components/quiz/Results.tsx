@@ -3,9 +3,10 @@
 import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { Gradient, Icon, Note } from "@/components/aw";
+import { CONSENT_TEXT } from "@/lib/quiz/consent";
 import { ARCHETYPES } from "@/lib/quiz/archetypes";
 import { addAttribution, getQuizAttribution, quizBookingUrl } from "@/lib/quiz/attribution";
-import { SCALES, parseAnswers, scaleLabel, scoreArchetype, toArchetypeId } from "@/lib/quiz/scoring";
+import { parseAnswers, scoreArchetype, toArchetypeId } from "@/lib/quiz/scoring";
 import { loadAnswers, loadOptional } from "@/lib/quiz/session";
 import { trackQuiz } from "@/lib/quiz/track";
 
@@ -103,78 +104,8 @@ export default function Results() {
             <h1 className="aw-h aw-h-l">
               <Gradient>{a.title}</Gradient>
             </h1>
-            <p className="lede">{a.description}</p>
-            <p className="quiz-body">{a.introText}</p>
+            <p className="lede">{a.preview}</p>
           </div>
-
-          {result && (
-            <div className="quiz-profile aw-panel">
-              <h2 className="aw-h aw-h-m">Your speaking style profile</h2>
-              <p className="quiz-body">Based on your answers, here&rsquo;s how you lean on five dimensions.</p>
-              <ul>
-                {SCALES.map((s) => {
-                  const v = result.slidingScales[s.key];
-                  return (
-                    <li key={s.key}>
-                      <div className="quiz-scale-ends">
-                        <span className={v <= 50 ? "lean" : undefined}>{s.left}</span>
-                        <span className={v > 50 ? "lean" : undefined}>{s.right}</span>
-                      </div>
-                      <div className="quiz-bar quiz-bar-scale">
-                        <i style={{ width: `${v}%` }} />
-                        <b style={{ left: `${v}%` }} aria-hidden />
-                      </div>
-                      <div className="quiz-scale-foot">
-                        <span>{s.description}</span>
-                        <strong>{scaleLabel(v, s.left, s.right)}</strong>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          )}
-
-          <div className="quiz-shows aw-panel">
-            <h2 className="aw-h aw-h-m">Where you might recognise this</h2>
-            <ol>
-              {a.whereItShowsUp.map((x) => {
-                const [label, ...rest] = x.split(": ");
-                return (
-                  <li key={x}>
-                    <b>{label}:</b> {rest.join(": ")}
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
-
-          <div className="quiz-two">
-            <div className="aw-panel">
-              <h2 className="aw-h aw-h-m">Your strengths</h2>
-              <ul className="quiz-ticks">
-                {a.strengths.map((s) => (
-                  <li key={s}>
-                    <Icon name="check" />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="aw-panel">
-              <h2 className="aw-h aw-h-m">Where to grow</h2>
-              <ul className="quiz-ticks">
-                {a.growthAreas.map((s) => (
-                  <li key={s}>
-                    <Icon name="arrow-right" />
-                    <span>{s}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <blockquote className="quiz-thought">{a.finalThought}</blockquote>
         </div>
       </section>
 
@@ -204,11 +135,9 @@ export default function Results() {
           ) : (
             <>
               <div className="quiz-plan-copy">
-                <Note>Want the full picture?</Note>
-                <h2 className="aw-h aw-h-l">Get your growth plan</h2>
+                <h2 className="aw-h aw-h-m">What could you try next?</h2>
                 <p className="lede">
-                  A longer plan for {a.title}, written by AI from your answers, with things to try this week. It
-                  comes straight to your inbox.
+                  Get a personalised speaking plan with exercises to try this week. It&rsquo;s written by AI using your quiz answers.
                 </p>
               </div>
               <form className="contact-form aw-panel" onSubmit={onSubmit} noValidate>
@@ -225,10 +154,10 @@ export default function Results() {
                 <input name="company" type="text" tabIndex={-1} autoComplete="off" className="waitlist-hp" aria-hidden />
                 <label className="quiz-consent">
                   <input type="checkbox" name="newsletterOptIn" />
-                  <span>Send me occasional speaking emails from Alistair. Optional, and you can unsubscribe at any time.</span>
+                  <span>{CONSENT_TEXT}</span>
                 </label>
                 <button type="submit" className="aw-btn aw-btn-primary" disabled={status === "sending"}>
-                  {status === "sending" ? "Writing your plan…" : "Email me my growth plan"}
+                  {status === "sending" ? "Writing your plan…" : "Email me my speaking plan"}
                 </button>
                 {status === "sending" && (
                   <p className="form-privacy" role="status">

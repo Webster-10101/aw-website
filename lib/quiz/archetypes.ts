@@ -5,6 +5,7 @@ import type { ArchetypeId } from "./questions";
 
 export type Archetype = {
   title: string;
+  preview: string;
   description: string;
   introText: string;
   strengths: string[];
@@ -19,6 +20,7 @@ export type Archetype = {
 
 export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
   rambler: {
+    preview: "Talking things through can help you find connections as you go. Sometimes a side thought takes you far enough from your point that your listeners lose the thread.",
     title: "The Rambler",
     description:
       "You’ve got energy to spare. When you talk, ideas tumble out fast and furious, and people can feel the spark. The trouble is, that spark sometimes sets everything on fire at once — words rush out, sentences spiral, and clarity gets lost in the noise.",
@@ -46,6 +48,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "rushed and scattered to clear, concise and confident",
   },
   overthinker: {
+    preview: "You often know what you want to say, but you keep refining the wording in your head. By the time you’re happy with it, the conversation may have moved on.",
     title: "The Overthinker",
     description:
       "You’ve got plenty to say — but when the spotlight’s on, you tend to freeze. Instead of speaking freely, you start running mental checks: Is this the right answer? Am I saying it perfectly? Before you know it, the moment has passed.",
@@ -73,6 +76,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "controlled and self-conscious to free and connected",
   },
   doubter: {
+    preview: "You may have a useful point ready and still wonder whether it’s worth saying out loud. Sometimes someone else says it a few minutes later and you wish you’d spoken up.",
     title: "The Self-Doubter",
     description:
       "You know your stuff, but when it’s time to speak, you tend to shrink back. Maybe you start with an implied or a real apology (“I might not explain this well…”) or trail off before finishing strong. It’s not that you don’t have ideas — it’s that fear of judgement makes you play small.",
@@ -100,6 +104,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "holding back to putting it out there for yourself",
   },
   pleaser: {
+    preview: "You notice how your words land and take care with other people’s feelings. When you disagree, you may soften your point so much that people miss it.",
     title: "The People Pleaser",
     description:
       "You care about people. You want them to like you, to feel they’ve got value from listening. That’s a gift — but it can also trap you. Instead of saying what you really think, you slip into “expert mode” or soften your opinions to keep everyone comfortable.",
@@ -127,6 +132,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "performing for approval to speaking with authenticity",
   },
   performer: {
+    preview: "You know how to prepare and deliver a polished talk. When someone asks an unexpected question, it can take a moment to find your own words again.",
     title: "The Performer",
     description:
       "You know how to put on a show. Strong delivery, polished presence, maybe even a few tricks and hacks up your sleeve. The trouble is, all that polish can sometimes get in the way. Instead of connection, people feel the performance. It looks good, but it doesn’t always feel real.",
@@ -154,6 +160,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "performance mode to authentic presence",
   },
   intense: {
+    preview: "When you care about an idea, people can hear it in your voice. Sometimes you’re already making your next point while someone else is still trying to respond to the first.",
     title: "The Intense Speaker",
     description:
       "When you speak, people feel it. There’s power in your voice, conviction in your delivery, and no one’s left wondering where you stand. But sometimes that intensity comes on so strong it can be overwhelming. Everything feels high-stakes, all the time — leaving little space for lightness, contrast, or play.",
@@ -181,6 +188,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "always full-throttle to intentional range",
   },
   rationalist: {
+    preview: "You like to give people solid reasons for what you’re saying. Sometimes they hear all the evidence before they understand why the question matters to you.",
     title: "The Rationalist",
     description:
       "You like things to make sense. Clear structure, solid logic, everything in order. That gives you credibility — people trust that you’ve done your thinking. But it can also make you sound a little flat. Too many summaries, too much abstraction, and not enough of you.",
@@ -208,6 +216,7 @@ export const ARCHETYPES: Record<ArchetypeId, Archetype> = {
     shift: "purely logical to logical and human",
   },
   minimalist: {
+    preview: "You can get to the point in a few words. Sometimes a listener needs one more detail to see how you got there.",
     title: "The Minimalist",
     description:
       "You probably already know this about yourself: you don’t say more than you need to. You get to the point, keep it short, maybe even cut things off before they’re fully formed. On the surface, that can look calm and collected — but if you’re honest, it often comes from holding back.",

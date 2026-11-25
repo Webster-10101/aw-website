@@ -1,3 +1,4 @@
+import { CONSENT_TEXT } from "@/lib/quiz/consent";
 import { NextResponse } from "next/server";
 import { ARCHETYPES } from "@/lib/quiz/archetypes";
 import { sanitizeAttribution } from "@/lib/quiz/attribution";
@@ -17,7 +18,7 @@ export const maxDuration = 60;
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const RATE_LIMIT = 3; // submissions per IP per hour, counted in the database so it holds across servers
-const CONSENT_TEXT = "Send me occasional speaking emails from Alistair. Optional, and you can unsubscribe at any time.";
+
 
 const str = (v: unknown, max: number) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
